@@ -3,32 +3,33 @@ from flask import request
 from api import api_key
 import requests, base64, datetime as dt, sys 
 
-sys.path.append('/opt/flask/')
-sys.argv.append("cliente_")#nombre de la bd 
+sys.path.append('/opt/flask/')# se coloca la ruta para porder importar el validador
+sys.argv.append("cliente_")# nombre de la bd del ws para obtener datos del token
 
-from validator import validate 
+from validator import validate # se importa la libreria validador que se encarga de validar el token y la sesion 
 
-APP_CONTEXT = "APP_CONTRI"
+APP_CONTEXT = "APP_KUDE" # se asigna el nombre de la aplicacion o ws. Este campo debe estar mapeado con el usuario para poder autenticarse
 
 # url_jde = 'http://localhost:5000/api/jdedb'
 
-url_jde = 'http://192.168.150.156:6000/api/jdedb'
+url_jde = 'http://192.168.150.156:6000/api/jdedb' #url del pool
 
-db = "cliente_"
+api_key_auth = {"apikey" : api_key} # diccionario que contiene la apikei del auth
 
-api_key_auth = {"apikey" : api_key}
+#variables
 token = ''
 ambiente = 'testdta'
-cookie = ''
 momento = dt.datetime.fromtimestamp(1688410986) - dt.timedelta(days=20*365)
 vencimiento_token = dt.datetime.fromtimestamp(1688410986) - dt.timedelta(days=20*365)
 token_is_expired = False
 session_closed = False
 api_key_pool = ''
 
+# Esta clase se encarga de obtener el token de sesion. Recibe el json con un formato especifico que debe contener el usuario y la contraseña para poder autenticarse. Este Json
+# se envia al autenticador. Este trabajo lo hace el validador mediante la funcion validator(). Esta funcion recibe ciertos parametros para poder funcionar.
 class GetToken(Resource):
     def post(self):
-        global cookie, token, momento, vencimiento_token, token_is_expired, session_closed
+        global token, momento, vencimiento_token, token_is_expired, session_closed # se sobreescriben los valores de las variables de la aplicacion
         try:
             if request.is_json:
                 data = request.get_json()
@@ -36,11 +37,11 @@ class GetToken(Resource):
                 params = data['params']
                 if operation == "get_token":
                     respuesta = validate.validator(request, token, session_closed, api_key_auth, APP_CONTEXT)
-                    token = respuesta[2]
-                    momento = respuesta[3]
-                    vencimiento_token = respuesta[4]
-                    token_is_expired = respuesta[5]
-                    session_closed = respuesta[6]
+                    token = respuesta[1]
+                    momento = respuesta[2]
+                    vencimiento_token = respuesta[3]
+                    token_is_expired = respuesta[4]
+                    session_closed = respuesta[5]
                     return respuesta[0]
                 else:
                     descripcion = 'Operación inválida'
@@ -57,16 +58,19 @@ class GetToken(Resource):
         respuesta = {'codigo': codigo, 'descripcion': descripcion,'objetoJson' : {}, 'arrayJson' : []}
         return respuesta
 
+# Esta clase se encarga de enviar una consulta al jde y el resultado se muestra en json. Recibe el json con un formato especifico que debe contener el la operacion y el campo a consultar. Este Json
+# se envia al pooljde si es que ya se cuenta con una sesion activa, que antes de ser enviado la solicitud, se realiza una validacion de la sesion. 
+# Este trabajo lo hace el validador mediante la funcion oper_validator(). Esta funcion recibe ciertos parametros para poder funcionar.
 class Select(Resource):
     def post(self):
-        global token, momento, vencimiento_token, api_key_pool, api_key_auth
+        global token, momento, vencimiento_token, api_key_pool, api_key_auth# se sobreescriben los valores de las variables de la aplicacion
         try:
             if request.is_json:
                 data = request.get_json()
                 operation = data['operation']
                 params = data['params']
                 if operation == "get_email":
-                    res = validate.oper_validator(request, token, cookie, api_key_auth, vencimiento_token, data, ambiente)
+                    res = validate.oper_validator(request, token, api_key_auth, vencimiento_token, data, ambiente)
                     codigo = res['codigo']
                     descripcion = res['descripcion']
                     
@@ -97,7 +101,7 @@ class Select(Resource):
 
 class Logout(Resource):
     def post(self):
-        global cookie, token, session_closed
+        global token, session_closed# se sobreescriben los valores de las variables de la aplicacion
         
         respuesta = validate.logout(token)
         codigo = respuesta['codigo']
@@ -108,16 +112,16 @@ class Logout(Resource):
 
 class KnowMyToken(Resource):
     def post(self):
-        global cookie, token, momento, vencimiento_token, token_is_expired
+        global token, momento, vencimiento_token, token_is_expired# se sobreescriben los valores de las variables de la aplicacion
         arrayJson = []
         objetoJson = {}
         val = validate.check_my_token()
         codigo = val[0]['codigo']
         descripcion = val[0]['descripcion']
         if codigo == 1000:
-            token = val[2]
-            momento = val[3].strftime('%m/%d/%Y %H:%M:%S')
-            vencimiento_token = val[4].strftime('%m/%d/%Y %H:%M:%S')
+            token = val[1]
+            momento = val[2].strftime('%m/%d/%Y %H:%M:%S')
+            vencimiento_token = val[3].strftime('%m/%d/%Y %H:%M:%S')
             arrayJson = {
                             "token" : token,
                             "momento" : momento,
