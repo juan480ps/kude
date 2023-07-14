@@ -6,7 +6,7 @@ import requests, base64, datetime as dt, sys
 sys.path.append('/opt/flask/')
 sys.argv.append("cliente_")#nombre de la bd 
 
-from validator import validate
+from validator import validate 
 
 APP_CONTEXT = "APP_CONTRI"
 
