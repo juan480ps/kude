@@ -1,0 +1,27 @@
+version: 1
+disable_existing_loggers: true
+formatters:
+  default:
+    format: 'auth %(levelname)s %(asctime)s %(name)s %(filename)s(%(lineno)d) %(funcName)s(): %(message)s'
+handlers:
+  console:
+    class: logging.StreamHandler
+    level: INFO
+    formatter: default
+    stream: ext://sys.stdout
+  file:
+    class: logging.FileHandler
+    level: INFO
+    filename: /var/log/nginx/access.log
+  info_file:
+    class: logging.FileHandler
+    level: INFO
+    filename: /var/log/jdewsring01/info.log
+loggers:
+  jdewsring01:
+    level: INFO
+    handlers: [console, file]
+    propagate: no
+root:
+  level: INFO
+  handlers: [console, file, info_file]

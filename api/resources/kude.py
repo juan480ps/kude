@@ -1,6 +1,6 @@
 from flask_restful import Resource
 from flask import request
-from api import api_key
+from api import API_KEY, AMBIENTE_DB
 import requests, base64, datetime as dt, sys 
 
 sys.path.append('/opt/flask/')# se coloca la ruta para porder importar el validador
@@ -10,15 +10,15 @@ from validator import validate # se importa la libreria validador que se encarga
 
 APP_CONTEXT = "APP_KUDE" # se asigna el nombre de la aplicacion o ws. Este campo debe estar mapeado con el usuario para poder autenticarse
 
-# url_jde = 'http://localhost:5000/api/jdedb'
+url_jde = 'http://localhost:5000/api/jdedb'
 
-url_jde = 'http://192.168.150.156:6000/api/jdedb' #url del pool
+# url_jde = 'http://192.168.150.156:6000/api/jdedb' #url del pool
 
-api_key_auth = {"apikey" : api_key} # diccionario que contiene la apikei del auth
+api_key_auth = {"apikey" : API_KEY} # diccionario que contiene la apikei del auth
 
 #variables
 token = ''
-ambiente = 'testdta'
+#ambiente = 'testdta'
 momento = dt.datetime.fromtimestamp(1688410986) - dt.timedelta(days=20*365)
 vencimiento_token = dt.datetime.fromtimestamp(1688410986) - dt.timedelta(days=20*365)
 token_is_expired = False
@@ -70,7 +70,7 @@ class Select(Resource):
                 operation = data['operation']
                 params = data['params']
                 if operation == "get_email":
-                    res = validate.oper_validator(request, token, api_key_auth, vencimiento_token, data, ambiente)
+                    res = validate.oper_validator(request, token, api_key_auth, vencimiento_token, data, AMBIENTE_DB)
                     codigo = res['codigo']
                     descripcion = res['descripcion']
                     
@@ -149,7 +149,7 @@ def send_query_select(data, token, api_key_pool):
         ruc = params['ruc']
         query = f"""
                     SELECT trim(EAEMAL) email
-                    FROM {ambiente}.F0101, TESTDTA.F01151
+                    FROM {AMBIENTE_DB}.F0101, TESTDTA.F01151
                     WHERE ABAN8 = EAAN8
                     AND EAETP = 'E'
                     AND trim(ABTAX) = '{ruc}'
