@@ -98,7 +98,8 @@ class Select(Resource):
             codigo = -1000
         respuesta = {'codigo': codigo, 'descripcion': descripcion, 'objetoJson' : {}, 'arrayJson': [] }
         return respuesta
-
+    
+#Esta clase se encarga de cerrar la sesion actual, hecho mas bien para pruebas. Lo que hace es actualiza la fecha de cracion del token igual al vencimiento para que al verificar salte el mensaje de token expirado
 class Logout(Resource):
     def post(self):
         global token, session_closed# se sobreescriben los valores de las variables de la aplicacion
@@ -109,27 +110,36 @@ class Logout(Resource):
         
         respuesta = {'codigo': codigo, 'descripcion': descripcion, 'objetoJson' : {}, 'arrayJson' : []}
         return respuesta
-
+#esta clase se encarga de mostrar la info del token asignado. Por ej. el nro. del token, y la fecha y hora del vencimiento. Hecho para pruebas
 class KnowMyToken(Resource):
     def post(self):
         global token, momento, vencimiento_token, token_is_expired# se sobreescriben los valores de las variables de la aplicacion
-        arrayJson = []
-        objetoJson = {}
-        val = validate.check_my_token()
-        codigo = val[0]['codigo']
-        descripcion = val[0]['descripcion']
-        if codigo == 1000:
-            token = val[1]
-            momento = val[2].strftime('%m/%d/%Y %H:%M:%S')
-            vencimiento_token = val[3].strftime('%m/%d/%Y %H:%M:%S')
-            arrayJson = {
-                            "token" : token,
-                            "momento" : momento,
-                            "vencimiento" : vencimiento_token
-                        }
-        respuesta = {'codigo': codigo, 'descripcion': descripcion, 'objetoJson' : objetoJson, 'arrayJson' : arrayJson}
+        try:
+            arrayJson = []
+            objetoJson = {}
+            val = validate.check_my_token()
+            codigo = val[0]['codigo']
+            descripcion = val[0]['descripcion']
+            if codigo == 1000:
+                token = val[1]
+                momento = val[2].strftime('%Y/%m/%d %H:%M:%S')#'%m/%d/%Y %H:%M:%S'
+                vencimiento_token = val[3].strftime('%Y/%m/%d %H:%M:%S')
+                arrayJson = {
+                                "token" : token,
+                                "momento" : momento,
+                                "vencimiento" : vencimiento_token
+                            }
+        except KeyError as e :
+            descripcion = 'No se encuentra el parametro: ' + str(e)
+            codigo = -1001
+        except Exception as e:
+            descripcion = str(e)
+            codigo = -1000
+        respuesta = {'codigo': codigo, 'descripcion': descripcion, 'objetoJson' : objetoJson, 'arrayJson': arrayJson }
         return respuesta
 
+    
+#Funcion que se encarga de armar el query de consulta al pool y el json con el formato correcto
 def send_query_select(data, token, api_key_pool):
     try:
         objetoJson = {}
@@ -144,7 +154,7 @@ def send_query_select(data, token, api_key_pool):
                     AND EAETP = 'E'
                     AND trim(ABTAX) = '{ruc}'
                 """
-        encoded_query = base64.b64encode(query.encode("utf-8")).decode("utf-8")
+        encoded_query = base64.b64encode(query.encode("utf-8")).decode("utf-8")# sel encripta con base 64 y se desencripta en el pool para realizar la consulta
         body = {
                 "operation": "select",
                 "params" : {
