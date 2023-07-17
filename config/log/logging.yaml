@@ -2,7 +2,7 @@ version: 1
 disable_existing_loggers: true
 formatters:
   default:
-    format: 'auth %(levelname)s %(asctime)s %(name)s %(filename)s(%(lineno)d) %(funcName)s(): %(message)s'
+    format: 'kude %(levelname)s %(asctime)s %(name)s %(filename)s(%(lineno)d) %(funcName)s(): %(message)s'
 handlers:
   console:
     class: logging.StreamHandler

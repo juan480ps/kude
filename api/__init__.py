@@ -13,6 +13,7 @@ app_config_file.close()
 
 API_KEY = app_config_data['API_KEY']
 AMBIENTE_DB = app_config_data['AMBIENTE_DB']
+APP_CONTEXT = app_config_data['APP_CONTEXT']
 
 app = Flask(__name__)
 api = Api(app)

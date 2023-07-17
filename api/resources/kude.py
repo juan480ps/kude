@@ -1,6 +1,6 @@
 from flask_restful import Resource
 from flask import request
-from api import API_KEY, AMBIENTE_DB
+from api import API_KEY, AMBIENTE_DB, APP_CONTEXT
 import requests, base64, datetime as dt, sys 
 
 sys.path.append('/opt/flask/')# se coloca la ruta para porder importar el validador
@@ -8,10 +8,9 @@ sys.argv.append("cliente_")# nombre de la bd del ws para obtener datos del token
 
 from validator import validate # se importa la libreria validador que se encarga de validar el token y la sesion 
 
-APP_CONTEXT = "APP_KUDE" # se asigna el nombre de la aplicacion o ws. Este campo debe estar mapeado con el usuario para poder autenticarse
+ # se asigna el nombre de la aplicacion o ws. Este campo debe estar mapeado con el usuario para poder autenticarse
 
 url_jde = 'http://localhost:5000/api/jdedb'
-
 # url_jde = 'http://192.168.150.156:6000/api/jdedb' #url del pool
 
 api_key_auth = {"apikey" : API_KEY} # diccionario que contiene la apikei del auth
