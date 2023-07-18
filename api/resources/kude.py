@@ -1,7 +1,7 @@
 from flask_restful import Resource
 from flask import request
 from api import API_KEY, AMBIENTE_DB, APP_CONTEXT
-import requests, base64, datetime as dt, sys 
+import requests, base64, datetime as dt, sys, logging, json
 
 sys.path.append('/opt/flask/')# se coloca la ruta para porder importar el validador
 sys.argv.append("cliente_")# nombre de la bd del ws para obtener datos del token
@@ -29,9 +29,13 @@ api_key_pool = ''
 class GetToken(Resource):
     def post(self):
         global token, momento, vencimiento_token, token_is_expired, session_closed # se sobreescriben los valores de las variables de la aplicacion
+        logging.debug("GetToken")
         try:
+            logging.debug("HTTP REQUEST HEADERS: " + str(request.headers))
+            logging.debug("HTTP REQUEST DATA: " + str(request.data))
             if request.is_json:
                 data = request.get_json()
+                logging.info('@REQUEST POST ' + json.dumps(data))
                 operation = data['operation']
                 params = data['params']
                 if operation == "get_token":
@@ -41,6 +45,10 @@ class GetToken(Resource):
                     vencimiento_token = respuesta[3]
                     token_is_expired = respuesta[4]
                     session_closed = respuesta[5]
+                    try: #se mete dentro de un try porque da problemas al convertir respuesta con cookies en json
+                        logging.info('@REQUEST GET ' + request.full_path + ' @RESPONSE ' + json.dumps(respuesta[0]))
+                    except Exception as e:
+                        logging.info('@REQUEST GET ' + request.full_path + ' @RESPONSE ' + str(respuesta[0].response))
                     return respuesta[0]
                 else:
                     descripcion = 'Operación inválida'
@@ -49,12 +57,17 @@ class GetToken(Resource):
                 descripcion = 'Json necesario para ingresar'
                 codigo = -1002
         except KeyError as e :
+            logging.debug(e)
+            logging.error("Peticion finalizada con error", exc_info = True)
             descripcion = 'No se encuentra el parametro: ' + str(e)
             codigo = -1001
         except Exception as e:
+            logging.debug(e)
+            logging.error("Peticion finalizada con error", exc_info = True)
             descripcion = str(e)
             codigo = -1000
-        respuesta = {'codigo': codigo, 'descripcion': descripcion,'objetoJson' : {}, 'arrayJson' : []}
+        respuesta = {'codigo': codigo, 'descripcion': descripcion,'objetoJson' : {}, 'arrayJson' : []}        
+        logging.info('@REQUEST GET ' + request.full_path + ' @RESPONSE ' + json.dumps(respuesta))
         return respuesta
 
 # Esta clase se encarga de enviar una consulta al jde y el resultado se muestra en json. Recibe el json con un formato especifico que debe contener el la operacion y el campo a consultar. Este Json
@@ -63,9 +76,13 @@ class GetToken(Resource):
 class Select(Resource):
     def post(self):
         global token, momento, vencimiento_token, api_key_pool, api_key_auth# se sobreescriben los valores de las variables de la aplicacion
+        logging.debug("/Select")
         try:
+            logging.debug("HTTP REQUEST HEADERS: " + str(request.headers))
+            logging.debug("HTTP REQUEST DATA: " + str(request.data))
             if request.is_json:
                 data = request.get_json()
+                logging.info('@REQUEST POST ' + json.dumps(data))
                 operation = data['operation']
                 params = data['params']
                 if operation == "get_email":
@@ -79,6 +96,7 @@ class Select(Resource):
                         data = request.get_json()
                         if api_key_pool:
                             respuesta = send_query_select(data, token, api_key_pool)
+                            logging.info('@REQUEST GET ' + request.full_path + ' @RESPONSE ' + json.dumps(respuesta))
                             return respuesta
                         else:
                             descripcion = 'Hubo un problema al recuperar la Api-Key'
@@ -90,30 +108,45 @@ class Select(Resource):
                 descripcion = 'Json necesario para ingresar'
                 codigo = -1002
         except KeyError as e :
+            logging.debug(e)
+            logging.error("Peticion finalizada con error", exc_info = True)
             descripcion = 'No se encuentra el parametro: ' + str(e)
             codigo = -1001
         except Exception as e:
+            logging.debug(e)
+            logging.error("Peticion finalizada con error", exc_info = True)
             descripcion = str(e)
             codigo = -1000
         respuesta = {'codigo': codigo, 'descripcion': descripcion, 'objetoJson' : {}, 'arrayJson': [] }
+        logging.info('@REQUEST GET ' + request.full_path + ' @RESPONSE ' + json.dumps(respuesta))
         return respuesta
     
 #Esta clase se encarga de cerrar la sesion actual, hecho mas bien para pruebas. Lo que hace es actualiza la fecha de cracion del token igual al vencimiento para que al verificar salte el mensaje de token expirado
 class Logout(Resource):
     def post(self):
-        global token, session_closed# se sobreescriben los valores de las variables de la aplicacion
+        global token, session_closed# se sobreescriben los valores de las variables de la aplicacion        
+        
+        logging.debug("/Logout")
+        
+        logging.debug("HTTP REQUEST HEADERS: " + str(request.headers))
+        logging.debug("HTTP REQUEST DATA: " + str(request.data))
         
         respuesta = validate.logout(token)
         codigo = respuesta['codigo']
         descripcion = respuesta['descripcion']   
         
         respuesta = {'codigo': codigo, 'descripcion': descripcion, 'objetoJson' : {}, 'arrayJson' : []}
+        logging.info('@REQUEST GET ' + request.full_path + ' @RESPONSE ' + json.dumps(respuesta))
         return respuesta
 #esta clase se encarga de mostrar la info del token asignado. Por ej. el nro. del token, y la fecha y hora del vencimiento. Hecho para pruebas
 class KnowMyToken(Resource):
     def post(self):
         global token, momento, vencimiento_token, token_is_expired# se sobreescriben los valores de las variables de la aplicacion
+        logging.debug("/KnowMyToken")
         try:
+            logging.debug("HTTP REQUEST HEADERS: " + str(request.headers))
+            logging.debug("HTTP REQUEST DATA: " + str(request.data))
+            
             arrayJson = []
             objetoJson = {}
             val = validate.check_my_token()
@@ -129,12 +162,17 @@ class KnowMyToken(Resource):
                                 "vencimiento" : vencimiento_token
                             }
         except KeyError as e :
+            logging.debug(e)
+            logging.error("Peticion finalizada con error", exc_info = True)
             descripcion = 'No se encuentra el parametro: ' + str(e)
             codigo = -1001
         except Exception as e:
+            logging.debug(e)
+            logging.error("Peticion finalizada con error", exc_info = True)
             descripcion = str(e)
             codigo = -1000
         respuesta = {'codigo': codigo, 'descripcion': descripcion, 'objetoJson' : objetoJson, 'arrayJson': arrayJson }
+        logging.info('@REQUEST GET ' + request.full_path + ' @RESPONSE ' + json.dumps(respuesta))
         return respuesta
 
     
@@ -148,7 +186,7 @@ def send_query_select(data, token, api_key_pool):
         ruc = params['ruc']
         query = f"""
                     SELECT trim(EAEMAL) email
-                    FROM {AMBIENTE_DB}.F0101, TESTDTA.F01151
+                    FROM {AMBIENTE_DB}.F0101, {AMBIENTE_DB}.F01151
                     WHERE ABAN8 = EAAN8
                     AND EAETP = 'E'
                     AND trim(ABTAX) = '{ruc}'
