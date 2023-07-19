@@ -61,3 +61,19 @@ kude INFO 2023-07-19 13:32:29,303 root kude.py(101) post(): @REQUEST GET /api/se
 kude INFO 2023-07-19 13:32:29,304 werkzeug _internal.py(187) _log(): 192.168.150.155 - - [19/Jul/2023 13:32:29] "POST /api/select HTTP/1.1" 200 -
 kude INFO 2023-07-19 15:00:38,001 root kude.py(38) post(): @REQUEST POST {"operation": "get_token", "params": {"username": "jcorrea", "password": "12345678j"}}
 kude INFO 2023-07-19 15:00:38,016 root kude.py(51) post(): @REQUEST GET /api/getlogin? @RESPONSE [b'{"arrayJson":[],"codigo":1000,"descripcion":"Sesion iniciada con exito","objetoJson":{"token":"1FDlnz3MCXFYL0wvhkAcszBs8wyH507zlHN0T62YwFruExvM12FmafYVpdU9U25aeXtg2IPByWQZKcSp"}}\n']
+kude INFO 2023-07-19 15:03:14,763 root kude.py(38) post(): @REQUEST POST {"operation": "get_token", "params": {"username": "jcorrea", "password": "12345678j"}}
+kude INFO 2023-07-19 15:03:14,764 root kude.py(49) post(): @REQUEST GET /api/getlogin? @RESPONSE {"codigo": 1100, "descripcion": "Sesion ya iniciada", "objetoJson": {}, "arrayJson": []}
+kude INFO 2023-07-19 15:25:51,050 werkzeug _internal.py(187) _log(): [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5002
+ * Running on http://192.168.150.155:5002
+kude INFO 2023-07-19 15:25:51,051 werkzeug _internal.py(187) _log(): [33mPress CTRL+C to quit[0m
+kude INFO 2023-07-19 15:26:00,611 root kude.py(32) post(): @REQUEST POST {"operation": "get_token", "params": {"username": "jcorrea", "password": "12345678j"}}
+kude INFO 2023-07-19 15:26:00,631 root kude.py(45) post(): @REQUEST GET /api/getlogin? @RESPONSE [b'{"arrayJson":[],"codigo":1000,"descripcion":"Sesion iniciada con exito","objetoJson":{"token":"E1VO57YBbZgw7qQS4Wh7edoVDe4QRsQB7UAH8BcbcJwyZiKyIGtSoqi99qPGpGXdMX4VZcr9rSlNF687"}}\n']
+kude INFO 2023-07-19 15:26:00,632 werkzeug _internal.py(187) _log(): 192.168.150.155 - - [19/Jul/2023 15:26:00] "POST /api/getlogin HTTP/1.1" 200 -
+kude INFO 2023-07-19 15:26:02,011 root kude.py(32) post(): @REQUEST POST {"operation": "get_token", "params": {"username": "jcorrea", "password": "12345678j"}}
+kude INFO 2023-07-19 15:26:02,013 root kude.py(43) post(): @REQUEST GET /api/getlogin? @RESPONSE {"codigo": 1100, "descripcion": "Sesion ya iniciada", "objetoJson": {}, "arrayJson": []}
+kude INFO 2023-07-19 15:26:02,014 werkzeug _internal.py(187) _log(): 192.168.150.155 - - [19/Jul/2023 15:26:02] "POST /api/getlogin HTTP/1.1" 200 -
+kude INFO 2023-07-19 15:26:11,956 root kude.py(81) post(): @REQUEST POST {"operation": "get_email", "params": {"ruc": "80018181-6"}}
+kude INFO 2023-07-19 15:26:11,995 root kude.py(95) post(): @REQUEST GET /api/select? @RESPONSE {"codigo": 1000, "descripcion": "OK", "objetoJson": {}, "arrayJson": [{"EMAIL": "ALAMBRA@PLANET.PY"}]}
+kude INFO 2023-07-19 15:26:11,995 werkzeug _internal.py(187) _log(): 192.168.150.155 - - [19/Jul/2023 15:26:11] "POST /api/select HTTP/1.1" 200 -
