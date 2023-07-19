@@ -53,19 +53,21 @@ class GetToken(Resource):
                 else:
                     descripcion = 'Operación inválida'
                     codigo = -1002
+                    logging.error("Peticion finalizada con error: " + descripcion + " " + str(codigo), exc_info = True)
             else:
                 descripcion = 'Json necesario para ingresar'
                 codigo = -1002
+                logging.error("Peticion finalizada con error: " + descripcion + " " + str(codigo), exc_info = True)
         except KeyError as e :
-            logging.debug(e)
-            logging.error("Peticion finalizada con error", exc_info = True)
             descripcion = 'No se encuentra el parametro: ' + str(e)
             codigo = -1001
-        except Exception as e:
             logging.debug(e)
-            logging.error("Peticion finalizada con error", exc_info = True)
+            logging.error("Peticion finalizada con error: " + descripcion + " " + str(codigo), exc_info = True)
+        except Exception as e:
             descripcion = str(e)
             codigo = -1000
+            logging.debug(e)
+            logging.error("Peticion finalizada con error: " + descripcion + " " + str(codigo), exc_info = True)
         respuesta = {'codigo': codigo, 'descripcion': descripcion,'objetoJson' : {}, 'arrayJson' : []}        
         logging.info('@REQUEST GET ' + request.full_path + ' @RESPONSE ' + json.dumps(respuesta))
         return respuesta
@@ -101,22 +103,25 @@ class Select(Resource):
                         else:
                             descripcion = 'Hubo un problema al recuperar la Api-Key'
                             codigo = -1000
+                            logging.error("Peticion finalizada con error: " + descripcion + " " + str(codigo), exc_info = True)
                 else:
                     descripcion = 'Operación inválida'
                     codigo = -1002
+                    logging.error("Peticion finalizada con error: " + descripcion + " " + str(codigo), exc_info = True)
             else:
                 descripcion = 'Json necesario para ingresar'
                 codigo = -1002
+                logging.error("Peticion finalizada con error: " + descripcion + " " + str(codigo), exc_info = True)
         except KeyError as e :
-            logging.debug(e)
-            logging.error("Peticion finalizada con error", exc_info = True)
             descripcion = 'No se encuentra el parametro: ' + str(e)
             codigo = -1001
-        except Exception as e:
             logging.debug(e)
-            logging.error("Peticion finalizada con error", exc_info = True)
+            logging.error("Peticion finalizada con error: " + descripcion + " " + str(codigo), exc_info = True)
+        except Exception as e:
             descripcion = str(e)
             codigo = -1000
+            logging.debug(e)
+            logging.error("Peticion finalizada con error: " + descripcion + " " + str(codigo), exc_info = True)
         respuesta = {'codigo': codigo, 'descripcion': descripcion, 'objetoJson' : {}, 'arrayJson': [] }
         logging.info('@REQUEST GET ' + request.full_path + ' @RESPONSE ' + json.dumps(respuesta))
         return respuesta
@@ -162,15 +167,15 @@ class KnowMyToken(Resource):
                                 "vencimiento" : vencimiento_token
                             }
         except KeyError as e :
-            logging.debug(e)
-            logging.error("Peticion finalizada con error", exc_info = True)
             descripcion = 'No se encuentra el parametro: ' + str(e)
             codigo = -1001
-        except Exception as e:
             logging.debug(e)
-            logging.error("Peticion finalizada con error", exc_info = True)
+            logging.error("Peticion finalizada con error: " + descripcion + " " + str(codigo), exc_info = True)
+        except Exception as e:
             descripcion = str(e)
             codigo = -1000
+            logging.debug(e)
+            logging.error("Peticion finalizada con error: " + descripcion + " " + str(codigo), exc_info = True)
         respuesta = {'codigo': codigo, 'descripcion': descripcion, 'objetoJson' : objetoJson, 'arrayJson': arrayJson }
         logging.info('@REQUEST GET ' + request.full_path + ' @RESPONSE ' + json.dumps(respuesta))
         return respuesta
@@ -208,8 +213,12 @@ def send_query_select(data, token, api_key_pool):
     except KeyError as e :
         codigo = -1001
         descripcion = 'No se encuentra el parametro: ' + str(e)
+        logging.debug(e)
+        logging.error("Peticion finalizada con error: " + descripcion + " " + str(codigo), exc_info = True)
     except Exception as e:
         codigo = -1000
         descripcion = str(e)
+        logging.debug(e)
+        logging.error("Peticion finalizada con error: " + descripcion + " " + str(codigo), exc_info = True)
     respuesta =  {'codigo': codigo, 'descripcion': descripcion, 'objetoJson': objetoJson, 'arrayJson': arrayJson}
     return respuesta
