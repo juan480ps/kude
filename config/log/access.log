@@ -1,0 +1,61 @@
+kude INFO 2023-07-19 13:21:29,719 root kude.py(38) post(): @REQUEST POST {"operation": "get_token", "params": {"username": "jcorrea", "password": "12345678j"}}
+kude INFO 2023-07-19 13:21:29,735 root kude.py(51) post(): @REQUEST GET /api/getlogin? @RESPONSE [b'{"arrayJson":[],"codigo":1000,"descripcion":"Sesion iniciada con exito","objetoJson":{"token":"UInKutuEtwtMn26qKVjnc8SpgCfn4T68CcVGsxAHbIcZpHxmCNMq8dggafEIjZIdlQqxVmE64AbQgFjK"}}\n']
+kude INFO 2023-07-19 13:21:30,836 root kude.py(38) post(): @REQUEST POST {"operation": "get_token", "params": {"username": "jcorrea", "password": "12345678j"}}
+kude INFO 2023-07-19 13:21:30,837 root kude.py(49) post(): @REQUEST GET /api/getlogin? @RESPONSE {"codigo": 1100, "descripcion": "Sesion ya iniciada", "objetoJson": {}, "arrayJson": []}
+kude INFO 2023-07-19 13:24:34,152 root kude.py(38) post(): @REQUEST POST {"operation": "get_token", "params": {"username": "jcorrea", "password": "12345678j"}}
+kude INFO 2023-07-19 13:24:34,164 root kude.py(51) post(): @REQUEST GET /api/getlogin? @RESPONSE [b'{"arrayJson":[],"codigo":1000,"descripcion":"Sesion iniciada con exito","objetoJson":{"token":"4eMPAzIVJ1BHt7UQ1WaKH7VzSDuBJCi5NqNOndJWwFillNXFsLZHRj2es16x6oGR7mZk03O6rsQemxNG"}}\n']
+kude INFO 2023-07-19 13:24:35,236 root kude.py(38) post(): @REQUEST POST {"operation": "get_token", "params": {"username": "jcorrea", "password": "12345678j"}}
+kude INFO 2023-07-19 13:24:35,237 root kude.py(49) post(): @REQUEST GET /api/getlogin? @RESPONSE {"codigo": 1100, "descripcion": "Sesion ya iniciada", "objetoJson": {}, "arrayJson": []}
+kude INFO 2023-07-19 13:24:37,666 root kude.py(87) post(): @REQUEST POST {"operation": "get_email", "params": {"ruc": "80018181-6"}}
+kude INFO 2023-07-19 13:24:37,678 root kude.py(101) post(): @REQUEST GET /api/select? @RESPONSE {"codigo": -1000, "descripcion": "module 'api' has no attribute 'api_key'", "objetoJson": {}, "arrayJson": {}}
+kude INFO 2023-07-19 13:24:42,373 root kude.py(87) post(): @REQUEST POST {"operation": "get_email", "params": {"ruc": "80018181-6"}}
+kude INFO 2023-07-19 13:24:42,383 root kude.py(101) post(): @REQUEST GET /api/select? @RESPONSE {"codigo": -1000, "descripcion": "module 'api' has no attribute 'api_key'", "objetoJson": {}, "arrayJson": {}}
+kude INFO 2023-07-19 13:24:43,433 root kude.py(87) post(): @REQUEST POST {"operation": "get_email", "params": {"ruc": "80018181-6"}}
+kude INFO 2023-07-19 13:24:43,438 root kude.py(101) post(): @REQUEST GET /api/select? @RESPONSE {"codigo": -1000, "descripcion": "module 'api' has no attribute 'api_key'", "objetoJson": {}, "arrayJson": {}}
+kude INFO 2023-07-19 13:25:30,308 root kude.py(38) post(): @REQUEST POST {"operation": "get_token", "params": {"username": "jcorrea", "password": "12345678j"}}
+kude INFO 2023-07-19 13:25:30,319 root kude.py(51) post(): @REQUEST GET /api/getlogin? @RESPONSE [b'{"arrayJson":[],"codigo":1000,"descripcion":"Sesion iniciada con exito","objetoJson":{"token":"EatokiyX7TnrZgszbhaNSv3VibrDcWaYjKm3XSF0erSfpRM7TMm3zMr2oCsayzJmBSYmvbQOWwF0qbb2"}}\n']
+kude INFO 2023-07-19 13:25:32,603 root kude.py(87) post(): @REQUEST POST {"operation": "get_email", "params": {"ruc": "80018181-6"}}
+kude INFO 2023-07-19 13:25:32,611 root kude.py(101) post(): @REQUEST GET /api/select? @RESPONSE {"codigo": -1000, "descripcion": "module 'api' has no attribute 'api_key'", "objetoJson": {}, "arrayJson": {}}
+kude INFO 2023-07-19 13:26:21,815 root kude.py(38) post(): @REQUEST POST {"operation": "get_token", "params": {"username": "jcorrea", "password": "12345678j"}}
+kude INFO 2023-07-19 13:26:21,826 root kude.py(51) post(): @REQUEST GET /api/getlogin? @RESPONSE [b'{"arrayJson":[],"codigo":1000,"descripcion":"Sesion iniciada con exito","objetoJson":{"token":"WUGlRtYXHb0nh5DnAXa1OzRGaR9d9mY4YevP6MBQH8vUxKXwviNDvU0tOXuVprWFB3LPEGjEBlMLZhlv"}}\n']
+kude INFO 2023-07-19 13:26:53,573 werkzeug _internal.py(187) _log(): [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5002
+ * Running on http://192.168.150.155:5002
+kude INFO 2023-07-19 13:26:53,574 werkzeug _internal.py(187) _log(): [33mPress CTRL+C to quit[0m
+kude INFO 2023-07-19 13:27:05,929 root kude.py(38) post(): @REQUEST POST {"operation": "get_token", "params": {"username": "jcorrea", "password": "12345678j"}}
+kude INFO 2023-07-19 13:27:05,949 root kude.py(51) post(): @REQUEST GET /api/getlogin? @RESPONSE [b'{"arrayJson":[],"codigo":1000,"descripcion":"Sesion iniciada con exito","objetoJson":{"token":"M4b5dkzzpO8pHEk7qcyMUKhzypwsqfnLpzYHgfJoEOQitBgRy7YzSViCNSikm9PEcDBEpuoUUDLgTguf"}}\n']
+kude INFO 2023-07-19 13:27:05,950 werkzeug _internal.py(187) _log(): 192.168.150.155 - - [19/Jul/2023 13:27:05] "POST /api/getlogin HTTP/1.1" 200 -
+kude INFO 2023-07-19 13:27:17,478 root kude.py(87) post(): @REQUEST POST {"operation": "get_email", "params": {"ruc": "80018181-6"}}
+kude INFO 2023-07-19 13:29:03,992 root kude.py(38) post(): @REQUEST POST {"operation": "get_token", "params": {"username": "jcorrea", "password": "12345678j"}}
+kude INFO 2023-07-19 13:29:04,002 root kude.py(51) post(): @REQUEST GET /api/getlogin? @RESPONSE [b'{"arrayJson":[],"codigo":1000,"descripcion":"Sesion iniciada con exito","objetoJson":{"token":"vQw0TbWY5lie1p9cDKRqfjKhppt5ybF1ItAlGmVSy0EYXvobXth6TiKihWksaUPyPK6wnSMtncGsEImq"}}\n']
+kude INFO 2023-07-19 13:29:04,003 werkzeug _internal.py(187) _log(): 192.168.150.155 - - [19/Jul/2023 13:29:04] "POST /api/getlogin HTTP/1.1" 200 -
+kude INFO 2023-07-19 13:29:08,087 root kude.py(87) post(): @REQUEST POST {"operation": "get_email", "params": {"ruc": "80018181-6"}}
+kude INFO 2023-07-19 13:29:09,598 root kude.py(101) post(): @REQUEST GET /api/select? @RESPONSE {"codigo": -1000, "descripcion": "module 'api' has no attribute 'api_key'", "objetoJson": {}, "arrayJson": {}}
+kude INFO 2023-07-19 13:29:09,605 werkzeug _internal.py(187) _log(): 192.168.150.155 - - [19/Jul/2023 13:29:09] "POST /api/select HTTP/1.1" 200 -
+kude INFO 2023-07-19 13:29:09,632 root kude.py(101) post(): @REQUEST GET /api/select? @RESPONSE {"codigo": 1000, "descripcion": "OK", "objetoJson": {}, "arrayJson": [{"EMAIL": "ALAMBRA@PLANET.PY"}]}
+kude INFO 2023-07-19 13:29:09,632 werkzeug _internal.py(187) _log(): 192.168.150.155 - - [19/Jul/2023 13:29:09] "POST /api/select HTTP/1.1" 200 -
+kude INFO 2023-07-19 13:32:10,292 root kude.py(180) post(): @REQUEST GET /api/mytoken? @RESPONSE {"codigo": -1010, "descripcion": "Token expirado", "objetoJson": {}, "arrayJson": []}
+kude INFO 2023-07-19 13:32:10,292 werkzeug _internal.py(187) _log(): 192.168.150.155 - - [19/Jul/2023 13:32:10] "POST /api/mytoken HTTP/1.1" 200 -
+kude INFO 2023-07-19 13:32:12,437 root kude.py(144) post(): @REQUEST GET /api/logout? @RESPONSE {"codigo": 1000, "descripcion": "Sesion cerrada", "objetoJson": {}, "arrayJson": []}
+kude INFO 2023-07-19 13:32:12,438 werkzeug _internal.py(187) _log(): 192.168.150.155 - - [19/Jul/2023 13:32:12] "POST /api/logout HTTP/1.1" 200 -
+kude INFO 2023-07-19 13:32:14,502 root kude.py(180) post(): @REQUEST GET /api/mytoken? @RESPONSE {"codigo": -1010, "descripcion": "Token expirado", "objetoJson": {}, "arrayJson": []}
+kude INFO 2023-07-19 13:32:14,503 werkzeug _internal.py(187) _log(): 192.168.150.155 - - [19/Jul/2023 13:32:14] "POST /api/mytoken HTTP/1.1" 200 -
+kude INFO 2023-07-19 13:32:16,415 root kude.py(87) post(): @REQUEST POST {"operation": "get_email", "params": {"ruc": "80018181-6"}}
+kude INFO 2023-07-19 13:32:19,976 root kude.py(126) post(): @REQUEST GET /api/select? @RESPONSE {"codigo": -1010, "descripcion": "Token expirado", "objetoJson": {}, "arrayJson": []}
+kude INFO 2023-07-19 13:32:19,977 werkzeug _internal.py(187) _log(): 192.168.150.155 - - [19/Jul/2023 13:32:19] "POST /api/select HTTP/1.1" 200 -
+kude INFO 2023-07-19 13:32:23,031 root kude.py(38) post(): @REQUEST POST {"operation": "get_token", "params": {"username": "jcorrea", "password": "12345678j"}}
+kude INFO 2023-07-19 13:32:23,050 root kude.py(51) post(): @REQUEST GET /api/getlogin? @RESPONSE [b'{"arrayJson":[],"codigo":1000,"descripcion":"Sesion iniciada con exito","objetoJson":{"token":"LEEiKwcTifOsIbiqEehTsIm9lBnua8ou6cNoZph9r7jR3hTlLErJ5I1jLEItCxxzeKGY0dnZr7MlmomD"}}\n']
+kude INFO 2023-07-19 13:32:23,050 werkzeug _internal.py(187) _log(): 192.168.150.155 - - [19/Jul/2023 13:32:23] "POST /api/getlogin HTTP/1.1" 200 -
+kude INFO 2023-07-19 13:32:24,963 root kude.py(38) post(): @REQUEST POST {"operation": "get_token", "params": {"username": "jcorrea", "password": "12345678j"}}
+kude INFO 2023-07-19 13:32:24,965 root kude.py(49) post(): @REQUEST GET /api/getlogin? @RESPONSE {"codigo": 1100, "descripcion": "Sesion ya iniciada", "objetoJson": {}, "arrayJson": []}
+kude INFO 2023-07-19 13:32:24,965 werkzeug _internal.py(187) _log(): 192.168.150.155 - - [19/Jul/2023 13:32:24] "POST /api/getlogin HTTP/1.1" 200 -
+kude INFO 2023-07-19 13:32:27,059 root kude.py(87) post(): @REQUEST POST {"operation": "get_email", "params": {"ruc": "80018181-6"}}
+kude INFO 2023-07-19 13:32:27,077 root kude.py(101) post(): @REQUEST GET /api/select? @RESPONSE {"codigo": 1000, "descripcion": "OK", "objetoJson": {}, "arrayJson": [{"EMAIL": "ALAMBRA@PLANET.PY"}]}
+kude INFO 2023-07-19 13:32:27,078 werkzeug _internal.py(187) _log(): 192.168.150.155 - - [19/Jul/2023 13:32:27] "POST /api/select HTTP/1.1" 200 -
+kude INFO 2023-07-19 13:32:28,263 root kude.py(87) post(): @REQUEST POST {"operation": "get_email", "params": {"ruc": "80018181-6"}}
+kude INFO 2023-07-19 13:32:28,278 root kude.py(101) post(): @REQUEST GET /api/select? @RESPONSE {"codigo": 1000, "descripcion": "OK", "objetoJson": {}, "arrayJson": [{"EMAIL": "ALAMBRA@PLANET.PY"}]}
+kude INFO 2023-07-19 13:32:28,279 werkzeug _internal.py(187) _log(): 192.168.150.155 - - [19/Jul/2023 13:32:28] "POST /api/select HTTP/1.1" 200 -
+kude INFO 2023-07-19 13:32:29,283 root kude.py(87) post(): @REQUEST POST {"operation": "get_email", "params": {"ruc": "80018181-6"}}
+kude INFO 2023-07-19 13:32:29,303 root kude.py(101) post(): @REQUEST GET /api/select? @RESPONSE {"codigo": 1000, "descripcion": "OK", "objetoJson": {}, "arrayJson": [{"EMAIL": "ALAMBRA@PLANET.PY"}]}
+kude INFO 2023-07-19 13:32:29,304 werkzeug _internal.py(187) _log(): 192.168.150.155 - - [19/Jul/2023 13:32:29] "POST /api/select HTTP/1.1" 200 -

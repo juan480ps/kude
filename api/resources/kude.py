@@ -4,7 +4,7 @@ from api import API_KEY, AMBIENTE_DB, APP_CONTEXT
 import requests, base64, datetime as dt, sys, logging, json
 
 sys.path.append('/opt/flask/')# se coloca la ruta para porder importar el validador
-sys.argv.append("cliente_")# nombre de la bd del ws para obtener datos del token
+sys.argv.append("kude")# nombre de la bd del ws para obtener datos del token
 
 from validator import validate # se importa la libreria validador que se encarga de validar el token y la sesion 
 
