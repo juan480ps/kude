@@ -10,8 +10,8 @@ from validator import validate # se importa la libreria validador que se encarga
 
  # se asigna el nombre de la aplicacion o ws. Este campo debe estar mapeado con el usuario para poder autenticarse
 
-# url_jde = 'http://localhost:5000/api/jdedb'
-url_jde = 'http://192.168.150.156:6000/api/jdedb' #url del pool
+url_jde = 'http://localhost:5000/api/jdedb'
+# url_jde = 'http://192.168.150.156:6000/api/jdedb' #url del pool
 
 api_key_auth = {"apikey" : API_KEY} # diccionario que contiene la apikei del auth
 

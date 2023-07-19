@@ -9,26 +9,23 @@ handlers:
     level: INFO
     formatter: default
     stream: ext://sys.stdout
-  file:
+  error_file:
     class: logging.FileHandler
-    level: INFO
-    filename: /var/log/nginx/access.log
-  info_file:
-    class: logging.FileHandler
-    level: INFO
-    filename: /var/log/nginx/access.log
+    level: ERROR
+    formatter: default
+    filename: /var/log/jdewsring01/error.log
   file_handler:
     class: logging.handlers.RotatingFileHandler
     level: INFO
     formatter: default
-    filename: /var/log/nginx/access.log
+    filename: /var/log/jdewsring01/access.log
     maxBytes: 104857600
     backupCount: 100
 loggers:
   jdewsring01:
     level: INFO
-    handlers: [console, file, file_handler]
+    handlers: [console,error_file, file_handler]
     propagate: no
 root:
   level: INFO
-  handlers: [console, file, info_file, file_handler]
+  handlers: [console, error_file, file_handler]
