@@ -6,11 +6,11 @@ connpost = psycopg2.connect(postgresqlConfig)# se importa la configuracion del p
 cur = connpost.cursor() # se abre cursor
 
 #urls 
-url_auth_login = 'http://localhost:5001/aut/login' 
-url_auth_get_api = 'http://localhost:5001/aut/getapibyalias/'
+# url_auth_login = 'http://localhost:5001/aut/login' 
+# url_auth_get_api = 'http://localhost:5001/aut/getapibyalias/'
 
-# url_auth_login = 'http://192.168.150.156:6001/aut/login'
-# url_auth_get_api = 'http://192.168.150.156:6001/aut/getapibyalias/'
+url_auth_login = 'http://192.168.150.156:6001/aut/login'
+url_auth_get_api = 'http://192.168.150.156:6001/aut/getapibyalias/'
 
 #variables
 token = ''

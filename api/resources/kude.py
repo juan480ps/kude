@@ -4,8 +4,8 @@ from api import API_KEY, AMBIENTE_DB, APP_CONTEXT
 import requests, base64, datetime as dt, sys, logging, json
 from lib import validate# se importa la libreria validador que se encarga de validar el token y la sesion 
 
-url_jde = 'http://localhost:5000/api/jdedb'
-# url_jde = 'http://192.168.150.156:6000/api/jdedb' #url del pool
+# url_jde = 'http://localhost:5000/api/jdedb'
+url_jde = 'http://192.168.150.156:6000/api/jdedb' #url del pool
 
 api_key_auth = {"apikey" : API_KEY} # diccionario que contiene la apikei del auth
 
