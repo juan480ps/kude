@@ -59,3 +59,5 @@ kude INFO 2023-07-19 13:32:28,279 werkzeug _internal.py(187) _log(): 192.168.150
 kude INFO 2023-07-19 13:32:29,283 root kude.py(87) post(): @REQUEST POST {"operation": "get_email", "params": {"ruc": "80018181-6"}}
 kude INFO 2023-07-19 13:32:29,303 root kude.py(101) post(): @REQUEST GET /api/select? @RESPONSE {"codigo": 1000, "descripcion": "OK", "objetoJson": {}, "arrayJson": [{"EMAIL": "ALAMBRA@PLANET.PY"}]}
 kude INFO 2023-07-19 13:32:29,304 werkzeug _internal.py(187) _log(): 192.168.150.155 - - [19/Jul/2023 13:32:29] "POST /api/select HTTP/1.1" 200 -
+kude INFO 2023-07-19 15:00:38,001 root kude.py(38) post(): @REQUEST POST {"operation": "get_token", "params": {"username": "jcorrea", "password": "12345678j"}}
+kude INFO 2023-07-19 15:00:38,016 root kude.py(51) post(): @REQUEST GET /api/getlogin? @RESPONSE [b'{"arrayJson":[],"codigo":1000,"descripcion":"Sesion iniciada con exito","objetoJson":{"token":"1FDlnz3MCXFYL0wvhkAcszBs8wyH507zlHN0T62YwFruExvM12FmafYVpdU9U25aeXtg2IPByWQZKcSp"}}\n']
