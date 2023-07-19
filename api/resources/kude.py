@@ -8,7 +8,7 @@ sys.argv.append("cliente_")# nombre de la bd del ws para obtener datos del token
 
 from validator import validate # se importa la libreria validador que se encarga de validar el token y la sesion 
 
- # se asigna el nombre de la aplicacion o ws. Este campo debe estar mapeado con el usuario para poder autenticarse
+# se asigna el nombre de la aplicacion o ws. Este campo debe estar mapeado con el usuario para poder autenticarse
 
 url_jde = 'http://localhost:5000/api/jdedb'
 # url_jde = 'http://192.168.150.156:6000/api/jdedb' #url del pool
