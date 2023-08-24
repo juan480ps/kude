@@ -1,3 +1,14 @@
 API_KEY : "0c3ac2fa-f79a-4503-a0ea-f950dd0a5b66"
-AMBIENTE_DB : "testdta"
+AMBIENTE_DB : "crpdta"
 APP_CONTEXT : "APP_KUDE"
+
+BASE_URL_POOL : 'http://192.168.150.155:6000/api/jdedb'
+BASE_URL_AUTH : 'http://localhost:6001/aut/login' 
+URL_AUTH_GET_API : 'http://localhost:6001/aut/getapibyalias/'
+AUTH_USER : 'bridge2jdews01'
+AUTH_PASS : 'bridge2jdews01.2023'
+BY_PASS_AUTH : FALSE
+
+
+DEFAULT_PAGE_SIZE : 500
+DEFAULT_PAGE_NUMBER : 1

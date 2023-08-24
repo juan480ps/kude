@@ -77,3 +77,1102 @@ kude INFO 2023-07-19 15:26:02,014 werkzeug _internal.py(187) _log(): 192.168.150
 kude INFO 2023-07-19 15:26:11,956 root kude.py(81) post(): @REQUEST POST {"operation": "get_email", "params": {"ruc": "80018181-6"}}
 kude INFO 2023-07-19 15:26:11,995 root kude.py(95) post(): @REQUEST GET /api/select? @RESPONSE {"codigo": 1000, "descripcion": "OK", "objetoJson": {}, "arrayJson": [{"EMAIL": "ALAMBRA@PLANET.PY"}]}
 kude INFO 2023-07-19 15:26:11,995 werkzeug _internal.py(187) _log(): 192.168.150.155 - - [19/Jul/2023 15:26:11] "POST /api/select HTTP/1.1" 200 -
+kude INFO 2023-08-23 14:16:30,672 werkzeug _internal.py(187) _log(): [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5002
+ * Running on http://192.168.150.155:5002
+kude INFO 2023-08-23 14:16:30,673 werkzeug _internal.py(187) _log(): [33mPress CTRL+C to quit[0m
+kude INFO 2023-08-23 16:06:00,239 werkzeug _internal.py(187) _log(): [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5002
+ * Running on http://192.168.150.155:5002
+kude INFO 2023-08-23 16:06:00,239 werkzeug _internal.py(187) _log(): [33mPress CTRL+C to quit[0m
+kude INFO 2023-08-23 16:06:28,130 werkzeug _internal.py(187) _log(): [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5002
+ * Running on http://192.168.150.155:5002
+kude INFO 2023-08-23 16:06:28,131 werkzeug _internal.py(187) _log(): [33mPress CTRL+C to quit[0m
+kude INFO 2023-08-23 16:08:04,523 root kude.py(24) post(): @REQUEST POST {"operation": "get_token", "params": {"username": "jcorrea", "password": "12345678j"}}
+kude INFO 2023-08-23 16:08:04,542 root kude.py(35) post(): @REQUEST GET /api/getlogin? @RESPONSE {"codigo": 1000, "descripcion": "Sesion iniciada con exito", "objetoJson": {"token": "nXiKozElcwHVA43dpwN6ZvOTpRIfZ9TjiMRCtNQcvoIi76vfXIW14dHYTggnB6LzDe73SAEru5crTSH5"}, "arrayJson": []}
+kude INFO 2023-08-23 16:08:04,544 werkzeug _internal.py(187) _log(): 192.168.150.155 - - [23/Aug/2023 16:08:04] "POST /api/getlogin HTTP/1.1" 200 -
+kude INFO 2023-08-23 16:11:54,340 werkzeug _internal.py(187) _log(): [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5002
+ * Running on http://192.168.150.155:5002
+kude INFO 2023-08-23 16:11:54,340 werkzeug _internal.py(187) _log(): [33mPress CTRL+C to quit[0m
+kude INFO 2023-08-23 16:11:56,761 root kude.py(73) post(): @REQUEST POST {"operation": "select", "params": [{"ruc": "123"}]}
+kude ERROR 2023-08-23 16:11:56,762 root kude.py(105) post(): Peticion finalizada con error: Operación inválida -1002
+NoneType: None
+kude ERROR 2023-08-23 16:11:56,762 root kude.py(105) post(): Peticion finalizada con error: Operación inválida -1002
+NoneType: None
+kude INFO 2023-08-23 16:11:56,762 root kude.py(121) post(): @REQUEST GET /api/getmailbyruc? @RESPONSE {"codigo": -1002, "descripcion": "Operaci\u00f3n inv\u00e1lida", "objetoJson": {}, "arrayJson": []}
+kude INFO 2023-08-23 16:11:56,764 werkzeug _internal.py(187) _log(): 192.168.150.155 - - [23/Aug/2023 16:11:56] "POST /api/getmailbyruc HTTP/1.1" 200 -
+kude INFO 2023-08-23 16:11:58,382 root kude.py(73) post(): @REQUEST POST {"operation": "select", "params": [{"ruc": "123"}]}
+kude ERROR 2023-08-23 16:11:58,382 root kude.py(105) post(): Peticion finalizada con error: Operación inválida -1002
+NoneType: None
+kude ERROR 2023-08-23 16:11:58,382 root kude.py(105) post(): Peticion finalizada con error: Operación inválida -1002
+NoneType: None
+kude INFO 2023-08-23 16:11:58,382 root kude.py(121) post(): @REQUEST GET /api/getmailbyruc? @RESPONSE {"codigo": -1002, "descripcion": "Operaci\u00f3n inv\u00e1lida", "objetoJson": {}, "arrayJson": []}
+kude INFO 2023-08-23 16:11:58,383 werkzeug _internal.py(187) _log(): 192.168.150.155 - - [23/Aug/2023 16:11:58] "POST /api/getmailbyruc HTTP/1.1" 200 -
+kude INFO 2023-08-23 16:12:12,208 root kude.py(73) post(): @REQUEST POST {"operation": "select", "params": [{"ruc": "123"}]}
+kude ERROR 2023-08-23 16:12:23,130 root kude.py(105) post(): Peticion finalizada con error: Operación inválida -1002
+NoneType: None
+kude ERROR 2023-08-23 16:12:23,130 root kude.py(105) post(): Peticion finalizada con error: Operación inválida -1002
+NoneType: None
+kude INFO 2023-08-23 16:12:23,130 root kude.py(121) post(): @REQUEST GET /api/getmailbyruc? @RESPONSE {"codigo": -1002, "descripcion": "Operaci\u00f3n inv\u00e1lida", "objetoJson": {}, "arrayJson": []}
+kude INFO 2023-08-23 16:12:23,131 werkzeug _internal.py(187) _log(): 192.168.150.155 - - [23/Aug/2023 16:12:23] "POST /api/getmailbyruc HTTP/1.1" 200 -
+kude INFO 2023-08-23 16:12:24,727 root kude.py(73) post(): @REQUEST POST {"operation": "get_email", "params": [{"ruc": "123"}]}
+kude INFO 2023-08-23 16:12:25,610 root kude.py(121) post(): @REQUEST GET /api/getmailbyruc? @RESPONSE {"codigo": -1000, "descripcion": "list indices must be integers or slices, not str", "objetoJson": {}, "arrayJson": []}
+kude INFO 2023-08-23 16:12:25,610 werkzeug _internal.py(187) _log(): 192.168.150.155 - - [23/Aug/2023 16:12:25] "POST /api/getmailbyruc HTTP/1.1" 200 -
+kude INFO 2023-08-23 16:12:29,052 root kude.py(73) post(): @REQUEST POST {"operation": "get_email", "params": [{"ruc": "123"}]}
+kude INFO 2023-08-23 16:12:42,866 root kude.py(121) post(): @REQUEST GET /api/getmailbyruc? @RESPONSE {"codigo": -1000, "descripcion": "list indices must be integers or slices, not str", "objetoJson": {}, "arrayJson": []}
+kude INFO 2023-08-23 16:12:42,867 werkzeug _internal.py(187) _log(): 192.168.150.155 - - [23/Aug/2023 16:12:42] "POST /api/getmailbyruc HTTP/1.1" 200 -
+kude INFO 2023-08-23 16:16:16,216 root kude.py(73) post(): @REQUEST POST {"operation": "get_email", "params": [{"ruc": "123"}]}
+kude INFO 2023-08-23 16:16:21,795 root kude.py(121) post(): @REQUEST GET /api/getmailbyruc? @RESPONSE {"codigo": -1000, "descripcion": "list indices must be integers or slices, not str", "objetoJson": {}, "arrayJson": []}
+kude INFO 2023-08-23 16:16:21,797 werkzeug _internal.py(187) _log(): 192.168.150.155 - - [23/Aug/2023 16:16:21] "POST /api/getmailbyruc HTTP/1.1" 200 -
+kude INFO 2023-08-23 16:18:19,913 werkzeug _internal.py(187) _log(): [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5002
+ * Running on http://192.168.150.155:5002
+kude INFO 2023-08-23 16:18:19,914 werkzeug _internal.py(187) _log(): [33mPress CTRL+C to quit[0m
+kude INFO 2023-08-23 16:18:21,306 root kude.py(73) post(): @REQUEST POST {"operation": "get_email", "params": [{"ruc": "123"}]}
+kude INFO 2023-08-23 16:18:26,844 root kude.py(121) post(): @REQUEST GET /api/getmailbyruc? @RESPONSE {"codigo": -1000, "descripcion": "list indices must be integers or slices, not str", "objetoJson": {}, "arrayJson": []}
+kude INFO 2023-08-23 16:18:26,848 werkzeug _internal.py(187) _log(): 192.168.150.155 - - [23/Aug/2023 16:18:26] "POST /api/getmailbyruc HTTP/1.1" 200 -
+kude INFO 2023-08-23 16:18:28,426 root kude.py(73) post(): @REQUEST POST {"operation": "get_email", "params": [{"ruc": "123"}]}
+kude INFO 2023-08-23 16:18:38,353 werkzeug _internal.py(187) _log(): [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5002
+ * Running on http://192.168.150.155:5002
+kude INFO 2023-08-23 16:18:38,353 werkzeug _internal.py(187) _log(): [33mPress CTRL+C to quit[0m
+kude INFO 2023-08-23 16:18:39,497 root kude.py(73) post(): @REQUEST POST {"operation": "get_email", "params": [{"ruc": "123"}]}
+kude INFO 2023-08-23 16:18:45,093 root kude.py(121) post(): @REQUEST GET /api/getmailbyruc? @RESPONSE {"codigo": -1000, "descripcion": "Token necesario para realizar operacion", "objetoJson": {}, "arrayJson": []}
+kude INFO 2023-08-23 16:18:45,097 werkzeug _internal.py(187) _log(): 192.168.150.155 - - [23/Aug/2023 16:18:45] "POST /api/getmailbyruc HTTP/1.1" 200 -
+kude INFO 2023-08-23 16:18:51,937 root kude.py(24) post(): @REQUEST POST {"operation": "get_token", "params": {"username": "jcorrea", "password": "12345678j"}}
+kude INFO 2023-08-23 16:18:51,956 root kude.py(35) post(): @REQUEST GET /api/getlogin? @RESPONSE {"codigo": 1000, "descripcion": "Sesion iniciada con exito", "objetoJson": {"token": "boalPF6PqSQbPN1FJjw8ErasKZrsS3EOuelTIW8lcVnDdM7CkEnMIkrW0FjDDfXh8vQTJmofwOhJLzhf"}, "arrayJson": []}
+kude INFO 2023-08-23 16:18:51,957 werkzeug _internal.py(187) _log(): 192.168.150.155 - - [23/Aug/2023 16:18:51] "POST /api/getlogin HTTP/1.1" 200 -
+kude INFO 2023-08-23 16:18:54,497 root kude.py(73) post(): @REQUEST POST {"operation": "get_email", "params": [{"ruc": "123"}]}
+kude INFO 2023-08-23 16:18:56,059 root kude.py(121) post(): @REQUEST GET /api/getmailbyruc? @RESPONSE {"codigo": -1010, "descripcion": "Token expirado", "objetoJson": {}, "arrayJson": []}
+kude INFO 2023-08-23 16:18:56,060 werkzeug _internal.py(187) _log(): 192.168.150.155 - - [23/Aug/2023 16:18:56] "POST /api/getmailbyruc HTTP/1.1" 200 -
+kude INFO 2023-08-23 16:19:03,673 root kude.py(24) post(): @REQUEST POST {"operation": "get_token", "params": {"username": "jcorrea", "password": "12345678j"}}
+kude INFO 2023-08-23 16:19:03,683 root kude.py(35) post(): @REQUEST GET /api/getlogin? @RESPONSE {"codigo": 1000, "descripcion": "Sesion iniciada con exito", "objetoJson": {"token": "WvafHPBTwUmpeEZJWV1bJ0UDKN8F3uQfsFBNCBtdG6zNdrf1RYV7ykEAKlFoXaAf5eBpDNyZQCRDG20M"}, "arrayJson": []}
+kude INFO 2023-08-23 16:19:03,684 werkzeug _internal.py(187) _log(): 192.168.150.155 - - [23/Aug/2023 16:19:03] "POST /api/getlogin HTTP/1.1" 200 -
+kude INFO 2023-08-23 16:19:10,105 root kude.py(73) post(): @REQUEST POST {"operation": "get_email", "params": [{"ruc": "123"}]}
+kude INFO 2023-08-23 16:19:12,297 root kude.py(121) post(): @REQUEST GET /api/getmailbyruc? @RESPONSE {"codigo": -1000, "descripcion": "Token necesario para realizar la operacion", "objetoJson": {}, "arrayJson": []}
+kude INFO 2023-08-23 16:19:12,298 werkzeug _internal.py(187) _log(): 192.168.150.155 - - [23/Aug/2023 16:19:12] "POST /api/getmailbyruc HTTP/1.1" 200 -
+kude INFO 2023-08-23 16:19:15,025 root kude.py(73) post(): @REQUEST POST {"operation": "get_email", "params": [{"ruc": "123"}]}
+kude INFO 2023-08-23 16:19:16,450 root kude.py(121) post(): @REQUEST GET /api/getmailbyruc? @RESPONSE {"codigo": -1000, "descripcion": "Token necesario para realizar la operacion", "objetoJson": {}, "arrayJson": []}
+kude INFO 2023-08-23 16:19:16,451 werkzeug _internal.py(187) _log(): 192.168.150.155 - - [23/Aug/2023 16:19:16] "POST /api/getmailbyruc HTTP/1.1" 200 -
+kude INFO 2023-08-23 16:25:43,630 werkzeug _internal.py(187) _log(): [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5002
+ * Running on http://192.168.150.155:5002
+kude INFO 2023-08-23 16:25:43,630 werkzeug _internal.py(187) _log(): [33mPress CTRL+C to quit[0m
+kude INFO 2023-08-23 16:25:47,897 root kude.py(24) post(): @REQUEST POST {"operation": "get_token", "params": {"username": "jcorrea", "password": "12345678j"}}
+kude INFO 2023-08-23 16:25:47,918 root kude.py(37) post(): @REQUEST GET /api/getlogin? @RESPONSE [b'{"arrayJson":[],"codigo":1000,"descripcion":"Sesion iniciada con exito","objetoJson":{"token":"LnKlhLYMzyUEf4452kY8HSbd232HTOHr1tsqNoKXCxMOVdlmvRXgTZUZINuDRDYxPrTDgiFExwBYf1CU"}}\n']
+kude INFO 2023-08-23 16:25:47,919 werkzeug _internal.py(187) _log(): 192.168.150.155 - - [23/Aug/2023 16:25:47] "POST /api/getlogin HTTP/1.1" 200 -
+kude INFO 2023-08-23 16:25:53,107 root kude.py(73) post(): @REQUEST POST {"operation": "get_email", "params": [{"ruc": "123"}]}
+kude INFO 2023-08-23 16:26:01,002 root kude.py(121) post(): @REQUEST GET /api/getmailbyruc? @RESPONSE {"codigo": -1000, "descripcion": "list indices must be integers or slices, not str", "objetoJson": {}, "arrayJson": []}
+kude INFO 2023-08-23 16:26:01,004 werkzeug _internal.py(187) _log(): 192.168.150.155 - - [23/Aug/2023 16:26:01] "POST /api/getmailbyruc HTTP/1.1" 200 -
+kude INFO 2023-08-23 16:26:02,989 root kude.py(73) post(): @REQUEST POST {"operation": "get_email", "params": [{"ruc": "123"}]}
+kude INFO 2023-08-23 16:26:26,727 werkzeug _internal.py(187) _log(): [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5002
+ * Running on http://192.168.150.155:5002
+kude INFO 2023-08-23 16:26:26,727 werkzeug _internal.py(187) _log(): [33mPress CTRL+C to quit[0m
+kude INFO 2023-08-23 16:26:28,886 root kude.py(73) post(): @REQUEST POST {"operation": "get_email", "params": [{"ruc": "123"}]}
+kude INFO 2023-08-23 16:26:30,415 root kude.py(121) post(): @REQUEST GET /api/getmailbyruc? @RESPONSE {"codigo": -1000, "descripcion": "Token necesario para realizar operacion", "objetoJson": {}, "arrayJson": []}
+kude INFO 2023-08-23 16:26:30,416 werkzeug _internal.py(187) _log(): 192.168.150.155 - - [23/Aug/2023 16:26:30] "POST /api/getmailbyruc HTTP/1.1" 200 -
+kude INFO 2023-08-23 16:26:35,507 root kude.py(24) post(): @REQUEST POST {"operation": "get_token", "params": {"username": "jcorrea", "password": "12345678j"}}
+kude INFO 2023-08-23 16:26:35,513 root kude.py(35) post(): @REQUEST GET /api/getlogin? @RESPONSE {"codigo": 1100, "descripcion": "Sesion ya iniciada", "objetoJson": {}, "arrayJson": []}
+kude INFO 2023-08-23 16:26:35,513 werkzeug _internal.py(187) _log(): 192.168.150.155 - - [23/Aug/2023 16:26:35] "POST /api/getlogin HTTP/1.1" 200 -
+kude INFO 2023-08-23 16:26:38,511 root kude.py(73) post(): @REQUEST POST {"operation": "get_email", "params": [{"ruc": "123"}]}
+kude INFO 2023-08-23 16:27:38,859 root kude.py(121) post(): @REQUEST GET /api/getmailbyruc? @RESPONSE {"codigo": -1000, "descripcion": "list indices must be integers or slices, not str", "objetoJson": {}, "arrayJson": []}
+kude INFO 2023-08-23 16:27:38,861 werkzeug _internal.py(187) _log(): 192.168.150.155 - - [23/Aug/2023 16:27:38] "POST /api/getmailbyruc HTTP/1.1" 200 -
+kude INFO 2023-08-23 16:27:41,626 root kude.py(73) post(): @REQUEST POST {"operation": "get_email", "params": [{"ruc": "123"}]}
+kude INFO 2023-08-23 17:03:38,933 root kude.py(121) post(): @REQUEST GET /api/getmailbyruc? @RESPONSE {"codigo": -1010, "descripcion": "Token expirado", "objetoJson": {}, "arrayJson": []}
+kude INFO 2023-08-23 17:03:38,934 werkzeug _internal.py(187) _log(): 192.168.150.155 - - [23/Aug/2023 17:03:38] "POST /api/getmailbyruc HTTP/1.1" 200 -
+kude INFO 2023-08-23 17:03:46,516 root kude.py(24) post(): @REQUEST POST {"operation": "get_token", "params": {"username": "jcorrea", "password": "12345678j"}}
+kude INFO 2023-08-23 17:03:46,532 root kude.py(37) post(): @REQUEST GET /api/getlogin? @RESPONSE [b'{"arrayJson":[],"codigo":1000,"descripcion":"Sesion iniciada con exito","objetoJson":{"token":"Txptfy4SPKd1OkulcPS9ju2awDYKNdVZGkvmo0RPYpehjvyqm65pkgS78WLGHtFOMToum3tKOW5kqcYR"}}\n']
+kude INFO 2023-08-23 17:03:46,533 werkzeug _internal.py(187) _log(): 192.168.150.155 - - [23/Aug/2023 17:03:46] "POST /api/getlogin HTTP/1.1" 200 -
+kude INFO 2023-08-23 17:03:48,213 root kude.py(73) post(): @REQUEST POST {"operation": "get_email", "params": [{"ruc": "123"}]}
+kude INFO 2023-08-23 17:11:23,685 werkzeug _internal.py(187) _log(): [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5002
+ * Running on http://192.168.150.155:5002
+kude INFO 2023-08-23 17:11:23,686 werkzeug _internal.py(187) _log(): [33mPress CTRL+C to quit[0m
+kude INFO 2023-08-23 17:11:26,246 root kude.py(74) post(): @REQUEST POST {"operation": "get_email", "params": [{"ruc": "123"}]}
+kude ERROR 2023-08-23 17:11:26,246 root kude.py(121) post(): Peticion finalizada con error: local variable 'json_data' referenced before assignment -1000
+Traceback (most recent call last):
+  File "/home/juanc/Escritorio/Scripts/proyecto_servidor/kude/api/resources/kude.py", line 78, in post
+    json_data = set_format_json(json_data, "select")
+UnboundLocalError: local variable 'json_data' referenced before assignment
+kude ERROR 2023-08-23 17:11:26,246 root kude.py(121) post(): Peticion finalizada con error: local variable 'json_data' referenced before assignment -1000
+Traceback (most recent call last):
+  File "/home/juanc/Escritorio/Scripts/proyecto_servidor/kude/api/resources/kude.py", line 78, in post
+    json_data = set_format_json(json_data, "select")
+UnboundLocalError: local variable 'json_data' referenced before assignment
+kude INFO 2023-08-23 17:11:26,247 root kude.py(123) post(): @REQUEST GET /api/getmailbyruc? @RESPONSE {"codigo": -1000, "descripcion": "local variable 'json_data' referenced before assignment", "objetoJson": {}, "arrayJson": []}
+kude INFO 2023-08-23 17:11:26,248 werkzeug _internal.py(187) _log(): 192.168.150.155 - - [23/Aug/2023 17:11:26] "POST /api/getmailbyruc HTTP/1.1" 200 -
+kude INFO 2023-08-23 17:11:28,526 root kude.py(74) post(): @REQUEST POST {"operation": "get_email", "params": [{"ruc": "123"}]}
+kude ERROR 2023-08-23 17:11:28,526 root kude.py(121) post(): Peticion finalizada con error: local variable 'json_data' referenced before assignment -1000
+Traceback (most recent call last):
+  File "/home/juanc/Escritorio/Scripts/proyecto_servidor/kude/api/resources/kude.py", line 78, in post
+    json_data = set_format_json(json_data, "select")
+UnboundLocalError: local variable 'json_data' referenced before assignment
+kude ERROR 2023-08-23 17:11:28,526 root kude.py(121) post(): Peticion finalizada con error: local variable 'json_data' referenced before assignment -1000
+Traceback (most recent call last):
+  File "/home/juanc/Escritorio/Scripts/proyecto_servidor/kude/api/resources/kude.py", line 78, in post
+    json_data = set_format_json(json_data, "select")
+UnboundLocalError: local variable 'json_data' referenced before assignment
+kude INFO 2023-08-23 17:11:28,526 root kude.py(123) post(): @REQUEST GET /api/getmailbyruc? @RESPONSE {"codigo": -1000, "descripcion": "local variable 'json_data' referenced before assignment", "objetoJson": {}, "arrayJson": []}
+kude INFO 2023-08-23 17:11:28,527 werkzeug _internal.py(187) _log(): 192.168.150.155 - - [23/Aug/2023 17:11:28] "POST /api/getmailbyruc HTTP/1.1" 200 -
+kude INFO 2023-08-23 17:11:45,368 werkzeug _internal.py(187) _log(): [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5002
+ * Running on http://192.168.150.155:5002
+kude INFO 2023-08-23 17:11:45,369 werkzeug _internal.py(187) _log(): [33mPress CTRL+C to quit[0m
+kude INFO 2023-08-23 17:11:46,468 root kude.py(74) post(): @REQUEST POST {"operation": "get_email", "params": [{"ruc": "123"}]}
+kude INFO 2023-08-23 17:11:52,356 root kude.py(123) post(): @REQUEST GET /api/getmailbyruc? @RESPONSE {"codigo": -1000, "descripcion": "Token necesario para realizar operacion", "objetoJson": {}, "arrayJson": []}
+kude INFO 2023-08-23 17:11:52,362 werkzeug _internal.py(187) _log(): 192.168.150.155 - - [23/Aug/2023 17:11:52] "POST /api/getmailbyruc HTTP/1.1" 200 -
+kude INFO 2023-08-23 17:11:55,909 root kude.py(25) post(): @REQUEST POST {"operation": "get_token", "params": {"username": "jcorrea", "password": "12345678j"}}
+kude INFO 2023-08-23 17:11:55,933 root kude.py(38) post(): @REQUEST GET /api/getlogin? @RESPONSE [b'{"arrayJson":[],"codigo":1000,"descripcion":"Sesion iniciada con exito","objetoJson":{"token":"IpUZbhxuUChESeBVJr9s2Zonsm9KX09g5d6eGTlAJ2jBuTkxhG4mFhrDeuYRB3KFrWP4u4aLQygpXUho"}}\n']
+kude INFO 2023-08-23 17:11:55,934 werkzeug _internal.py(187) _log(): 192.168.150.155 - - [23/Aug/2023 17:11:55] "POST /api/getlogin HTTP/1.1" 200 -
+kude INFO 2023-08-23 17:11:57,901 root kude.py(74) post(): @REQUEST POST {"operation": "get_email", "params": [{"ruc": "123"}]}
+kude ERROR 2023-08-23 17:12:04,125 root kude.py(121) post(): Peticion finalizada con error: list indices must be integers or slices, not str -1000
+Traceback (most recent call last):
+  File "/home/juanc/Escritorio/Scripts/proyecto_servidor/kude/api/resources/kude.py", line 90, in post
+    ruc = params['ruc']
+TypeError: list indices must be integers or slices, not str
+kude ERROR 2023-08-23 17:12:04,125 root kude.py(121) post(): Peticion finalizada con error: list indices must be integers or slices, not str -1000
+Traceback (most recent call last):
+  File "/home/juanc/Escritorio/Scripts/proyecto_servidor/kude/api/resources/kude.py", line 90, in post
+    ruc = params['ruc']
+TypeError: list indices must be integers or slices, not str
+kude INFO 2023-08-23 17:12:04,128 root kude.py(123) post(): @REQUEST GET /api/getmailbyruc? @RESPONSE {"codigo": -1000, "descripcion": "list indices must be integers or slices, not str", "objetoJson": {}, "arrayJson": []}
+kude INFO 2023-08-23 17:12:04,131 werkzeug _internal.py(187) _log(): 192.168.150.155 - - [23/Aug/2023 17:12:04] "POST /api/getmailbyruc HTTP/1.1" 200 -
+kude INFO 2023-08-23 17:12:09,965 root kude.py(74) post(): @REQUEST POST {"operation": "get_email", "params": [{"ruc": "123"}]}
+kude ERROR 2023-08-23 17:12:09,967 root kude.py(121) post(): Peticion finalizada con error: list indices must be integers or slices, not str -1000
+Traceback (most recent call last):
+  File "/home/juanc/Escritorio/Scripts/proyecto_servidor/kude/api/resources/kude.py", line 90, in post
+    ruc = params['ruc']
+TypeError: list indices must be integers or slices, not str
+kude ERROR 2023-08-23 17:12:09,967 root kude.py(121) post(): Peticion finalizada con error: list indices must be integers or slices, not str -1000
+Traceback (most recent call last):
+  File "/home/juanc/Escritorio/Scripts/proyecto_servidor/kude/api/resources/kude.py", line 90, in post
+    ruc = params['ruc']
+TypeError: list indices must be integers or slices, not str
+kude INFO 2023-08-23 17:12:09,968 root kude.py(123) post(): @REQUEST GET /api/getmailbyruc? @RESPONSE {"codigo": -1000, "descripcion": "list indices must be integers or slices, not str", "objetoJson": {}, "arrayJson": []}
+kude INFO 2023-08-23 17:12:09,968 werkzeug _internal.py(187) _log(): 192.168.150.155 - - [23/Aug/2023 17:12:09] "POST /api/getmailbyruc HTTP/1.1" 200 -
+kude INFO 2023-08-23 17:12:57,641 root kude.py(74) post(): @REQUEST POST {"operation": "get_email", "params": [{"ruc": "123"}]}
+kude ERROR 2023-08-23 17:12:57,643 root kude.py(121) post(): Peticion finalizada con error: list indices must be integers or slices, not str -1000
+Traceback (most recent call last):
+  File "/home/juanc/Escritorio/Scripts/proyecto_servidor/kude/api/resources/kude.py", line 90, in post
+    ruc = params['ruc']
+TypeError: list indices must be integers or slices, not str
+kude ERROR 2023-08-23 17:12:57,643 root kude.py(121) post(): Peticion finalizada con error: list indices must be integers or slices, not str -1000
+Traceback (most recent call last):
+  File "/home/juanc/Escritorio/Scripts/proyecto_servidor/kude/api/resources/kude.py", line 90, in post
+    ruc = params['ruc']
+TypeError: list indices must be integers or slices, not str
+kude INFO 2023-08-23 17:12:57,643 root kude.py(123) post(): @REQUEST GET /api/getmailbyruc? @RESPONSE {"codigo": -1000, "descripcion": "list indices must be integers or slices, not str", "objetoJson": {}, "arrayJson": []}
+kude INFO 2023-08-23 17:12:57,644 werkzeug _internal.py(187) _log(): 192.168.150.155 - - [23/Aug/2023 17:12:57] "POST /api/getmailbyruc HTTP/1.1" 200 -
+kude INFO 2023-08-23 17:13:06,682 root kude.py(74) post(): @REQUEST POST {"operation": "get_email", "params": [{"ruc": "123"}]}
+kude ERROR 2023-08-23 17:14:02,618 root kude.py(121) post(): Peticion finalizada con error: list indices must be integers or slices, not str -1000
+Traceback (most recent call last):
+  File "/home/juanc/Escritorio/Scripts/proyecto_servidor/kude/api/resources/kude.py", line 90, in post
+    ruc = params['ruc']
+TypeError: list indices must be integers or slices, not str
+kude ERROR 2023-08-23 17:14:02,618 root kude.py(121) post(): Peticion finalizada con error: list indices must be integers or slices, not str -1000
+Traceback (most recent call last):
+  File "/home/juanc/Escritorio/Scripts/proyecto_servidor/kude/api/resources/kude.py", line 90, in post
+    ruc = params['ruc']
+TypeError: list indices must be integers or slices, not str
+kude INFO 2023-08-23 17:14:02,619 root kude.py(123) post(): @REQUEST GET /api/getmailbyruc? @RESPONSE {"codigo": -1000, "descripcion": "list indices must be integers or slices, not str", "objetoJson": {}, "arrayJson": []}
+kude INFO 2023-08-23 17:14:02,620 werkzeug _internal.py(187) _log(): 192.168.150.155 - - [23/Aug/2023 17:14:02] "POST /api/getmailbyruc HTTP/1.1" 200 -
+kude INFO 2023-08-23 17:14:18,698 root kude.py(74) post(): @REQUEST POST {"operation": "get_email", "params": {"ruc": "123"}}
+kude ERROR 2023-08-23 17:14:46,167 root kude.py(121) post(): Peticion finalizada con error: local variable 'respuesta' referenced before assignment -1000
+Traceback (most recent call last):
+  File "/home/juanc/Escritorio/Scripts/proyecto_servidor/kude/api/resources/kude.py", line 98, in post
+    logging.info('@REQUEST GET ' + request.full_path + ' @RESPONSE ' + json.dumps(respuesta))
+UnboundLocalError: local variable 'respuesta' referenced before assignment
+kude ERROR 2023-08-23 17:14:46,167 root kude.py(121) post(): Peticion finalizada con error: local variable 'respuesta' referenced before assignment -1000
+Traceback (most recent call last):
+  File "/home/juanc/Escritorio/Scripts/proyecto_servidor/kude/api/resources/kude.py", line 98, in post
+    logging.info('@REQUEST GET ' + request.full_path + ' @RESPONSE ' + json.dumps(respuesta))
+UnboundLocalError: local variable 'respuesta' referenced before assignment
+kude INFO 2023-08-23 17:14:49,956 root kude.py(123) post(): @REQUEST GET /api/getmailbyruc? @RESPONSE {"codigo": -1000, "descripcion": "local variable 'respuesta' referenced before assignment", "objetoJson": {}, "arrayJson": []}
+kude INFO 2023-08-23 17:14:52,775 werkzeug _internal.py(187) _log(): 192.168.150.155 - - [23/Aug/2023 17:14:52] "POST /api/getmailbyruc HTTP/1.1" 200 -
+kude INFO 2023-08-23 17:15:59,767 root kude.py(74) post(): @REQUEST POST {"operation": "get_email", "params": {"ruc": "123"}}
+kude INFO 2023-08-23 17:15:59,768 root kude.py(123) post(): @REQUEST GET /api/getmailbyruc? @RESPONSE {"codigo": -1010, "descripcion": "Token expirado", "objetoJson": {}, "arrayJson": []}
+kude INFO 2023-08-23 17:15:59,769 werkzeug _internal.py(187) _log(): 192.168.150.155 - - [23/Aug/2023 17:15:59] "POST /api/getmailbyruc HTTP/1.1" 200 -
+kude INFO 2023-08-23 17:16:02,399 root kude.py(25) post(): @REQUEST POST {"operation": "get_token", "params": {"username": "jcorrea", "password": "12345678j"}}
+kude INFO 2023-08-23 17:16:02,410 root kude.py(38) post(): @REQUEST GET /api/getlogin? @RESPONSE [b'{"arrayJson":[],"codigo":1000,"descripcion":"Sesion iniciada con exito","objetoJson":{"token":"lyBEiFU2I4AlYHOBUG0xGmblAipL1EyUBGFga9SQ8cG3LfmRdLYIaPIeFFt1YIgePBAXGNCjkMfgE3Yx"}}\n']
+kude INFO 2023-08-23 17:16:02,410 werkzeug _internal.py(187) _log(): 192.168.150.155 - - [23/Aug/2023 17:16:02] "POST /api/getlogin HTTP/1.1" 200 -
+kude INFO 2023-08-23 17:16:04,641 root kude.py(74) post(): @REQUEST POST {"operation": "get_email", "params": {"ruc": "123"}}
+kude ERROR 2023-08-23 17:16:29,094 root kude.py(121) post(): Peticion finalizada con error: local variable 'respuesta' referenced before assignment -1000
+Traceback (most recent call last):
+  File "/home/juanc/Escritorio/Scripts/proyecto_servidor/kude/api/resources/kude.py", line 98, in post
+    logging.info('@REQUEST GET ' + request.full_path + ' @RESPONSE ' + json.dumps(respuesta))
+UnboundLocalError: local variable 'respuesta' referenced before assignment
+kude ERROR 2023-08-23 17:16:29,094 root kude.py(121) post(): Peticion finalizada con error: local variable 'respuesta' referenced before assignment -1000
+Traceback (most recent call last):
+  File "/home/juanc/Escritorio/Scripts/proyecto_servidor/kude/api/resources/kude.py", line 98, in post
+    logging.info('@REQUEST GET ' + request.full_path + ' @RESPONSE ' + json.dumps(respuesta))
+UnboundLocalError: local variable 'respuesta' referenced before assignment
+kude INFO 2023-08-23 17:16:29,095 root kude.py(123) post(): @REQUEST GET /api/getmailbyruc? @RESPONSE {"codigo": -1000, "descripcion": "local variable 'respuesta' referenced before assignment", "objetoJson": {}, "arrayJson": []}
+kude INFO 2023-08-23 17:16:29,096 werkzeug _internal.py(187) _log(): 192.168.150.155 - - [23/Aug/2023 17:16:29] "POST /api/getmailbyruc HTTP/1.1" 200 -
+kude INFO 2023-08-23 17:16:40,087 root kude.py(74) post(): @REQUEST POST {"operation": "get_email", "params": {"ruc": "123"}}
+kude ERROR 2023-08-23 17:17:47,007 root kude.py(121) post(): Peticion finalizada con error: local variable 'respuesta' referenced before assignment -1000
+Traceback (most recent call last):
+  File "/home/juanc/Escritorio/Scripts/proyecto_servidor/kude/api/resources/kude.py", line 98, in post
+    logging.info('@REQUEST GET ' + request.full_path + ' @RESPONSE ' + json.dumps(respuesta))
+UnboundLocalError: local variable 'respuesta' referenced before assignment
+kude ERROR 2023-08-23 17:17:47,007 root kude.py(121) post(): Peticion finalizada con error: local variable 'respuesta' referenced before assignment -1000
+Traceback (most recent call last):
+  File "/home/juanc/Escritorio/Scripts/proyecto_servidor/kude/api/resources/kude.py", line 98, in post
+    logging.info('@REQUEST GET ' + request.full_path + ' @RESPONSE ' + json.dumps(respuesta))
+UnboundLocalError: local variable 'respuesta' referenced before assignment
+kude INFO 2023-08-23 17:17:47,008 root kude.py(123) post(): @REQUEST GET /api/getmailbyruc? @RESPONSE {"codigo": -1000, "descripcion": "local variable 'respuesta' referenced before assignment", "objetoJson": {}, "arrayJson": []}
+kude INFO 2023-08-23 17:17:47,009 werkzeug _internal.py(187) _log(): 192.168.150.155 - - [23/Aug/2023 17:17:47] "POST /api/getmailbyruc HTTP/1.1" 200 -
+kude INFO 2023-08-23 17:17:49,278 root kude.py(74) post(): @REQUEST POST {"operation": "get_email", "params": {"ruc": "80025336-1"}}
+kude ERROR 2023-08-23 17:17:51,596 root kude.py(121) post(): Peticion finalizada con error: local variable 'respuesta' referenced before assignment -1000
+Traceback (most recent call last):
+  File "/home/juanc/Escritorio/Scripts/proyecto_servidor/kude/api/resources/kude.py", line 98, in post
+    logging.info('@REQUEST GET ' + request.full_path + ' @RESPONSE ' + json.dumps(respuesta))
+UnboundLocalError: local variable 'respuesta' referenced before assignment
+kude ERROR 2023-08-23 17:17:51,596 root kude.py(121) post(): Peticion finalizada con error: local variable 'respuesta' referenced before assignment -1000
+Traceback (most recent call last):
+  File "/home/juanc/Escritorio/Scripts/proyecto_servidor/kude/api/resources/kude.py", line 98, in post
+    logging.info('@REQUEST GET ' + request.full_path + ' @RESPONSE ' + json.dumps(respuesta))
+UnboundLocalError: local variable 'respuesta' referenced before assignment
+kude INFO 2023-08-23 17:17:51,597 root kude.py(123) post(): @REQUEST GET /api/getmailbyruc? @RESPONSE {"codigo": -1000, "descripcion": "local variable 'respuesta' referenced before assignment", "objetoJson": {}, "arrayJson": []}
+kude INFO 2023-08-23 17:17:51,597 werkzeug _internal.py(187) _log(): 192.168.150.155 - - [23/Aug/2023 17:17:51] "POST /api/getmailbyruc HTTP/1.1" 200 -
+kude INFO 2023-08-23 17:20:29,825 root kude.py(74) post(): @REQUEST POST {"operation": "get_email", "params": {"ruc": "80025336-1"}}
+kude INFO 2023-08-23 17:20:29,826 root kude.py(123) post(): @REQUEST GET /api/getmailbyruc? @RESPONSE {"codigo": -1010, "descripcion": "Token expirado", "objetoJson": {}, "arrayJson": []}
+kude INFO 2023-08-23 17:20:29,827 werkzeug _internal.py(187) _log(): 192.168.150.155 - - [23/Aug/2023 17:20:29] "POST /api/getmailbyruc HTTP/1.1" 200 -
+kude INFO 2023-08-23 17:20:32,114 root kude.py(25) post(): @REQUEST POST {"operation": "get_token", "params": {"username": "jcorrea", "password": "12345678j"}}
+kude INFO 2023-08-23 17:20:32,125 root kude.py(38) post(): @REQUEST GET /api/getlogin? @RESPONSE [b'{"arrayJson":[],"codigo":1000,"descripcion":"Sesion iniciada con exito","objetoJson":{"token":"CD0WMNmOEX2v9Ba6G0okJsdwDTN6SIsYNw11CTdUmCv5Y8GwPmhM1QECcPjaLQ5vzN6IBjNTr6h6MyBb"}}\n']
+kude INFO 2023-08-23 17:20:32,125 werkzeug _internal.py(187) _log(): 192.168.150.155 - - [23/Aug/2023 17:20:32] "POST /api/getlogin HTTP/1.1" 200 -
+kude INFO 2023-08-23 17:20:34,398 root kude.py(74) post(): @REQUEST POST {"operation": "get_email", "params": {"ruc": "80025336-1"}}
+kude INFO 2023-08-23 17:23:34,376 werkzeug _internal.py(187) _log(): [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5002
+ * Running on http://192.168.150.155:5002
+kude INFO 2023-08-23 17:23:34,377 werkzeug _internal.py(187) _log(): [33mPress CTRL+C to quit[0m
+kude INFO 2023-08-23 17:23:44,006 root kude.py(80) post(): @REQUEST POST {"operation": "get_email", "params": {"ruc": "80025336-1"}}
+kude INFO 2023-08-23 17:23:44,006 root kude.py(129) post(): @REQUEST GET /api/getmailbyruc? @RESPONSE {"codigo": -1000, "descripcion": "Token necesario para realizar operacion", "objetoJson": {}, "arrayJson": []}
+kude INFO 2023-08-23 17:23:44,008 werkzeug _internal.py(187) _log(): 192.168.150.155 - - [23/Aug/2023 17:23:44] "POST /api/getmailbyruc HTTP/1.1" 200 -
+kude INFO 2023-08-23 17:23:47,270 root kude.py(25) post(): @REQUEST POST {"operation": "get_token", "params": {"username": "jcorrea", "password": "12345678j"}}
+kude INFO 2023-08-23 17:23:47,290 root kude.py(38) post(): @REQUEST GET /api/getlogin? @RESPONSE [b'{"arrayJson":[],"codigo":1000,"descripcion":"Sesion iniciada con exito","objetoJson":{"token":"VnhWxJqoN5ecKg1fi7sub2TVOrKS17ilrIEgURtzCe1oZGIwIFqnQZAox2kugwT8LQNfrTjq2EiEmLq2"}}\n']
+kude INFO 2023-08-23 17:23:47,290 werkzeug _internal.py(187) _log(): 192.168.150.155 - - [23/Aug/2023 17:23:47] "POST /api/getlogin HTTP/1.1" 200 -
+kude INFO 2023-08-23 17:23:49,211 root kude.py(80) post(): @REQUEST POST {"operation": "get_email", "params": {"ruc": "80025336-1"}}
+kude INFO 2023-08-23 17:23:52,049 root kude.py(104) post(): @REQUEST GET /api/getmailbyruc? @RESPONSE null
+kude INFO 2023-08-23 17:23:52,600 werkzeug _internal.py(187) _log(): 192.168.150.155 - - [23/Aug/2023 17:23:52] "POST /api/getmailbyruc HTTP/1.1" 200 -
+kude INFO 2023-08-23 17:24:25,078 werkzeug _internal.py(187) _log(): [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5002
+ * Running on http://192.168.150.155:5002
+kude INFO 2023-08-23 17:24:25,078 werkzeug _internal.py(187) _log(): [33mPress CTRL+C to quit[0m
+kude INFO 2023-08-23 17:24:26,070 root kude.py(80) post(): @REQUEST POST {"operation": "get_email", "params": {"ruc": "80025336-1"}}
+kude INFO 2023-08-23 17:24:26,071 root kude.py(129) post(): @REQUEST GET /api/getmailbyruc? @RESPONSE {"codigo": -1000, "descripcion": "Token necesario para realizar operacion", "objetoJson": {}, "arrayJson": []}
+kude INFO 2023-08-23 17:24:26,072 werkzeug _internal.py(187) _log(): 192.168.150.155 - - [23/Aug/2023 17:24:26] "POST /api/getmailbyruc HTTP/1.1" 200 -
+kude INFO 2023-08-23 17:24:28,834 root kude.py(25) post(): @REQUEST POST {"operation": "get_token", "params": {"username": "jcorrea", "password": "12345678j"}}
+kude INFO 2023-08-23 17:24:28,840 root kude.py(36) post(): @REQUEST GET /api/getlogin? @RESPONSE {"codigo": 1100, "descripcion": "Sesion ya iniciada", "objetoJson": {}, "arrayJson": []}
+kude INFO 2023-08-23 17:24:28,840 werkzeug _internal.py(187) _log(): 192.168.150.155 - - [23/Aug/2023 17:24:28] "POST /api/getlogin HTTP/1.1" 200 -
+kude INFO 2023-08-23 17:24:31,033 root kude.py(80) post(): @REQUEST POST {"operation": "get_email", "params": {"ruc": "80025336-1"}}
+kude INFO 2023-08-23 17:24:34,361 root kude.py(104) post(): @REQUEST GET /api/getmailbyruc? @RESPONSE null
+kude INFO 2023-08-23 17:24:34,361 root kude.py(129) post(): @REQUEST GET /api/getmailbyruc? @RESPONSE {"codigo": 1000, "descripcion": "OK", "objetoJson": {}, "arrayJson": [{"EMAIL": "COMERCIALKORSEN_SA@HOTMAIL.COM", "RNUM": "1"}]}
+kude INFO 2023-08-23 17:24:34,362 werkzeug _internal.py(187) _log(): 192.168.150.155 - - [23/Aug/2023 17:24:34] "POST /api/getmailbyruc HTTP/1.1" 200 -
+kude INFO 2023-08-23 17:25:00,261 werkzeug _internal.py(187) _log(): [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5002
+ * Running on http://192.168.150.155:5002
+kude INFO 2023-08-23 17:25:00,261 werkzeug _internal.py(187) _log(): [33mPress CTRL+C to quit[0m
+kude INFO 2023-08-23 17:25:04,550 root kude.py(80) post(): @REQUEST POST {"operation": "get_email", "params": {"ruc": "80025336-1"}}
+kude ERROR 2023-08-23 17:25:04,550 api app.py(1414) log_exception(): Exception on /api/getmailbyruc [POST]
+Traceback (most recent call last):
+  File "/home/juanc/Escritorio/Scripts/proyecto_servidor/kude/venv/lib/python3.10/site-packages/flask/app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/juanc/Escritorio/Scripts/proyecto_servidor/kude/venv/lib/python3.10/site-packages/flask/app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "/home/juanc/Escritorio/Scripts/proyecto_servidor/kude/venv/lib/python3.10/site-packages/flask_restful/__init__.py", line 489, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/home/juanc/Escritorio/Scripts/proyecto_servidor/kude/venv/lib/python3.10/site-packages/flask/views.py", line 109, in view
+    return current_app.ensure_sync(self.dispatch_request)(**kwargs)
+  File "/home/juanc/Escritorio/Scripts/proyecto_servidor/kude/venv/lib/python3.10/site-packages/flask_restful/__init__.py", line 604, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "/home/juanc/Escritorio/Scripts/proyecto_servidor/kude/api/resources/kude.py", line 128, in post
+    respuesta = {'codigo': codigo, 'descripcion': descripcion, 'objetoJson' : {objetoJson}, 'arrayJson': [] }
+TypeError: unhashable type: 'dict'
+kude ERROR 2023-08-23 17:25:04,550 api app.py(1414) log_exception(): Exception on /api/getmailbyruc [POST]
+Traceback (most recent call last):
+  File "/home/juanc/Escritorio/Scripts/proyecto_servidor/kude/venv/lib/python3.10/site-packages/flask/app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/juanc/Escritorio/Scripts/proyecto_servidor/kude/venv/lib/python3.10/site-packages/flask/app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "/home/juanc/Escritorio/Scripts/proyecto_servidor/kude/venv/lib/python3.10/site-packages/flask_restful/__init__.py", line 489, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/home/juanc/Escritorio/Scripts/proyecto_servidor/kude/venv/lib/python3.10/site-packages/flask/views.py", line 109, in view
+    return current_app.ensure_sync(self.dispatch_request)(**kwargs)
+  File "/home/juanc/Escritorio/Scripts/proyecto_servidor/kude/venv/lib/python3.10/site-packages/flask_restful/__init__.py", line 604, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "/home/juanc/Escritorio/Scripts/proyecto_servidor/kude/api/resources/kude.py", line 128, in post
+    respuesta = {'codigo': codigo, 'descripcion': descripcion, 'objetoJson' : {objetoJson}, 'arrayJson': [] }
+TypeError: unhashable type: 'dict'
+kude INFO 2023-08-23 17:25:04,553 werkzeug _internal.py(187) _log(): 192.168.150.155 - - [23/Aug/2023 17:25:04] "[35m[1mPOST /api/getmailbyruc HTTP/1.1[0m" 500 -
+kude INFO 2023-08-23 17:25:12,472 werkzeug _internal.py(187) _log(): [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5002
+ * Running on http://192.168.150.155:5002
+kude INFO 2023-08-23 17:25:12,473 werkzeug _internal.py(187) _log(): [33mPress CTRL+C to quit[0m
+kude INFO 2023-08-23 17:25:15,853 root kude.py(80) post(): @REQUEST POST {"operation": "get_email", "params": {"ruc": "80025336-1"}}
+kude ERROR 2023-08-23 17:25:15,854 api app.py(1414) log_exception(): Exception on /api/getmailbyruc [POST]
+Traceback (most recent call last):
+  File "/home/juanc/Escritorio/Scripts/proyecto_servidor/kude/venv/lib/python3.10/site-packages/flask/app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/juanc/Escritorio/Scripts/proyecto_servidor/kude/venv/lib/python3.10/site-packages/flask/app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "/home/juanc/Escritorio/Scripts/proyecto_servidor/kude/venv/lib/python3.10/site-packages/flask_restful/__init__.py", line 489, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/home/juanc/Escritorio/Scripts/proyecto_servidor/kude/venv/lib/python3.10/site-packages/flask/views.py", line 109, in view
+    return current_app.ensure_sync(self.dispatch_request)(**kwargs)
+  File "/home/juanc/Escritorio/Scripts/proyecto_servidor/kude/venv/lib/python3.10/site-packages/flask_restful/__init__.py", line 604, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "/home/juanc/Escritorio/Scripts/proyecto_servidor/kude/api/resources/kude.py", line 128, in post
+    respuesta = {'codigo': codigo, 'descripcion': descripcion, 'objetoJson' : {objetoJson}, 'arrayJson': [] }
+TypeError: unhashable type: 'dict'
+kude ERROR 2023-08-23 17:25:15,854 api app.py(1414) log_exception(): Exception on /api/getmailbyruc [POST]
+Traceback (most recent call last):
+  File "/home/juanc/Escritorio/Scripts/proyecto_servidor/kude/venv/lib/python3.10/site-packages/flask/app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/juanc/Escritorio/Scripts/proyecto_servidor/kude/venv/lib/python3.10/site-packages/flask/app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "/home/juanc/Escritorio/Scripts/proyecto_servidor/kude/venv/lib/python3.10/site-packages/flask_restful/__init__.py", line 489, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/home/juanc/Escritorio/Scripts/proyecto_servidor/kude/venv/lib/python3.10/site-packages/flask/views.py", line 109, in view
+    return current_app.ensure_sync(self.dispatch_request)(**kwargs)
+  File "/home/juanc/Escritorio/Scripts/proyecto_servidor/kude/venv/lib/python3.10/site-packages/flask_restful/__init__.py", line 604, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "/home/juanc/Escritorio/Scripts/proyecto_servidor/kude/api/resources/kude.py", line 128, in post
+    respuesta = {'codigo': codigo, 'descripcion': descripcion, 'objetoJson' : {objetoJson}, 'arrayJson': [] }
+TypeError: unhashable type: 'dict'
+kude INFO 2023-08-23 17:25:15,858 werkzeug _internal.py(187) _log(): 192.168.150.155 - - [23/Aug/2023 17:25:15] "[35m[1mPOST /api/getmailbyruc HTTP/1.1[0m" 500 -
+kude INFO 2023-08-23 17:25:35,679 root kude.py(80) post(): @REQUEST POST {"operation": "get_email", "params": {"ruc": "80025336-1"}}
+kude ERROR 2023-08-23 17:25:35,680 api app.py(1414) log_exception(): Exception on /api/getmailbyruc [POST]
+Traceback (most recent call last):
+  File "/home/juanc/Escritorio/Scripts/proyecto_servidor/kude/venv/lib/python3.10/site-packages/flask/app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/juanc/Escritorio/Scripts/proyecto_servidor/kude/venv/lib/python3.10/site-packages/flask/app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "/home/juanc/Escritorio/Scripts/proyecto_servidor/kude/venv/lib/python3.10/site-packages/flask_restful/__init__.py", line 489, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/home/juanc/Escritorio/Scripts/proyecto_servidor/kude/venv/lib/python3.10/site-packages/flask/views.py", line 109, in view
+    return current_app.ensure_sync(self.dispatch_request)(**kwargs)
+  File "/home/juanc/Escritorio/Scripts/proyecto_servidor/kude/venv/lib/python3.10/site-packages/flask_restful/__init__.py", line 604, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "/home/juanc/Escritorio/Scripts/proyecto_servidor/kude/api/resources/kude.py", line 128, in post
+    respuesta = {'codigo': codigo, 'descripcion': descripcion, 'objetoJson' : {objetoJson}, 'arrayJson': [] }
+TypeError: unhashable type: 'dict'
+kude ERROR 2023-08-23 17:25:35,680 api app.py(1414) log_exception(): Exception on /api/getmailbyruc [POST]
+Traceback (most recent call last):
+  File "/home/juanc/Escritorio/Scripts/proyecto_servidor/kude/venv/lib/python3.10/site-packages/flask/app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/juanc/Escritorio/Scripts/proyecto_servidor/kude/venv/lib/python3.10/site-packages/flask/app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "/home/juanc/Escritorio/Scripts/proyecto_servidor/kude/venv/lib/python3.10/site-packages/flask_restful/__init__.py", line 489, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/home/juanc/Escritorio/Scripts/proyecto_servidor/kude/venv/lib/python3.10/site-packages/flask/views.py", line 109, in view
+    return current_app.ensure_sync(self.dispatch_request)(**kwargs)
+  File "/home/juanc/Escritorio/Scripts/proyecto_servidor/kude/venv/lib/python3.10/site-packages/flask_restful/__init__.py", line 604, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "/home/juanc/Escritorio/Scripts/proyecto_servidor/kude/api/resources/kude.py", line 128, in post
+    respuesta = {'codigo': codigo, 'descripcion': descripcion, 'objetoJson' : {objetoJson}, 'arrayJson': [] }
+TypeError: unhashable type: 'dict'
+kude INFO 2023-08-23 17:25:35,681 werkzeug _internal.py(187) _log(): 192.168.150.155 - - [23/Aug/2023 17:25:35] "[35m[1mPOST /api/getmailbyruc HTTP/1.1[0m" 500 -
+kude INFO 2023-08-23 17:25:40,249 werkzeug _internal.py(187) _log(): [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5002
+ * Running on http://192.168.150.155:5002
+kude INFO 2023-08-23 17:25:40,249 werkzeug _internal.py(187) _log(): [33mPress CTRL+C to quit[0m
+kude INFO 2023-08-23 17:25:42,300 root kude.py(80) post(): @REQUEST POST {"operation": "get_email", "params": {"ruc": "80025336-1"}}
+kude ERROR 2023-08-23 17:25:42,301 api app.py(1414) log_exception(): Exception on /api/getmailbyruc [POST]
+Traceback (most recent call last):
+  File "/home/juanc/Escritorio/Scripts/proyecto_servidor/kude/venv/lib/python3.10/site-packages/flask/app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/juanc/Escritorio/Scripts/proyecto_servidor/kude/venv/lib/python3.10/site-packages/flask/app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "/home/juanc/Escritorio/Scripts/proyecto_servidor/kude/venv/lib/python3.10/site-packages/flask_restful/__init__.py", line 489, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/home/juanc/Escritorio/Scripts/proyecto_servidor/kude/venv/lib/python3.10/site-packages/flask/views.py", line 109, in view
+    return current_app.ensure_sync(self.dispatch_request)(**kwargs)
+  File "/home/juanc/Escritorio/Scripts/proyecto_servidor/kude/venv/lib/python3.10/site-packages/flask_restful/__init__.py", line 604, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "/home/juanc/Escritorio/Scripts/proyecto_servidor/kude/api/resources/kude.py", line 128, in post
+    respuesta = {'codigo': codigo, 'descripcion': descripcion, 'objetoJson' : {objetoJson}, 'arrayJson': [] }
+TypeError: unhashable type: 'dict'
+kude ERROR 2023-08-23 17:25:42,301 api app.py(1414) log_exception(): Exception on /api/getmailbyruc [POST]
+Traceback (most recent call last):
+  File "/home/juanc/Escritorio/Scripts/proyecto_servidor/kude/venv/lib/python3.10/site-packages/flask/app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/juanc/Escritorio/Scripts/proyecto_servidor/kude/venv/lib/python3.10/site-packages/flask/app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "/home/juanc/Escritorio/Scripts/proyecto_servidor/kude/venv/lib/python3.10/site-packages/flask_restful/__init__.py", line 489, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/home/juanc/Escritorio/Scripts/proyecto_servidor/kude/venv/lib/python3.10/site-packages/flask/views.py", line 109, in view
+    return current_app.ensure_sync(self.dispatch_request)(**kwargs)
+  File "/home/juanc/Escritorio/Scripts/proyecto_servidor/kude/venv/lib/python3.10/site-packages/flask_restful/__init__.py", line 604, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "/home/juanc/Escritorio/Scripts/proyecto_servidor/kude/api/resources/kude.py", line 128, in post
+    respuesta = {'codigo': codigo, 'descripcion': descripcion, 'objetoJson' : {objetoJson}, 'arrayJson': [] }
+TypeError: unhashable type: 'dict'
+kude INFO 2023-08-23 17:25:42,304 werkzeug _internal.py(187) _log(): 192.168.150.155 - - [23/Aug/2023 17:25:42] "[35m[1mPOST /api/getmailbyruc HTTP/1.1[0m" 500 -
+kude INFO 2023-08-23 17:26:09,319 werkzeug _internal.py(187) _log(): [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5002
+ * Running on http://192.168.150.155:5002
+kude INFO 2023-08-23 17:26:09,320 werkzeug _internal.py(187) _log(): [33mPress CTRL+C to quit[0m
+kude INFO 2023-08-23 17:26:12,081 root kude.py(79) post(): @REQUEST POST {"operation": "get_email", "params": {"ruc": "80025336-1"}}
+kude ERROR 2023-08-23 17:26:12,081 api app.py(1414) log_exception(): Exception on /api/getmailbyruc [POST]
+Traceback (most recent call last):
+  File "/home/juanc/Escritorio/Scripts/proyecto_servidor/kude/venv/lib/python3.10/site-packages/flask/app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/juanc/Escritorio/Scripts/proyecto_servidor/kude/venv/lib/python3.10/site-packages/flask/app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "/home/juanc/Escritorio/Scripts/proyecto_servidor/kude/venv/lib/python3.10/site-packages/flask_restful/__init__.py", line 489, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/home/juanc/Escritorio/Scripts/proyecto_servidor/kude/venv/lib/python3.10/site-packages/flask/views.py", line 109, in view
+    return current_app.ensure_sync(self.dispatch_request)(**kwargs)
+  File "/home/juanc/Escritorio/Scripts/proyecto_servidor/kude/venv/lib/python3.10/site-packages/flask_restful/__init__.py", line 604, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "/home/juanc/Escritorio/Scripts/proyecto_servidor/kude/api/resources/kude.py", line 127, in post
+    respuesta = {'codigo': codigo, 'descripcion': descripcion, 'objetoJson' : {objetoJson}, 'arrayJson': [] }
+UnboundLocalError: local variable 'objetoJson' referenced before assignment
+kude ERROR 2023-08-23 17:26:12,081 api app.py(1414) log_exception(): Exception on /api/getmailbyruc [POST]
+Traceback (most recent call last):
+  File "/home/juanc/Escritorio/Scripts/proyecto_servidor/kude/venv/lib/python3.10/site-packages/flask/app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/juanc/Escritorio/Scripts/proyecto_servidor/kude/venv/lib/python3.10/site-packages/flask/app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "/home/juanc/Escritorio/Scripts/proyecto_servidor/kude/venv/lib/python3.10/site-packages/flask_restful/__init__.py", line 489, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/home/juanc/Escritorio/Scripts/proyecto_servidor/kude/venv/lib/python3.10/site-packages/flask/views.py", line 109, in view
+    return current_app.ensure_sync(self.dispatch_request)(**kwargs)
+  File "/home/juanc/Escritorio/Scripts/proyecto_servidor/kude/venv/lib/python3.10/site-packages/flask_restful/__init__.py", line 604, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "/home/juanc/Escritorio/Scripts/proyecto_servidor/kude/api/resources/kude.py", line 127, in post
+    respuesta = {'codigo': codigo, 'descripcion': descripcion, 'objetoJson' : {objetoJson}, 'arrayJson': [] }
+UnboundLocalError: local variable 'objetoJson' referenced before assignment
+kude INFO 2023-08-23 17:26:12,084 werkzeug _internal.py(187) _log(): 192.168.150.155 - - [23/Aug/2023 17:26:12] "[35m[1mPOST /api/getmailbyruc HTTP/1.1[0m" 500 -
+kude INFO 2023-08-23 17:26:25,327 root kude.py(79) post(): @REQUEST POST {"operation": "get_email", "params": {"ruc": "80025336-1"}}
+kude ERROR 2023-08-23 17:26:25,327 api app.py(1414) log_exception(): Exception on /api/getmailbyruc [POST]
+Traceback (most recent call last):
+  File "/home/juanc/Escritorio/Scripts/proyecto_servidor/kude/venv/lib/python3.10/site-packages/flask/app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/juanc/Escritorio/Scripts/proyecto_servidor/kude/venv/lib/python3.10/site-packages/flask/app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "/home/juanc/Escritorio/Scripts/proyecto_servidor/kude/venv/lib/python3.10/site-packages/flask_restful/__init__.py", line 489, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/home/juanc/Escritorio/Scripts/proyecto_servidor/kude/venv/lib/python3.10/site-packages/flask/views.py", line 109, in view
+    return current_app.ensure_sync(self.dispatch_request)(**kwargs)
+  File "/home/juanc/Escritorio/Scripts/proyecto_servidor/kude/venv/lib/python3.10/site-packages/flask_restful/__init__.py", line 604, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "/home/juanc/Escritorio/Scripts/proyecto_servidor/kude/api/resources/kude.py", line 127, in post
+    respuesta = {'codigo': codigo, 'descripcion': descripcion, 'objetoJson' : {objetoJson}, 'arrayJson': [] }
+UnboundLocalError: local variable 'objetoJson' referenced before assignment
+kude ERROR 2023-08-23 17:26:25,327 api app.py(1414) log_exception(): Exception on /api/getmailbyruc [POST]
+Traceback (most recent call last):
+  File "/home/juanc/Escritorio/Scripts/proyecto_servidor/kude/venv/lib/python3.10/site-packages/flask/app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/juanc/Escritorio/Scripts/proyecto_servidor/kude/venv/lib/python3.10/site-packages/flask/app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "/home/juanc/Escritorio/Scripts/proyecto_servidor/kude/venv/lib/python3.10/site-packages/flask_restful/__init__.py", line 489, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/home/juanc/Escritorio/Scripts/proyecto_servidor/kude/venv/lib/python3.10/site-packages/flask/views.py", line 109, in view
+    return current_app.ensure_sync(self.dispatch_request)(**kwargs)
+  File "/home/juanc/Escritorio/Scripts/proyecto_servidor/kude/venv/lib/python3.10/site-packages/flask_restful/__init__.py", line 604, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "/home/juanc/Escritorio/Scripts/proyecto_servidor/kude/api/resources/kude.py", line 127, in post
+    respuesta = {'codigo': codigo, 'descripcion': descripcion, 'objetoJson' : {objetoJson}, 'arrayJson': [] }
+UnboundLocalError: local variable 'objetoJson' referenced before assignment
+kude INFO 2023-08-23 17:26:25,328 werkzeug _internal.py(187) _log(): 192.168.150.155 - - [23/Aug/2023 17:26:25] "[35m[1mPOST /api/getmailbyruc HTTP/1.1[0m" 500 -
+kude INFO 2023-08-24 08:19:01,639 werkzeug _internal.py(187) _log(): [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5002
+ * Running on http://192.168.150.155:5002
+kude INFO 2023-08-24 08:19:01,639 werkzeug _internal.py(187) _log(): [33mPress CTRL+C to quit[0m
+kude INFO 2023-08-24 08:20:07,117 root kude.py(79) post(): @REQUEST POST {"operation": "get_email", "params": {"ruc": "80025336-1"}}
+kude ERROR 2023-08-24 08:20:07,117 api app.py(1414) log_exception(): Exception on /api/getmailbyruc [POST]
+Traceback (most recent call last):
+  File "/home/juanc/Escritorio/Scripts/proyecto_servidor/kude/venv/lib/python3.10/site-packages/flask/app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/juanc/Escritorio/Scripts/proyecto_servidor/kude/venv/lib/python3.10/site-packages/flask/app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "/home/juanc/Escritorio/Scripts/proyecto_servidor/kude/venv/lib/python3.10/site-packages/flask_restful/__init__.py", line 489, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/home/juanc/Escritorio/Scripts/proyecto_servidor/kude/venv/lib/python3.10/site-packages/flask/views.py", line 109, in view
+    return current_app.ensure_sync(self.dispatch_request)(**kwargs)
+  File "/home/juanc/Escritorio/Scripts/proyecto_servidor/kude/venv/lib/python3.10/site-packages/flask_restful/__init__.py", line 604, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "/home/juanc/Escritorio/Scripts/proyecto_servidor/kude/api/resources/kude.py", line 127, in post
+    respuesta = {'codigo': codigo, 'descripcion': descripcion, 'objetoJson' : {objetoJson}, 'arrayJson': [] }
+UnboundLocalError: local variable 'objetoJson' referenced before assignment
+kude ERROR 2023-08-24 08:20:07,117 api app.py(1414) log_exception(): Exception on /api/getmailbyruc [POST]
+Traceback (most recent call last):
+  File "/home/juanc/Escritorio/Scripts/proyecto_servidor/kude/venv/lib/python3.10/site-packages/flask/app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/juanc/Escritorio/Scripts/proyecto_servidor/kude/venv/lib/python3.10/site-packages/flask/app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "/home/juanc/Escritorio/Scripts/proyecto_servidor/kude/venv/lib/python3.10/site-packages/flask_restful/__init__.py", line 489, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/home/juanc/Escritorio/Scripts/proyecto_servidor/kude/venv/lib/python3.10/site-packages/flask/views.py", line 109, in view
+    return current_app.ensure_sync(self.dispatch_request)(**kwargs)
+  File "/home/juanc/Escritorio/Scripts/proyecto_servidor/kude/venv/lib/python3.10/site-packages/flask_restful/__init__.py", line 604, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "/home/juanc/Escritorio/Scripts/proyecto_servidor/kude/api/resources/kude.py", line 127, in post
+    respuesta = {'codigo': codigo, 'descripcion': descripcion, 'objetoJson' : {objetoJson}, 'arrayJson': [] }
+UnboundLocalError: local variable 'objetoJson' referenced before assignment
+kude INFO 2023-08-24 08:20:07,120 werkzeug _internal.py(187) _log(): 192.168.150.155 - - [24/Aug/2023 08:20:07] "[35m[1mPOST /api/getmailbyruc HTTP/1.1[0m" 500 -
+kude INFO 2023-08-24 08:20:26,661 root kude.py(79) post(): @REQUEST POST {"operation": "get_email", "params": {"ruc": "80025336-1"}}
+kude ERROR 2023-08-24 08:20:39,819 api app.py(1414) log_exception(): Exception on /api/getmailbyruc [POST]
+Traceback (most recent call last):
+  File "/home/juanc/Escritorio/Scripts/proyecto_servidor/kude/venv/lib/python3.10/site-packages/flask/app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/juanc/Escritorio/Scripts/proyecto_servidor/kude/venv/lib/python3.10/site-packages/flask/app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "/home/juanc/Escritorio/Scripts/proyecto_servidor/kude/venv/lib/python3.10/site-packages/flask_restful/__init__.py", line 489, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/home/juanc/Escritorio/Scripts/proyecto_servidor/kude/venv/lib/python3.10/site-packages/flask/views.py", line 109, in view
+    return current_app.ensure_sync(self.dispatch_request)(**kwargs)
+  File "/home/juanc/Escritorio/Scripts/proyecto_servidor/kude/venv/lib/python3.10/site-packages/flask_restful/__init__.py", line 604, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "/home/juanc/Escritorio/Scripts/proyecto_servidor/kude/api/resources/kude.py", line 127, in post
+    respuesta = {'codigo': codigo, 'descripcion': descripcion, 'objetoJson' : {objetoJson}, 'arrayJson': [] }
+UnboundLocalError: local variable 'objetoJson' referenced before assignment
+kude ERROR 2023-08-24 08:20:39,819 api app.py(1414) log_exception(): Exception on /api/getmailbyruc [POST]
+Traceback (most recent call last):
+  File "/home/juanc/Escritorio/Scripts/proyecto_servidor/kude/venv/lib/python3.10/site-packages/flask/app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/juanc/Escritorio/Scripts/proyecto_servidor/kude/venv/lib/python3.10/site-packages/flask/app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "/home/juanc/Escritorio/Scripts/proyecto_servidor/kude/venv/lib/python3.10/site-packages/flask_restful/__init__.py", line 489, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/home/juanc/Escritorio/Scripts/proyecto_servidor/kude/venv/lib/python3.10/site-packages/flask/views.py", line 109, in view
+    return current_app.ensure_sync(self.dispatch_request)(**kwargs)
+  File "/home/juanc/Escritorio/Scripts/proyecto_servidor/kude/venv/lib/python3.10/site-packages/flask_restful/__init__.py", line 604, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "/home/juanc/Escritorio/Scripts/proyecto_servidor/kude/api/resources/kude.py", line 127, in post
+    respuesta = {'codigo': codigo, 'descripcion': descripcion, 'objetoJson' : {objetoJson}, 'arrayJson': [] }
+UnboundLocalError: local variable 'objetoJson' referenced before assignment
+kude INFO 2023-08-24 08:20:39,821 werkzeug _internal.py(187) _log(): 192.168.150.155 - - [24/Aug/2023 08:20:39] "[35m[1mPOST /api/getmailbyruc HTTP/1.1[0m" 500 -
+kude INFO 2023-08-24 08:20:41,731 root kude.py(79) post(): @REQUEST POST {"operation": "get_email", "params": {"ruc": "80025336-1"}}
+kude ERROR 2023-08-24 08:21:05,878 api app.py(1414) log_exception(): Exception on /api/getmailbyruc [POST]
+Traceback (most recent call last):
+  File "/home/juanc/Escritorio/Scripts/proyecto_servidor/kude/venv/lib/python3.10/site-packages/flask/app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/juanc/Escritorio/Scripts/proyecto_servidor/kude/venv/lib/python3.10/site-packages/flask/app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "/home/juanc/Escritorio/Scripts/proyecto_servidor/kude/venv/lib/python3.10/site-packages/flask_restful/__init__.py", line 489, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/home/juanc/Escritorio/Scripts/proyecto_servidor/kude/venv/lib/python3.10/site-packages/flask/views.py", line 109, in view
+    return current_app.ensure_sync(self.dispatch_request)(**kwargs)
+  File "/home/juanc/Escritorio/Scripts/proyecto_servidor/kude/venv/lib/python3.10/site-packages/flask_restful/__init__.py", line 604, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "/home/juanc/Escritorio/Scripts/proyecto_servidor/kude/api/resources/kude.py", line 127, in post
+    respuesta = {'codigo': codigo, 'descripcion': descripcion, 'objetoJson' : {objetoJson}, 'arrayJson': [] }
+UnboundLocalError: local variable 'objetoJson' referenced before assignment
+kude ERROR 2023-08-24 08:21:05,878 api app.py(1414) log_exception(): Exception on /api/getmailbyruc [POST]
+Traceback (most recent call last):
+  File "/home/juanc/Escritorio/Scripts/proyecto_servidor/kude/venv/lib/python3.10/site-packages/flask/app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/juanc/Escritorio/Scripts/proyecto_servidor/kude/venv/lib/python3.10/site-packages/flask/app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "/home/juanc/Escritorio/Scripts/proyecto_servidor/kude/venv/lib/python3.10/site-packages/flask_restful/__init__.py", line 489, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/home/juanc/Escritorio/Scripts/proyecto_servidor/kude/venv/lib/python3.10/site-packages/flask/views.py", line 109, in view
+    return current_app.ensure_sync(self.dispatch_request)(**kwargs)
+  File "/home/juanc/Escritorio/Scripts/proyecto_servidor/kude/venv/lib/python3.10/site-packages/flask_restful/__init__.py", line 604, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "/home/juanc/Escritorio/Scripts/proyecto_servidor/kude/api/resources/kude.py", line 127, in post
+    respuesta = {'codigo': codigo, 'descripcion': descripcion, 'objetoJson' : {objetoJson}, 'arrayJson': [] }
+UnboundLocalError: local variable 'objetoJson' referenced before assignment
+kude INFO 2023-08-24 08:21:05,879 werkzeug _internal.py(187) _log(): 192.168.150.155 - - [24/Aug/2023 08:21:05] "[35m[1mPOST /api/getmailbyruc HTTP/1.1[0m" 500 -
+kude INFO 2023-08-24 08:21:50,073 werkzeug _internal.py(187) _log(): [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5002
+ * Running on http://192.168.150.155:5002
+kude INFO 2023-08-24 08:21:50,074 werkzeug _internal.py(187) _log(): [33mPress CTRL+C to quit[0m
+kude INFO 2023-08-24 08:22:00,270 root kude.py(79) post(): @REQUEST POST {"operation": "get_email", "params": {"ruc": "80025336-1"}}
+kude INFO 2023-08-24 08:22:24,290 werkzeug _internal.py(187) _log(): [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5002
+ * Running on http://192.168.150.155:5002
+kude INFO 2023-08-24 08:22:24,290 werkzeug _internal.py(187) _log(): [33mPress CTRL+C to quit[0m
+kude INFO 2023-08-24 08:22:25,963 root kude.py(80) post(): @REQUEST POST {"operation": "get_email", "params": {"ruc": "80025336-1"}}
+kude INFO 2023-08-24 08:22:37,552 werkzeug _internal.py(187) _log(): [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5002
+ * Running on http://192.168.150.155:5002
+kude INFO 2023-08-24 08:22:37,552 werkzeug _internal.py(187) _log(): [33mPress CTRL+C to quit[0m
+kude INFO 2023-08-24 08:22:39,098 root kude.py(80) post(): @REQUEST POST {"operation": "get_email", "params": {"ruc": "80025336-1"}}
+kude INFO 2023-08-24 08:22:43,793 werkzeug _internal.py(187) _log(): 192.168.150.155 - - [24/Aug/2023 08:22:43] "POST /api/getmailbyruc HTTP/1.1" 200 -
+kude INFO 2023-08-24 08:23:08,707 werkzeug _internal.py(187) _log(): [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5002
+ * Running on http://192.168.150.155:5002
+kude INFO 2023-08-24 08:23:08,708 werkzeug _internal.py(187) _log(): [33mPress CTRL+C to quit[0m
+kude INFO 2023-08-24 08:23:10,122 root kude.py(80) post(): @REQUEST POST {"operation": "get_email", "params": {"ruc": "80025336-1"}}
+kude INFO 2023-08-24 08:23:11,531 root kude.py(112) post(): @REQUEST GET /api/getmailbyruc? @RESPONSE {"codigo": -1000, "descripcion": "Token necesario para realizar operacion", "objetoJson": {}, "arrayJson": []}
+kude INFO 2023-08-24 08:23:11,532 werkzeug _internal.py(187) _log(): 192.168.150.155 - - [24/Aug/2023 08:23:11] "POST /api/getmailbyruc HTTP/1.1" 200 -
+kude INFO 2023-08-24 08:23:33,552 root kude.py(80) post(): @REQUEST POST {"operation": "get_email", "params": {"ruc": "80025336-1"}}
+kude INFO 2023-08-24 08:23:37,305 root kude.py(112) post(): @REQUEST GET /api/getmailbyruc? @RESPONSE {"codigo": -1000, "descripcion": "Token necesario para realizar operacion", "objetoJson": {}, "arrayJson": []}
+kude INFO 2023-08-24 08:23:37,306 werkzeug _internal.py(187) _log(): 192.168.150.155 - - [24/Aug/2023 08:23:37] "POST /api/getmailbyruc HTTP/1.1" 200 -
+kude INFO 2023-08-24 08:23:39,801 root kude.py(25) post(): @REQUEST POST {"operation": "get_token", "params": {"username": "jcorrea", "password": "12345678j"}}
+kude INFO 2023-08-24 08:23:39,835 root kude.py(38) post(): @REQUEST GET /api/getlogin? @RESPONSE [b'{"arrayJson":[],"codigo":1000,"descripcion":"Sesion iniciada con exito","objetoJson":{"token":"h2fC9QvluO7qxGZYqbr09HbPlHL4GYq4y5S2u3TpQtrQqZVOxM7GIXqkEdAJYYo5fmVhDlmXSbVL6JZ8"}}\n']
+kude INFO 2023-08-24 08:23:39,836 werkzeug _internal.py(187) _log(): 192.168.150.155 - - [24/Aug/2023 08:23:39] "POST /api/getlogin HTTP/1.1" 200 -
+kude INFO 2023-08-24 08:23:42,085 root kude.py(80) post(): @REQUEST POST {"operation": "get_email", "params": {"ruc": "80025336-1"}}
+kude INFO 2023-08-24 08:23:42,130 root kude.py(104) post(): @REQUEST GET /api/getmailbyruc? @RESPONSE null
+kude ERROR 2023-08-24 08:23:42,131 api app.py(1414) log_exception(): Exception on /api/getmailbyruc [POST]
+Traceback (most recent call last):
+  File "/home/juanc/Escritorio/Scripts/proyecto_servidor/kude/venv/lib/python3.10/site-packages/flask/app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/juanc/Escritorio/Scripts/proyecto_servidor/kude/venv/lib/python3.10/site-packages/flask/app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "/home/juanc/Escritorio/Scripts/proyecto_servidor/kude/venv/lib/python3.10/site-packages/flask_restful/__init__.py", line 489, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/home/juanc/Escritorio/Scripts/proyecto_servidor/kude/venv/lib/python3.10/site-packages/flask/views.py", line 109, in view
+    return current_app.ensure_sync(self.dispatch_request)(**kwargs)
+  File "/home/juanc/Escritorio/Scripts/proyecto_servidor/kude/venv/lib/python3.10/site-packages/flask_restful/__init__.py", line 604, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "/home/juanc/Escritorio/Scripts/proyecto_servidor/kude/api/resources/kude.py", line 132, in post
+    respuesta = {'codigo': codigo, 'descripcion': descripcion, 'objetoJson' : {objetoJson}, 'arrayJson': [] }
+TypeError: unhashable type: 'list'
+kude ERROR 2023-08-24 08:23:42,131 api app.py(1414) log_exception(): Exception on /api/getmailbyruc [POST]
+Traceback (most recent call last):
+  File "/home/juanc/Escritorio/Scripts/proyecto_servidor/kude/venv/lib/python3.10/site-packages/flask/app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/juanc/Escritorio/Scripts/proyecto_servidor/kude/venv/lib/python3.10/site-packages/flask/app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "/home/juanc/Escritorio/Scripts/proyecto_servidor/kude/venv/lib/python3.10/site-packages/flask_restful/__init__.py", line 489, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/home/juanc/Escritorio/Scripts/proyecto_servidor/kude/venv/lib/python3.10/site-packages/flask/views.py", line 109, in view
+    return current_app.ensure_sync(self.dispatch_request)(**kwargs)
+  File "/home/juanc/Escritorio/Scripts/proyecto_servidor/kude/venv/lib/python3.10/site-packages/flask_restful/__init__.py", line 604, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "/home/juanc/Escritorio/Scripts/proyecto_servidor/kude/api/resources/kude.py", line 132, in post
+    respuesta = {'codigo': codigo, 'descripcion': descripcion, 'objetoJson' : {objetoJson}, 'arrayJson': [] }
+TypeError: unhashable type: 'list'
+kude INFO 2023-08-24 08:23:42,133 werkzeug _internal.py(187) _log(): 192.168.150.155 - - [24/Aug/2023 08:23:42] "[35m[1mPOST /api/getmailbyruc HTTP/1.1[0m" 500 -
+kude INFO 2023-08-24 08:23:47,672 root kude.py(80) post(): @REQUEST POST {"operation": "get_email", "params": {"ruc": "80025336-1"}}
+kude INFO 2023-08-24 08:24:02,004 root kude.py(104) post(): @REQUEST GET /api/getmailbyruc? @RESPONSE null
+kude INFO 2023-08-24 08:24:27,472 werkzeug _internal.py(187) _log(): [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5002
+ * Running on http://192.168.150.155:5002
+kude INFO 2023-08-24 08:24:27,472 werkzeug _internal.py(187) _log(): [33mPress CTRL+C to quit[0m
+kude INFO 2023-08-24 08:24:31,718 root kude.py(80) post(): @REQUEST POST {"operation": "get_email", "params": {"ruc": "80025336-1"}}
+kude INFO 2023-08-24 08:24:33,090 root kude.py(112) post(): @REQUEST GET /api/getmailbyruc? @RESPONSE {"codigo": -1000, "descripcion": "Token necesario para realizar operacion", "objetoJson": {}, "arrayJson": []}
+kude INFO 2023-08-24 08:24:33,091 werkzeug _internal.py(187) _log(): 192.168.150.155 - - [24/Aug/2023 08:24:33] "POST /api/getmailbyruc HTTP/1.1" 200 -
+kude INFO 2023-08-24 08:24:36,032 root kude.py(25) post(): @REQUEST POST {"operation": "get_token", "params": {"username": "jcorrea", "password": "12345678j"}}
+kude INFO 2023-08-24 08:24:36,038 root kude.py(36) post(): @REQUEST GET /api/getlogin? @RESPONSE {"codigo": 1100, "descripcion": "Sesion ya iniciada", "objetoJson": {}, "arrayJson": []}
+kude INFO 2023-08-24 08:24:36,039 werkzeug _internal.py(187) _log(): 192.168.150.155 - - [24/Aug/2023 08:24:36] "POST /api/getlogin HTTP/1.1" 200 -
+kude INFO 2023-08-24 08:24:37,495 root kude.py(80) post(): @REQUEST POST {"operation": "get_email", "params": {"ruc": "80025336-1"}}
+kude INFO 2023-08-24 08:24:38,775 root kude.py(104) post(): @REQUEST GET /api/getmailbyruc? @RESPONSE null
+kude INFO 2023-08-24 08:24:38,775 root kude.py(133) post(): @REQUEST GET /api/getmailbyruc? @RESPONSE {"codigo": 1000, "descripcion": "OK", "objetoJson": [{"EMAIL": "COMERCIALKORSEN_SA@HOTMAIL.COM", "RNUM": "1"}], "arrayJson": []}
+kude INFO 2023-08-24 08:24:38,776 werkzeug _internal.py(187) _log(): 192.168.150.155 - - [24/Aug/2023 08:24:38] "POST /api/getmailbyruc HTTP/1.1" 200 -
+kude INFO 2023-08-24 08:25:40,666 werkzeug _internal.py(187) _log(): [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5002
+ * Running on http://192.168.150.155:5002
+kude INFO 2023-08-24 08:25:40,666 werkzeug _internal.py(187) _log(): [33mPress CTRL+C to quit[0m
+kude INFO 2023-08-24 08:25:41,946 root kude.py(80) post(): @REQUEST POST {"operation": "get_email", "params": {"ruc": "80025336-1"}}
+kude INFO 2023-08-24 08:25:43,699 root kude.py(112) post(): @REQUEST GET /api/getmailbyruc? @RESPONSE {"codigo": -1000, "descripcion": "Token necesario para realizar operacion", "objetoJson": {}, "arrayJson": []}
+kude INFO 2023-08-24 08:25:43,700 werkzeug _internal.py(187) _log(): 192.168.150.155 - - [24/Aug/2023 08:25:43] "POST /api/getmailbyruc HTTP/1.1" 200 -
+kude INFO 2023-08-24 08:25:46,605 root kude.py(25) post(): @REQUEST POST {"operation": "get_token", "params": {"username": "jcorrea", "password": "12345678j"}}
+kude INFO 2023-08-24 08:25:46,611 root kude.py(36) post(): @REQUEST GET /api/getlogin? @RESPONSE {"codigo": 1100, "descripcion": "Sesion ya iniciada", "objetoJson": {}, "arrayJson": []}
+kude INFO 2023-08-24 08:25:46,612 werkzeug _internal.py(187) _log(): 192.168.150.155 - - [24/Aug/2023 08:25:46] "POST /api/getlogin HTTP/1.1" 200 -
+kude INFO 2023-08-24 08:25:48,211 root kude.py(80) post(): @REQUEST POST {"operation": "get_email", "params": {"ruc": "80025336-1"}}
+kude INFO 2023-08-24 08:25:48,867 root kude.py(104) post(): @REQUEST GET /api/getmailbyruc? @RESPONSE null
+kude INFO 2023-08-24 08:25:48,867 root kude.py(133) post(): @REQUEST GET /api/getmailbyruc? @RESPONSE {"codigo": 1000, "descripcion": "OK", "objetoJson": {}, "arrayJson": [{"EMAIL": "COMERCIALKORSEN_SA@HOTMAIL.COM", "RNUM": "1"}]}
+kude INFO 2023-08-24 08:25:48,868 werkzeug _internal.py(187) _log(): 192.168.150.155 - - [24/Aug/2023 08:25:48] "POST /api/getmailbyruc HTTP/1.1" 200 -
+kude INFO 2023-08-24 08:27:47,511 werkzeug _internal.py(187) _log(): [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5002
+ * Running on http://192.168.150.155:5002
+kude INFO 2023-08-24 08:27:47,511 werkzeug _internal.py(187) _log(): [33mPress CTRL+C to quit[0m
+kude INFO 2023-08-24 08:27:51,357 werkzeug _internal.py(187) _log(): [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5002
+ * Running on http://192.168.150.155:5002
+kude INFO 2023-08-24 08:27:51,357 werkzeug _internal.py(187) _log(): [33mPress CTRL+C to quit[0m
+kude INFO 2023-08-24 08:27:55,335 root kude.py(80) post(): @REQUEST POST {"operation": "get_email", "params": {"ruc": "80025336-1"}}
+kude INFO 2023-08-24 08:27:58,543 root kude.py(112) post(): @REQUEST GET /api/getmailbyruc? @RESPONSE {"codigo": -1000, "descripcion": "Token necesario para realizar operacion", "objetoJson": {}, "arrayJson": []}
+kude INFO 2023-08-24 08:27:58,545 werkzeug _internal.py(187) _log(): 192.168.150.155 - - [24/Aug/2023 08:27:58] "POST /api/getmailbyruc HTTP/1.1" 200 -
+kude INFO 2023-08-24 08:28:01,489 root kude.py(25) post(): @REQUEST POST {"operation": "get_token", "params": {"username": "jcorrea", "password": "12345678j"}}
+kude INFO 2023-08-24 08:28:01,513 root kude.py(38) post(): @REQUEST GET /api/getlogin? @RESPONSE [b'{"arrayJson":[],"codigo":1000,"descripcion":"Sesion iniciada con exito","objetoJson":{"token":"OO58ZwRSJ5gjqFNgz5ESx29iDbwfxIamNzWONMvmLHwg3LCY9OAx29yXTzU0Xk80JU3Dc3yIF4wf8y4f"}}\n']
+kude INFO 2023-08-24 08:28:01,513 werkzeug _internal.py(187) _log(): 192.168.150.155 - - [24/Aug/2023 08:28:01] "POST /api/getlogin HTTP/1.1" 200 -
+kude INFO 2023-08-24 08:28:03,348 root kude.py(80) post(): @REQUEST POST {"operation": "get_email", "params": {"ruc": "80025336-1"}}
+kude INFO 2023-08-24 08:28:03,368 root kude.py(104) post(): @REQUEST GET /api/getmailbyruc? @RESPONSE null
+kude INFO 2023-08-24 08:28:03,368 root kude.py(133) post(): @REQUEST GET /api/getmailbyruc? @RESPONSE {"codigo": 1000, "descripcion": "OK", "objetoJson": {"ruc": "80025336-1"}, "arrayJson": [{"EMAIL": "COMERCIALKORSEN_SA@HOTMAIL.COM", "RNUM": "1"}]}
+kude INFO 2023-08-24 08:28:03,368 werkzeug _internal.py(187) _log(): 192.168.150.155 - - [24/Aug/2023 08:28:03] "POST /api/getmailbyruc HTTP/1.1" 200 -
+kude INFO 2023-08-24 08:28:16,069 root kude.py(80) post(): @REQUEST POST {"operation": "get_email", "params": {"ruc": "80025336-1"}}
+kude INFO 2023-08-24 08:28:23,487 root kude.py(104) post(): @REQUEST GET /api/getmailbyruc? @RESPONSE null
+kude INFO 2023-08-24 08:28:23,487 root kude.py(133) post(): @REQUEST GET /api/getmailbyruc? @RESPONSE {"codigo": 1000, "descripcion": "OK", "objetoJson": {"ruc": "80025336-1"}, "arrayJson": [{"EMAIL": "COMERCIALKORSEN_SA@HOTMAIL.COM", "RNUM": "1"}]}
+kude INFO 2023-08-24 08:28:23,488 werkzeug _internal.py(187) _log(): 192.168.150.155 - - [24/Aug/2023 08:28:23] "POST /api/getmailbyruc HTTP/1.1" 200 -
+kude INFO 2023-08-24 08:28:24,869 root kude.py(80) post(): @REQUEST POST {"operation": "get_email", "params": {"ruc": "80025336-1"}}
+kude INFO 2023-08-24 08:28:58,202 root kude.py(104) post(): @REQUEST GET /api/getmailbyruc? @RESPONSE null
+kude INFO 2023-08-24 08:28:58,203 root kude.py(133) post(): @REQUEST GET /api/getmailbyruc? @RESPONSE {"codigo": 1000, "descripcion": "OK", "objetoJson": {"ruc": "80025336-1"}, "arrayJson": [{"EMAIL": "COMERCIALKORSEN_SA@HOTMAIL.COM", "RNUM": "1"}]}
+kude INFO 2023-08-24 08:28:58,204 werkzeug _internal.py(187) _log(): 192.168.150.155 - - [24/Aug/2023 08:28:58] "POST /api/getmailbyruc HTTP/1.1" 200 -
+kude INFO 2023-08-24 08:29:18,686 root kude.py(80) post(): @REQUEST POST {"operation": "get_email", "params": {"ruc": "80025336-1"}}
+kude INFO 2023-08-24 08:29:41,746 root kude.py(104) post(): @REQUEST GET /api/getmailbyruc? @RESPONSE null
+kude INFO 2023-08-24 08:29:41,746 root kude.py(133) post(): @REQUEST GET /api/getmailbyruc? @RESPONSE {"codigo": 1000, "descripcion": "OK", "objetoJson": {"ruc": "80025336-1"}, "arrayJson": [{"EMAIL": "COMERCIALKORSEN_SA@HOTMAIL.COM", "RNUM": "1"}]}
+kude INFO 2023-08-24 08:29:41,747 werkzeug _internal.py(187) _log(): 192.168.150.155 - - [24/Aug/2023 08:29:41] "POST /api/getmailbyruc HTTP/1.1" 200 -
+kude INFO 2023-08-24 08:29:44,601 root kude.py(80) post(): @REQUEST POST {"operation": "get_email", "params": {"ruc": "80025336-1"}}
+kude INFO 2023-08-24 08:30:44,372 root kude.py(104) post(): @REQUEST GET /api/getmailbyruc? @RESPONSE null
+kude INFO 2023-08-24 08:30:44,373 root kude.py(133) post(): @REQUEST GET /api/getmailbyruc? @RESPONSE {"codigo": 1000, "descripcion": "OK", "objetoJson": {"ruc": "80025336-1"}, "arrayJson": [{"EMAIL": "COMERCIALKORSEN_SA@HOTMAIL.COM", "RNUM": "1"}]}
+kude INFO 2023-08-24 08:30:44,373 werkzeug _internal.py(187) _log(): 192.168.150.155 - - [24/Aug/2023 08:30:44] "POST /api/getmailbyruc HTTP/1.1" 200 -
+kude INFO 2023-08-24 08:45:55,998 werkzeug _internal.py(187) _log(): [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5002
+ * Running on http://192.168.150.155:5002
+kude INFO 2023-08-24 08:45:55,999 werkzeug _internal.py(187) _log(): [33mPress CTRL+C to quit[0m
+kude INFO 2023-08-24 08:46:00,407 root kude.py(25) post(): @REQUEST POST {"operation": "get_token", "params": {"username": "jcorrea", "password": "12345678j"}}
+kude INFO 2023-08-24 08:46:00,429 root kude.py(38) post(): @REQUEST GET /api/getlogin? @RESPONSE [b'{"arrayJson":[],"codigo":1000,"descripcion":"Sesion iniciada con exito","objetoJson":{"token":"Sn4Rxtx8BQxZpANZMByQ41eknXzeEWGg1IDkMhlC3v5GduXwKJWoqNKFJ2YYFNWrd4hz7qFq1UBhqu91"}}\n']
+kude INFO 2023-08-24 08:46:00,430 werkzeug _internal.py(187) _log(): 192.168.150.155 - - [24/Aug/2023 08:46:00] "POST /api/getlogin HTTP/1.1" 200 -
+kude INFO 2023-08-24 08:46:08,141 root kude.py(80) post(): @REQUEST POST {"operation": "get_email", "params": {"ruc": "80025336-1"}}
+kude INFO 2023-08-24 08:46:44,592 root kude.py(106) post(): @REQUEST GET /api/getmailbyruc? @RESPONSE null
+kude INFO 2023-08-24 08:46:44,593 root kude.py(135) post(): @REQUEST GET /api/getmailbyruc? @RESPONSE {"codigo": 1000, "descripcion": "OK", "objetoJson": {"ruc": "80025336-1"}, "arrayJson": ["C", "O", "M", "E", "R", "C", "I", "A", "L", "K", "O", "R", "S", "E", "N", "_", "S", "A", "@", "H", "O", "T", "M", "A", "I", "L", ".", "C", "O", "M"]}
+kude INFO 2023-08-24 08:46:44,595 werkzeug _internal.py(187) _log(): 192.168.150.155 - - [24/Aug/2023 08:46:44] "POST /api/getmailbyruc HTTP/1.1" 200 -
+kude INFO 2023-08-24 08:46:48,362 root kude.py(80) post(): @REQUEST POST {"operation": "get_email", "params": {"ruc": "80025336-1"}}
+kude INFO 2023-08-24 08:55:48,688 werkzeug _internal.py(187) _log(): [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5002
+ * Running on http://192.168.150.155:5002
+kude INFO 2023-08-24 08:55:48,688 werkzeug _internal.py(187) _log(): [33mPress CTRL+C to quit[0m
+kude INFO 2023-08-24 08:55:50,816 root kude.py(80) post(): @REQUEST POST {"operation": "get_email", "params": {"ruc": "80025336-1"}}
+kude INFO 2023-08-24 08:55:50,817 root kude.py(114) post(): @REQUEST GET /api/getmailbyruc? @RESPONSE {"codigo": -1000, "descripcion": "Token necesario para realizar operacion", "objetoJson": {}, "arrayJson": []}
+kude INFO 2023-08-24 08:55:50,818 werkzeug _internal.py(187) _log(): 192.168.150.155 - - [24/Aug/2023 08:55:50] "POST /api/getmailbyruc HTTP/1.1" 200 -
+kude INFO 2023-08-24 08:55:52,841 root kude.py(25) post(): @REQUEST POST {"operation": "get_token", "params": {"username": "jcorrea", "password": "12345678j"}}
+kude INFO 2023-08-24 08:55:52,863 root kude.py(38) post(): @REQUEST GET /api/getlogin? @RESPONSE [b'{"arrayJson":[],"codigo":1000,"descripcion":"Sesion iniciada con exito","objetoJson":{"token":"BbYA34FRBcadrMu7Yu2Z6EcdCIBi9gXhRCAgRy2tGdXGVTIytk1CsuhS2f2OTylYl3p5cHIMf22z5X5S"}}\n']
+kude INFO 2023-08-24 08:55:52,864 werkzeug _internal.py(187) _log(): 192.168.150.155 - - [24/Aug/2023 08:55:52] "POST /api/getlogin HTTP/1.1" 200 -
+kude INFO 2023-08-24 08:55:54,917 root kude.py(80) post(): @REQUEST POST {"operation": "get_email", "params": {"ruc": "80025336-1"}}
+kude INFO 2023-08-24 10:28:30,771 werkzeug _internal.py(187) _log(): [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5002
+ * Running on http://192.168.150.155:5002
+kude INFO 2023-08-24 10:28:30,771 werkzeug _internal.py(187) _log(): [33mPress CTRL+C to quit[0m
+kude INFO 2023-08-24 10:28:35,489 root kude.py(25) post(): @REQUEST POST {"operation": "get_token", "params": {"username": "jcorrea", "password": "12345678j"}}
+kude INFO 2023-08-24 10:28:35,514 root kude.py(38) post(): @REQUEST GET /api/getlogin? @RESPONSE [b'{"arrayJson":[],"codigo":1000,"descripcion":"Sesion iniciada con exito","objetoJson":{"token":"RP7igPcTRYMAs0ib1xw1IZ7jVraKPCJBHnm0vS0LpB1HEKY92gd7loj5qFwVjHTxrHEToTWxprOuXb2S"}}\n']
+kude INFO 2023-08-24 10:28:35,515 werkzeug _internal.py(187) _log(): 192.168.150.155 - - [24/Aug/2023 10:28:35] "POST /api/getlogin HTTP/1.1" 200 -
+kude INFO 2023-08-24 10:28:37,311 root kude.py(80) post(): @REQUEST POST {"operation": "get_email", "params": {"ruc": "80025336-1"}}
+kude INFO 2023-08-24 10:28:57,903 werkzeug _internal.py(187) _log(): [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5002
+ * Running on http://192.168.150.155:5002
+kude INFO 2023-08-24 10:28:57,903 werkzeug _internal.py(187) _log(): [33mPress CTRL+C to quit[0m
+kude INFO 2023-08-24 10:29:00,202 root kude.py(25) post(): @REQUEST POST {"operation": "get_token", "params": {"username": "jcorrea", "password": "12345678j"}}
+kude INFO 2023-08-24 10:29:00,208 root kude.py(36) post(): @REQUEST GET /api/getlogin? @RESPONSE {"codigo": 1100, "descripcion": "Sesion ya iniciada", "objetoJson": {}, "arrayJson": []}
+kude INFO 2023-08-24 10:29:00,209 werkzeug _internal.py(187) _log(): 192.168.150.155 - - [24/Aug/2023 10:29:00] "POST /api/getlogin HTTP/1.1" 200 -
+kude INFO 2023-08-24 10:29:02,041 root kude.py(80) post(): @REQUEST POST {"operation": "get_email", "params": {"ruc": "80025336-1"}}
+kude INFO 2023-08-24 10:29:02,976 root kude.py(106) post(): @REQUEST GET /api/getmailbyruc? @RESPONSE null
+kude INFO 2023-08-24 10:29:02,977 root kude.py(135) post(): @REQUEST GET /api/getmailbyruc? @RESPONSE {"codigo": 1000, "descripcion": "OK", "objetoJson": {"ruc": "80025336-1"}, "arrayJson": {"Email": "COMERCIALKORSEN_SA@HOTMAIL.COM"}}
+kude INFO 2023-08-24 10:29:02,977 werkzeug _internal.py(187) _log(): 192.168.150.155 - - [24/Aug/2023 10:29:02] "POST /api/getmailbyruc HTTP/1.1" 200 -
+kude INFO 2023-08-24 10:29:13,788 werkzeug _internal.py(187) _log(): [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5002
+ * Running on http://192.168.150.155:5002
+kude INFO 2023-08-24 10:29:13,789 werkzeug _internal.py(187) _log(): [33mPress CTRL+C to quit[0m
+kude INFO 2023-08-24 10:29:15,292 root kude.py(80) post(): @REQUEST POST {"operation": "get_email", "params": {"ruc": "80025336-1"}}
+kude INFO 2023-08-24 10:29:15,293 root kude.py(114) post(): @REQUEST GET /api/getmailbyruc? @RESPONSE {"codigo": -1000, "descripcion": "Token necesario para realizar operacion", "objetoJson": {}, "arrayJson": []}
+kude INFO 2023-08-24 10:29:15,294 werkzeug _internal.py(187) _log(): 192.168.150.155 - - [24/Aug/2023 10:29:15] "POST /api/getmailbyruc HTTP/1.1" 200 -
+kude INFO 2023-08-24 10:29:17,448 root kude.py(25) post(): @REQUEST POST {"operation": "get_token", "params": {"username": "jcorrea", "password": "12345678j"}}
+kude INFO 2023-08-24 10:29:17,454 root kude.py(36) post(): @REQUEST GET /api/getlogin? @RESPONSE {"codigo": 1100, "descripcion": "Sesion ya iniciada", "objetoJson": {}, "arrayJson": []}
+kude INFO 2023-08-24 10:29:17,454 werkzeug _internal.py(187) _log(): 192.168.150.155 - - [24/Aug/2023 10:29:17] "POST /api/getlogin HTTP/1.1" 200 -
+kude INFO 2023-08-24 10:29:19,282 root kude.py(80) post(): @REQUEST POST {"operation": "get_email", "params": {"ruc": "80025336-1"}}
+kude INFO 2023-08-24 10:29:20,300 root kude.py(106) post(): @REQUEST GET /api/getmailbyruc? @RESPONSE null
+kude INFO 2023-08-24 10:29:20,300 root kude.py(135) post(): @REQUEST GET /api/getmailbyruc? @RESPONSE {"codigo": 1000, "descripcion": "OK", "objetoJson": {"ruc": "80025336-1"}, "arrayJson": {"email": "COMERCIALKORSEN_SA@HOTMAIL.COM"}}
+kude INFO 2023-08-24 10:29:20,301 werkzeug _internal.py(187) _log(): 192.168.150.155 - - [24/Aug/2023 10:29:20] "POST /api/getmailbyruc HTTP/1.1" 200 -
+kude INFO 2023-08-24 10:31:30,145 werkzeug _internal.py(187) _log(): [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5002
+ * Running on http://192.168.150.155:5002
+kude INFO 2023-08-24 10:31:30,146 werkzeug _internal.py(187) _log(): [33mPress CTRL+C to quit[0m
+kude INFO 2023-08-24 10:31:33,122 root kude.py(80) post(): @REQUEST POST {"operation": "get_email", "params": {"ruc": "80025336-1"}}
+kude INFO 2023-08-24 10:31:33,123 root kude.py(114) post(): @REQUEST GET /api/getmailbyruc? @RESPONSE {"codigo": -1000, "descripcion": "Token necesario para realizar operacion", "objetoJson": {}, "arrayJson": []}
+kude INFO 2023-08-24 10:31:33,124 werkzeug _internal.py(187) _log(): 192.168.150.155 - - [24/Aug/2023 10:31:33] "POST /api/getmailbyruc HTTP/1.1" 200 -
+kude INFO 2023-08-24 10:31:36,335 root kude.py(25) post(): @REQUEST POST {"operation": "get_token", "params": {"username": "jcorrea", "password": "12345678j"}}
+kude INFO 2023-08-24 10:31:36,356 root kude.py(38) post(): @REQUEST GET /api/getlogin? @RESPONSE [b'{"arrayJson":[],"codigo":1000,"descripcion":"Sesion iniciada con exito","objetoJson":{"token":"zdpbGBzekXq4cinPGwoDFIGihwikqDENjPySnFtB6MBhVeQF2AndVaLaglBLetiMguoEOTfMze8SVjnz"}}\n']
+kude INFO 2023-08-24 10:31:36,357 werkzeug _internal.py(187) _log(): 192.168.150.155 - - [24/Aug/2023 10:31:36] "POST /api/getlogin HTTP/1.1" 200 -
+kude INFO 2023-08-24 10:31:38,415 root kude.py(80) post(): @REQUEST POST {"operation": "get_email", "params": {"ruc": "80025336-1"}}
+kude INFO 2023-08-24 10:31:40,099 root kude.py(106) post(): @REQUEST GET /api/getmailbyruc? @RESPONSE null
+kude INFO 2023-08-24 10:31:40,100 root kude.py(135) post(): @REQUEST GET /api/getmailbyruc? @RESPONSE {"codigo": 1000, "descripcion": "OK", "objetoJson": {"ruc": "80025336-1"}, "arrayJson": {"email": "COMERCIALKORSEN_SA@HOTMAIL.COM"}}
+kude INFO 2023-08-24 10:31:40,100 werkzeug _internal.py(187) _log(): 192.168.150.155 - - [24/Aug/2023 10:31:40] "POST /api/getmailbyruc HTTP/1.1" 200 -
+kude INFO 2023-08-24 10:31:42,660 root kude.py(80) post(): @REQUEST POST {"operation": "get_email", "params": {"ruc": "80025336-1"}}
+kude INFO 2023-08-24 10:31:42,673 root kude.py(106) post(): @REQUEST GET /api/getmailbyruc? @RESPONSE null
+kude INFO 2023-08-24 10:31:42,673 root kude.py(135) post(): @REQUEST GET /api/getmailbyruc? @RESPONSE {"codigo": 1000, "descripcion": "OK", "objetoJson": {"ruc": "80025336-1"}, "arrayJson": {"email": "COMERCIALKORSEN_SA@HOTMAIL.COM"}}
+kude INFO 2023-08-24 10:31:42,674 werkzeug _internal.py(187) _log(): 192.168.150.155 - - [24/Aug/2023 10:31:42] "POST /api/getmailbyruc HTTP/1.1" 200 -
+kude INFO 2023-08-24 10:31:43,516 root kude.py(80) post(): @REQUEST POST {"operation": "get_email", "params": {"ruc": "80025336-1"}}
+kude INFO 2023-08-24 10:31:43,529 root kude.py(106) post(): @REQUEST GET /api/getmailbyruc? @RESPONSE null
+kude INFO 2023-08-24 10:31:43,529 root kude.py(135) post(): @REQUEST GET /api/getmailbyruc? @RESPONSE {"codigo": 1000, "descripcion": "OK", "objetoJson": {"ruc": "80025336-1"}, "arrayJson": {"email": "COMERCIALKORSEN_SA@HOTMAIL.COM"}}
+kude INFO 2023-08-24 10:31:43,530 werkzeug _internal.py(187) _log(): 192.168.150.155 - - [24/Aug/2023 10:31:43] "POST /api/getmailbyruc HTTP/1.1" 200 -
+kude INFO 2023-08-24 10:32:59,800 root kude.py(80) post(): @REQUEST POST {"operation": "get_email", "params": {"ruc": "80025336-1"}}
+kude INFO 2023-08-24 10:35:47,291 werkzeug _internal.py(187) _log(): [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5002
+ * Running on http://192.168.150.155:5002
+kude INFO 2023-08-24 10:35:47,292 werkzeug _internal.py(187) _log(): [33mPress CTRL+C to quit[0m
+kude INFO 2023-08-24 10:35:48,816 root kude.py(80) post(): @REQUEST POST {"operation": "get_email", "params": {"ruc": "80025336-1"}}
+kude INFO 2023-08-24 10:35:48,816 root kude.py(114) post(): @REQUEST GET /api/getmailbyruc? @RESPONSE {"codigo": -1000, "descripcion": "Token necesario para realizar operacion", "objetoJson": {}, "arrayJson": []}
+kude INFO 2023-08-24 10:35:48,818 werkzeug _internal.py(187) _log(): 192.168.150.155 - - [24/Aug/2023 10:35:48] "POST /api/getmailbyruc HTTP/1.1" 200 -
+kude INFO 2023-08-24 10:35:52,210 root kude.py(25) post(): @REQUEST POST {"operation": "get_token", "params": {"username": "jcorrea", "password": "12345678j"}}
+kude INFO 2023-08-24 10:35:52,232 root kude.py(38) post(): @REQUEST GET /api/getlogin? @RESPONSE [b'{"arrayJson":[],"codigo":1000,"descripcion":"Sesion iniciada con exito","objetoJson":{"token":"XHP8MLmqbpwWCuHwImEv7Y6fFWd9z1iLtBndn80kNx0bV9Z0JBDZpyN7058oyPxfG4ZMDBNikmpriPUo"}}\n']
+kude INFO 2023-08-24 10:35:52,233 werkzeug _internal.py(187) _log(): 192.168.150.155 - - [24/Aug/2023 10:35:52] "POST /api/getlogin HTTP/1.1" 200 -
+kude INFO 2023-08-24 10:35:53,878 root kude.py(80) post(): @REQUEST POST {"operation": "get_email", "params": {"ruc": "80025336-1"}}
+kude INFO 2023-08-24 10:35:57,579 root kude.py(106) post(): @REQUEST GET /api/getmailbyruc? @RESPONSE null
+kude INFO 2023-08-24 10:35:57,579 root kude.py(135) post(): @REQUEST GET /api/getmailbyruc? @RESPONSE {"codigo": 1000, "descripcion": "OK", "objetoJson": {"ruc": "80025336-1"}, "arrayJson": {"email": "COMERCIALKORSEN_SA@HOTMAIL.COM"}}
+kude INFO 2023-08-24 10:35:57,580 werkzeug _internal.py(187) _log(): 192.168.150.155 - - [24/Aug/2023 10:35:57] "POST /api/getmailbyruc HTTP/1.1" 200 -
+kude INFO 2023-08-24 10:36:37,493 root kude.py(80) post(): @REQUEST POST {"operation": "get_email", "params": {"ruc": "80025336-1"}}
+kude ERROR 2023-08-24 10:37:30,041 root kude.py(133) post(): Peticion finalizada con error: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response')) -1000
+Traceback (most recent call last):
+  File "/home/juanc/Escritorio/Scripts/proyecto_servidor/kude/venv/lib/python3.10/site-packages/urllib3/connectionpool.py", line 790, in urlopen
+    response = self._make_request(
+  File "/home/juanc/Escritorio/Scripts/proyecto_servidor/kude/venv/lib/python3.10/site-packages/urllib3/connectionpool.py", line 536, in _make_request
+    response = conn.getresponse()
+  File "/home/juanc/Escritorio/Scripts/proyecto_servidor/kude/venv/lib/python3.10/site-packages/urllib3/connection.py", line 454, in getresponse
+    httplib_response = super().getresponse()
+  File "/usr/lib/python3.10/http/client.py", line 1375, in getresponse
+    response.begin()
+  File "/usr/lib/python3.10/http/client.py", line 318, in begin
+    version, status, reason = self._read_status()
+  File "/usr/lib/python3.10/http/client.py", line 287, in _read_status
+    raise RemoteDisconnected("Remote end closed connection without"
+http.client.RemoteDisconnected: Remote end closed connection without response
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/juanc/Escritorio/Scripts/proyecto_servidor/kude/venv/lib/python3.10/site-packages/requests/adapters.py", line 486, in send
+    resp = conn.urlopen(
+  File "/home/juanc/Escritorio/Scripts/proyecto_servidor/kude/venv/lib/python3.10/site-packages/urllib3/connectionpool.py", line 844, in urlopen
+    retries = retries.increment(
+  File "/home/juanc/Escritorio/Scripts/proyecto_servidor/kude/venv/lib/python3.10/site-packages/urllib3/util/retry.py", line 470, in increment
+    raise reraise(type(error), error, _stacktrace)
+  File "/home/juanc/Escritorio/Scripts/proyecto_servidor/kude/venv/lib/python3.10/site-packages/urllib3/util/util.py", line 38, in reraise
+    raise value.with_traceback(tb)
+  File "/home/juanc/Escritorio/Scripts/proyecto_servidor/kude/venv/lib/python3.10/site-packages/urllib3/connectionpool.py", line 790, in urlopen
+    response = self._make_request(
+  File "/home/juanc/Escritorio/Scripts/proyecto_servidor/kude/venv/lib/python3.10/site-packages/urllib3/connectionpool.py", line 536, in _make_request
+    response = conn.getresponse()
+  File "/home/juanc/Escritorio/Scripts/proyecto_servidor/kude/venv/lib/python3.10/site-packages/urllib3/connection.py", line 454, in getresponse
+    httplib_response = super().getresponse()
+  File "/usr/lib/python3.10/http/client.py", line 1375, in getresponse
+    response.begin()
+  File "/usr/lib/python3.10/http/client.py", line 318, in begin
+    version, status, reason = self._read_status()
+  File "/usr/lib/python3.10/http/client.py", line 287, in _read_status
+    raise RemoteDisconnected("Remote end closed connection without"
+urllib3.exceptions.ProtocolError: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/juanc/Escritorio/Scripts/proyecto_servidor/kude/api/resources/kude.py", line 103, in post
+    arrayJson = makeResponseByQuery(AMBIENTE_DB, ruc, data)
+  File "/home/juanc/Escritorio/Scripts/proyecto_servidor/kude/api/resources/kude.py", line 209, in makeResponseByQuery
+    arrayJson = query_result_pager.get_rows_select(data, token, api_key_pool, query, DEFAULT_PAGE_NUMBER, DEFAULT_PAGE_SIZE)
+  File "/home/juanc/Escritorio/Scripts/proyecto_servidor/kude/lib/query_result_pager.py", line 25, in get_rows_select
+    pool_res = requests.post(BASE_URL_POOL, json = body)
+  File "/home/juanc/Escritorio/Scripts/proyecto_servidor/kude/venv/lib/python3.10/site-packages/requests/api.py", line 115, in post
+    return request("post", url, data=data, json=json, **kwargs)
+  File "/home/juanc/Escritorio/Scripts/proyecto_servidor/kude/venv/lib/python3.10/site-packages/requests/api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "/home/juanc/Escritorio/Scripts/proyecto_servidor/kude/venv/lib/python3.10/site-packages/requests/sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/home/juanc/Escritorio/Scripts/proyecto_servidor/kude/venv/lib/python3.10/site-packages/requests/sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+  File "/home/juanc/Escritorio/Scripts/proyecto_servidor/kude/venv/lib/python3.10/site-packages/requests/adapters.py", line 501, in send
+    raise ConnectionError(err, request=request)
+requests.exceptions.ConnectionError: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+kude ERROR 2023-08-24 10:37:30,041 root kude.py(133) post(): Peticion finalizada con error: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response')) -1000
+Traceback (most recent call last):
+  File "/home/juanc/Escritorio/Scripts/proyecto_servidor/kude/venv/lib/python3.10/site-packages/urllib3/connectionpool.py", line 790, in urlopen
+    response = self._make_request(
+  File "/home/juanc/Escritorio/Scripts/proyecto_servidor/kude/venv/lib/python3.10/site-packages/urllib3/connectionpool.py", line 536, in _make_request
+    response = conn.getresponse()
+  File "/home/juanc/Escritorio/Scripts/proyecto_servidor/kude/venv/lib/python3.10/site-packages/urllib3/connection.py", line 454, in getresponse
+    httplib_response = super().getresponse()
+  File "/usr/lib/python3.10/http/client.py", line 1375, in getresponse
+    response.begin()
+  File "/usr/lib/python3.10/http/client.py", line 318, in begin
+    version, status, reason = self._read_status()
+  File "/usr/lib/python3.10/http/client.py", line 287, in _read_status
+    raise RemoteDisconnected("Remote end closed connection without"
+http.client.RemoteDisconnected: Remote end closed connection without response
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/juanc/Escritorio/Scripts/proyecto_servidor/kude/venv/lib/python3.10/site-packages/requests/adapters.py", line 486, in send
+    resp = conn.urlopen(
+  File "/home/juanc/Escritorio/Scripts/proyecto_servidor/kude/venv/lib/python3.10/site-packages/urllib3/connectionpool.py", line 844, in urlopen
+    retries = retries.increment(
+  File "/home/juanc/Escritorio/Scripts/proyecto_servidor/kude/venv/lib/python3.10/site-packages/urllib3/util/retry.py", line 470, in increment
+    raise reraise(type(error), error, _stacktrace)
+  File "/home/juanc/Escritorio/Scripts/proyecto_servidor/kude/venv/lib/python3.10/site-packages/urllib3/util/util.py", line 38, in reraise
+    raise value.with_traceback(tb)
+  File "/home/juanc/Escritorio/Scripts/proyecto_servidor/kude/venv/lib/python3.10/site-packages/urllib3/connectionpool.py", line 790, in urlopen
+    response = self._make_request(
+  File "/home/juanc/Escritorio/Scripts/proyecto_servidor/kude/venv/lib/python3.10/site-packages/urllib3/connectionpool.py", line 536, in _make_request
+    response = conn.getresponse()
+  File "/home/juanc/Escritorio/Scripts/proyecto_servidor/kude/venv/lib/python3.10/site-packages/urllib3/connection.py", line 454, in getresponse
+    httplib_response = super().getresponse()
+  File "/usr/lib/python3.10/http/client.py", line 1375, in getresponse
+    response.begin()
+  File "/usr/lib/python3.10/http/client.py", line 318, in begin
+    version, status, reason = self._read_status()
+  File "/usr/lib/python3.10/http/client.py", line 287, in _read_status
+    raise RemoteDisconnected("Remote end closed connection without"
+urllib3.exceptions.ProtocolError: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/juanc/Escritorio/Scripts/proyecto_servidor/kude/api/resources/kude.py", line 103, in post
+    arrayJson = makeResponseByQuery(AMBIENTE_DB, ruc, data)
+  File "/home/juanc/Escritorio/Scripts/proyecto_servidor/kude/api/resources/kude.py", line 209, in makeResponseByQuery
+    arrayJson = query_result_pager.get_rows_select(data, token, api_key_pool, query, DEFAULT_PAGE_NUMBER, DEFAULT_PAGE_SIZE)
+  File "/home/juanc/Escritorio/Scripts/proyecto_servidor/kude/lib/query_result_pager.py", line 25, in get_rows_select
+    pool_res = requests.post(BASE_URL_POOL, json = body)
+  File "/home/juanc/Escritorio/Scripts/proyecto_servidor/kude/venv/lib/python3.10/site-packages/requests/api.py", line 115, in post
+    return request("post", url, data=data, json=json, **kwargs)
+  File "/home/juanc/Escritorio/Scripts/proyecto_servidor/kude/venv/lib/python3.10/site-packages/requests/api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "/home/juanc/Escritorio/Scripts/proyecto_servidor/kude/venv/lib/python3.10/site-packages/requests/sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/home/juanc/Escritorio/Scripts/proyecto_servidor/kude/venv/lib/python3.10/site-packages/requests/sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+  File "/home/juanc/Escritorio/Scripts/proyecto_servidor/kude/venv/lib/python3.10/site-packages/requests/adapters.py", line 501, in send
+    raise ConnectionError(err, request=request)
+requests.exceptions.ConnectionError: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+kude INFO 2023-08-24 10:37:30,049 root kude.py(135) post(): @REQUEST GET /api/getmailbyruc? @RESPONSE {"codigo": -1000, "descripcion": "('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))", "objetoJson": {"ruc": "80025336-1"}, "arrayJson": {"apikey": "0c3ac2fa-f79a-4503-a0ea-f950dd0a5b66"}}
+kude INFO 2023-08-24 10:37:30,049 werkzeug _internal.py(187) _log(): 192.168.150.155 - - [24/Aug/2023 10:37:30] "POST /api/getmailbyruc HTTP/1.1" 200 -
+kude INFO 2023-08-24 10:37:33,004 root kude.py(80) post(): @REQUEST POST {"operation": "get_email", "params": {"ruc": "80025336-1"}}
+kude INFO 2023-08-24 10:37:34,424 root kude.py(106) post(): @REQUEST GET /api/getmailbyruc? @RESPONSE null
+kude INFO 2023-08-24 10:37:34,424 root kude.py(135) post(): @REQUEST GET /api/getmailbyruc? @RESPONSE {"codigo": 1000, "descripcion": "OK", "objetoJson": {"ruc": "80025336-1"}, "arrayJson": {"email": "COMERCIALKORSEN_SA@HOTMAIL.COM"}}
+kude INFO 2023-08-24 10:37:34,425 werkzeug _internal.py(187) _log(): 192.168.150.155 - - [24/Aug/2023 10:37:34] "POST /api/getmailbyruc HTTP/1.1" 200 -
+kude INFO 2023-08-24 10:37:36,991 root kude.py(80) post(): @REQUEST POST {"operation": "get_email", "params": {"ruc": "80025336-1"}}
+kude INFO 2023-08-24 10:37:59,554 root kude.py(106) post(): @REQUEST GET /api/getmailbyruc? @RESPONSE null
+kude INFO 2023-08-24 10:37:59,554 root kude.py(135) post(): @REQUEST GET /api/getmailbyruc? @RESPONSE {"codigo": 1000, "descripcion": "OK", "objetoJson": {"ruc": "80025336-1"}, "arrayJson": {"email": "COMERCIALKORSEN_SA@HOTMAIL.COM"}}
+kude INFO 2023-08-24 10:37:59,555 werkzeug _internal.py(187) _log(): 192.168.150.155 - - [24/Aug/2023 10:37:59] "POST /api/getmailbyruc HTTP/1.1" 200 -
+kude INFO 2023-08-24 10:38:08,552 root kude.py(80) post(): @REQUEST POST {"operation": "get_email", "params": {"ruc": "80025336-1"}}
+kude INFO 2023-08-24 10:38:16,831 root kude.py(106) post(): @REQUEST GET /api/getmailbyruc? @RESPONSE null
+kude INFO 2023-08-24 10:38:16,831 root kude.py(135) post(): @REQUEST GET /api/getmailbyruc? @RESPONSE {"codigo": 1000, "descripcion": "OK", "objetoJson": {"ruc": "80025336-1"}, "arrayJson": {"email": "COMERCIALKORSEN_SA@HOTMAIL.COM"}}
+kude INFO 2023-08-24 10:38:16,832 werkzeug _internal.py(187) _log(): 192.168.150.155 - - [24/Aug/2023 10:38:16] "POST /api/getmailbyruc HTTP/1.1" 200 -
+kude INFO 2023-08-24 10:38:18,447 root kude.py(80) post(): @REQUEST POST {"operation": "get_email", "params": {"ruc": "80025336-1"}}
+kude INFO 2023-08-24 10:39:14,096 root kude.py(106) post(): @REQUEST GET /api/getmailbyruc? @RESPONSE null
+kude INFO 2023-08-24 10:39:14,097 root kude.py(135) post(): @REQUEST GET /api/getmailbyruc? @RESPONSE {"codigo": 1000, "descripcion": "OK", "objetoJson": {"ruc": "80025336-1"}, "arrayJson": {"email": "COMERCIALKORSEN_SA@HOTMAIL.COM"}}
+kude INFO 2023-08-24 10:39:14,097 werkzeug _internal.py(187) _log(): 192.168.150.155 - - [24/Aug/2023 10:39:14] "POST /api/getmailbyruc HTTP/1.1" 200 -
+kude INFO 2023-08-24 10:39:19,878 root kude.py(80) post(): @REQUEST POST {"operation": "get_email", "params": {"ruc": "80001647-5"}}
+kude INFO 2023-08-24 10:39:19,879 root kude.py(114) post(): @REQUEST GET /api/getmailbyruc? @RESPONSE {"codigo": -1010, "descripcion": "Token expirado", "objetoJson": {}, "arrayJson": []}
+kude INFO 2023-08-24 10:39:19,879 werkzeug _internal.py(187) _log(): 192.168.150.155 - - [24/Aug/2023 10:39:19] "POST /api/getmailbyruc HTTP/1.1" 200 -
+kude INFO 2023-08-24 10:39:23,240 root kude.py(25) post(): @REQUEST POST {"operation": "get_token", "params": {"username": "jcorrea", "password": "12345678j"}}
+kude INFO 2023-08-24 10:39:23,251 root kude.py(38) post(): @REQUEST GET /api/getlogin? @RESPONSE [b'{"arrayJson":[],"codigo":1000,"descripcion":"Sesion iniciada con exito","objetoJson":{"token":"fcAw1qjdc6UyLpnnEQMFctXH1LVXP96QrwgXjvYlYkijQCWF4aeTacxcgrBdg1y3UbRnYZjaB553rjQI"}}\n']
+kude INFO 2023-08-24 10:39:23,252 werkzeug _internal.py(187) _log(): 192.168.150.155 - - [24/Aug/2023 10:39:23] "POST /api/getlogin HTTP/1.1" 200 -
+kude INFO 2023-08-24 10:39:24,998 root kude.py(80) post(): @REQUEST POST {"operation": "get_email", "params": {"ruc": "80001647-5"}}
+kude INFO 2023-08-24 10:39:25,023 root kude.py(106) post(): @REQUEST GET /api/getmailbyruc? @RESPONSE null
+kude INFO 2023-08-24 10:39:25,023 root kude.py(135) post(): @REQUEST GET /api/getmailbyruc? @RESPONSE {"codigo": 1000, "descripcion": "OK", "objetoJson": {"ruc": "80001647-5"}, "arrayJson": {"email": "COOPERADORARURAL@HOTMAIL.COM"}}
+kude INFO 2023-08-24 10:39:25,024 werkzeug _internal.py(187) _log(): 192.168.150.155 - - [24/Aug/2023 10:39:25] "POST /api/getmailbyruc HTTP/1.1" 200 -
+kude INFO 2023-08-24 10:39:54,584 root kude.py(80) post(): @REQUEST POST {"operation": "get_email", "params": {"ruc": "80001647-5"}}
+kude INFO 2023-08-24 10:39:54,598 root kude.py(106) post(): @REQUEST GET /api/getmailbyruc? @RESPONSE null
+kude INFO 2023-08-24 10:39:54,598 root kude.py(135) post(): @REQUEST GET /api/getmailbyruc? @RESPONSE {"codigo": 1000, "descripcion": "OK", "objetoJson": {"ruc": "80001647-5"}, "arrayJson": {"email": "COOPERADORARURAL@HOTMAIL.COM"}}
+kude INFO 2023-08-24 10:39:54,599 werkzeug _internal.py(187) _log(): 192.168.150.155 - - [24/Aug/2023 10:39:54] "POST /api/getmailbyruc HTTP/1.1" 200 -
+kude INFO 2023-08-24 10:40:06,451 root kude.py(80) post(): @REQUEST POST {"operation": "get_email", "params": {"ruc": "80001647-5"}}
+kude INFO 2023-08-24 10:42:30,102 werkzeug _internal.py(187) _log(): [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5002
+ * Running on http://192.168.150.155:5002
+kude INFO 2023-08-24 10:42:30,102 werkzeug _internal.py(187) _log(): [33mPress CTRL+C to quit[0m
+kude INFO 2023-08-24 10:42:31,966 root kude.py(80) post(): @REQUEST POST {"operation": "get_email", "params": {"ruc": "80001647-5"}}
+kude INFO 2023-08-24 10:42:31,966 root kude.py(114) post(): @REQUEST GET /api/getmailbyruc? @RESPONSE {"codigo": -1000, "descripcion": "Token necesario para realizar operacion", "objetoJson": {}, "arrayJson": []}
+kude INFO 2023-08-24 10:42:31,967 werkzeug _internal.py(187) _log(): 192.168.150.155 - - [24/Aug/2023 10:42:31] "POST /api/getmailbyruc HTTP/1.1" 200 -
+kude INFO 2023-08-24 10:42:34,867 root kude.py(25) post(): @REQUEST POST {"operation": "get_token", "params": {"username": "jcorrea", "password": "12345678j"}}
+kude INFO 2023-08-24 10:42:34,889 root kude.py(38) post(): @REQUEST GET /api/getlogin? @RESPONSE [b'{"arrayJson":[],"codigo":1000,"descripcion":"Sesion iniciada con exito","objetoJson":{"token":"r0zEgTxmG2lBVbca4C66UUnpz85h97uEr4khBYgLHTSbx1CtAew6rLGcWJZLvDWgwVswZVhdiVJnvkA2"}}\n']
+kude INFO 2023-08-24 10:42:34,889 werkzeug _internal.py(187) _log(): 192.168.150.155 - - [24/Aug/2023 10:42:34] "POST /api/getlogin HTTP/1.1" 200 -
+kude INFO 2023-08-24 10:42:37,715 root kude.py(80) post(): @REQUEST POST {"operation": "get_email", "params": {"ruc": "80001647-5"}}
+kude INFO 2023-08-24 10:43:31,061 werkzeug _internal.py(187) _log(): [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5002
+ * Running on http://192.168.150.155:5002
+kude INFO 2023-08-24 10:43:31,061 werkzeug _internal.py(187) _log(): [33mPress CTRL+C to quit[0m
+kude INFO 2023-08-24 10:43:32,476 root kude.py(80) post(): @REQUEST POST {"operation": "get_email", "params": {"ruc": "80001647-5"}}
+kude INFO 2023-08-24 10:43:32,477 root kude.py(114) post(): @REQUEST GET /api/getmailbyruc? @RESPONSE {"codigo": -1000, "descripcion": "Token necesario para realizar operacion", "objetoJson": {}, "arrayJson": []}
+kude INFO 2023-08-24 10:43:32,478 werkzeug _internal.py(187) _log(): 192.168.150.155 - - [24/Aug/2023 10:43:32] "POST /api/getmailbyruc HTTP/1.1" 200 -
+kude INFO 2023-08-24 10:43:35,369 root kude.py(25) post(): @REQUEST POST {"operation": "get_token", "params": {"username": "jcorrea", "password": "12345678j"}}
+kude INFO 2023-08-24 10:43:35,375 root kude.py(36) post(): @REQUEST GET /api/getlogin? @RESPONSE {"codigo": 1100, "descripcion": "Sesion ya iniciada", "objetoJson": {}, "arrayJson": []}
+kude INFO 2023-08-24 10:43:35,376 werkzeug _internal.py(187) _log(): 192.168.150.155 - - [24/Aug/2023 10:43:35] "POST /api/getlogin HTTP/1.1" 200 -
+kude INFO 2023-08-24 10:43:36,969 root kude.py(80) post(): @REQUEST POST {"operation": "get_email", "params": {"ruc": "80001647-5"}}
+kude INFO 2023-08-24 10:43:38,859 root kude.py(106) post(): @REQUEST GET /api/getmailbyruc? @RESPONSE null
+kude INFO 2023-08-24 10:43:38,860 root kude.py(135) post(): @REQUEST GET /api/getmailbyruc? @RESPONSE {"codigo": 1000, "descripcion": "OK", "objetoJson": {"ruc": "80001647-5"}, "arrayJson": {"email": ["COOPERADORARURAL@HOTMAIL.COM", "COOPERADORARURAL@HOTMAIL.COM"]}}
+kude INFO 2023-08-24 10:43:38,860 werkzeug _internal.py(187) _log(): 192.168.150.155 - - [24/Aug/2023 10:43:38] "POST /api/getmailbyruc HTTP/1.1" 200 -
+kude INFO 2023-08-24 10:43:53,449 werkzeug _internal.py(187) _log(): [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5002
+ * Running on http://192.168.150.155:5002
+kude INFO 2023-08-24 10:43:53,449 werkzeug _internal.py(187) _log(): [33mPress CTRL+C to quit[0m
+kude INFO 2023-08-24 10:43:54,844 root kude.py(25) post(): @REQUEST POST {"operation": "get_token", "params": {"username": "jcorrea", "password": "12345678j"}}
+kude INFO 2023-08-24 10:43:54,850 root kude.py(36) post(): @REQUEST GET /api/getlogin? @RESPONSE {"codigo": 1100, "descripcion": "Sesion ya iniciada", "objetoJson": {}, "arrayJson": []}
+kude INFO 2023-08-24 10:43:54,852 werkzeug _internal.py(187) _log(): 192.168.150.155 - - [24/Aug/2023 10:43:54] "POST /api/getlogin HTTP/1.1" 200 -
+kude INFO 2023-08-24 10:43:56,596 root kude.py(80) post(): @REQUEST POST {"operation": "get_email", "params": {"ruc": "80001647-5"}}
+kude INFO 2023-08-24 10:45:02,245 werkzeug _internal.py(187) _log(): [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5002
+ * Running on http://192.168.150.155:5002
+kude INFO 2023-08-24 10:45:02,246 werkzeug _internal.py(187) _log(): [33mPress CTRL+C to quit[0m
+kude INFO 2023-08-24 10:45:03,000 root kude.py(80) post(): @REQUEST POST {"operation": "get_email", "params": {"ruc": "80001647-5"}}
+kude INFO 2023-08-24 10:45:03,001 root kude.py(114) post(): @REQUEST GET /api/getmailbyruc? @RESPONSE {"codigo": -1000, "descripcion": "Token necesario para realizar operacion", "objetoJson": {}, "arrayJson": []}
+kude INFO 2023-08-24 10:45:03,002 werkzeug _internal.py(187) _log(): 192.168.150.155 - - [24/Aug/2023 10:45:03] "POST /api/getmailbyruc HTTP/1.1" 200 -
+kude INFO 2023-08-24 10:45:05,921 root kude.py(25) post(): @REQUEST POST {"operation": "get_token", "params": {"username": "jcorrea", "password": "12345678j"}}
+kude INFO 2023-08-24 10:45:05,927 root kude.py(36) post(): @REQUEST GET /api/getlogin? @RESPONSE {"codigo": 1100, "descripcion": "Sesion ya iniciada", "objetoJson": {}, "arrayJson": []}
+kude INFO 2023-08-24 10:45:05,928 werkzeug _internal.py(187) _log(): 192.168.150.155 - - [24/Aug/2023 10:45:05] "POST /api/getlogin HTTP/1.1" 200 -
+kude INFO 2023-08-24 10:45:07,561 root kude.py(80) post(): @REQUEST POST {"operation": "get_email", "params": {"ruc": "80001647-5"}}
+kude INFO 2023-08-24 10:45:20,202 werkzeug _internal.py(187) _log(): [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5002
+ * Running on http://192.168.150.155:5002
+kude INFO 2023-08-24 10:45:20,203 werkzeug _internal.py(187) _log(): [33mPress CTRL+C to quit[0m
+kude INFO 2023-08-24 10:45:21,971 root kude.py(25) post(): @REQUEST POST {"operation": "get_token", "params": {"username": "jcorrea", "password": "12345678j"}}
+kude INFO 2023-08-24 10:45:21,978 root kude.py(36) post(): @REQUEST GET /api/getlogin? @RESPONSE {"codigo": 1100, "descripcion": "Sesion ya iniciada", "objetoJson": {}, "arrayJson": []}
+kude INFO 2023-08-24 10:45:21,980 werkzeug _internal.py(187) _log(): 192.168.150.155 - - [24/Aug/2023 10:45:21] "POST /api/getlogin HTTP/1.1" 200 -
+kude INFO 2023-08-24 10:45:24,000 root kude.py(80) post(): @REQUEST POST {"operation": "get_email", "params": {"ruc": "80001647-5"}}
+kude INFO 2023-08-24 10:45:40,016 root kude.py(106) post(): @REQUEST GET /api/getmailbyruc? @RESPONSE null
+kude INFO 2023-08-24 10:45:40,016 root kude.py(135) post(): @REQUEST GET /api/getmailbyruc? @RESPONSE {"codigo": 1000, "descripcion": "OK", "objetoJson": {"ruc": "80001647-5"}, "arrayJson": [{"email": "COOPERADORARURAL@HOTMAIL.COM"}, {"email": "COOPERADORARURAL@HOTMAIL.COM"}]}
+kude INFO 2023-08-24 10:45:40,018 werkzeug _internal.py(187) _log(): 192.168.150.155 - - [24/Aug/2023 10:45:40] "POST /api/getmailbyruc HTTP/1.1" 200 -
+kude INFO 2023-08-24 10:46:32,378 root kude.py(80) post(): @REQUEST POST {"operation": "get_email", "params": {"ruc": "80001647-5"}}
+kude INFO 2023-08-24 10:46:32,380 root kude.py(114) post(): @REQUEST GET /api/getmailbyruc? @RESPONSE {"codigo": -1010, "descripcion": "Token expirado", "objetoJson": {}, "arrayJson": []}
+kude INFO 2023-08-24 10:46:32,381 werkzeug _internal.py(187) _log(): 192.168.150.155 - - [24/Aug/2023 10:46:32] "POST /api/getmailbyruc HTTP/1.1" 200 -
+kude INFO 2023-08-24 10:46:34,867 root kude.py(25) post(): @REQUEST POST {"operation": "get_token", "params": {"username": "jcorrea", "password": "12345678j"}}
+kude INFO 2023-08-24 10:46:34,879 root kude.py(38) post(): @REQUEST GET /api/getlogin? @RESPONSE [b'{"arrayJson":[],"codigo":1000,"descripcion":"Sesion iniciada con exito","objetoJson":{"token":"upy5XraVZ1eNHBhLHnahtfUEZh9Rl54qKqabQLYbzX7aP2BOK82CW0zrDUa05bnZENhU9e6uWeyPXFGb"}}\n']
+kude INFO 2023-08-24 10:46:34,879 werkzeug _internal.py(187) _log(): 192.168.150.155 - - [24/Aug/2023 10:46:34] "POST /api/getlogin HTTP/1.1" 200 -
+kude INFO 2023-08-24 10:46:36,464 root kude.py(80) post(): @REQUEST POST {"operation": "get_email", "params": {"ruc": "80001647-5"}}
+kude INFO 2023-08-24 10:46:38,831 root kude.py(106) post(): @REQUEST GET /api/getmailbyruc? @RESPONSE null
+kude INFO 2023-08-24 10:46:38,832 root kude.py(135) post(): @REQUEST GET /api/getmailbyruc? @RESPONSE {"codigo": 1000, "descripcion": "OK", "objetoJson": {"ruc": "80001647-5"}, "arrayJson": [{"email": "COOPERADORARURAL@HOTMAIL.COM"}, {"email": "COOPERADORARURAL@HOTMAIL.COM"}]}
+kude INFO 2023-08-24 10:46:38,832 werkzeug _internal.py(187) _log(): 192.168.150.155 - - [24/Aug/2023 10:46:38] "POST /api/getmailbyruc HTTP/1.1" 200 -
+kude INFO 2023-08-24 10:50:37,871 werkzeug _internal.py(187) _log(): [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5002
+ * Running on http://192.168.150.155:5002
+kude INFO 2023-08-24 10:50:37,872 werkzeug _internal.py(187) _log(): [33mPress CTRL+C to quit[0m
+kude INFO 2023-08-24 10:50:42,271 root kude.py(80) post(): @REQUEST POST {"operation": "get_email", "params": {"ruc": "80001647-5"}}
+kude INFO 2023-08-24 10:50:42,271 root kude.py(114) post(): @REQUEST GET /api/getmailbyruc? @RESPONSE {"codigo": -1000, "descripcion": "Token necesario para realizar operacion", "objetoJson": {}, "arrayJson": []}
+kude INFO 2023-08-24 10:50:42,272 werkzeug _internal.py(187) _log(): 192.168.150.155 - - [24/Aug/2023 10:50:42] "POST /api/getmailbyruc HTTP/1.1" 200 -
+kude INFO 2023-08-24 10:50:45,853 root kude.py(25) post(): @REQUEST POST {"operation": "get_token", "params": {"username": "jcorrea", "password": "12345678j"}}
+kude INFO 2023-08-24 10:50:45,875 root kude.py(38) post(): @REQUEST GET /api/getlogin? @RESPONSE [b'{"arrayJson":[],"codigo":1000,"descripcion":"Sesion iniciada con exito","objetoJson":{"token":"hHMEqGeqv1ervED76dnutIKStnMJcn7EbjSE1Fy5govUNnOJ9VjsiWrHMJOKERWBeQPhTGd89d248jCt"}}\n']
+kude INFO 2023-08-24 10:50:45,876 werkzeug _internal.py(187) _log(): 192.168.150.155 - - [24/Aug/2023 10:50:45] "POST /api/getlogin HTTP/1.1" 200 -
+kude INFO 2023-08-24 10:53:08,950 root kude.py(80) post(): @REQUEST POST {"operation": "get_email", "params": {"ruc": "80001647-5"}}
+kude INFO 2023-08-24 10:53:12,471 root kude.py(106) post(): @REQUEST GET /api/getmailbyruc? @RESPONSE null
+kude INFO 2023-08-24 10:53:12,471 root kude.py(135) post(): @REQUEST GET /api/getmailbyruc? @RESPONSE {"codigo": 1000, "descripcion": "OK", "objetoJson": {"ruc": "80001647-5"}, "arrayJson": [{"email": "COOPERADORARURAL@HOTMAIL.COM"}, {"email": "COOPERADORARURAL@HOTMAIL.COM"}]}
+kude INFO 2023-08-24 10:53:12,472 werkzeug _internal.py(187) _log(): 192.168.150.155 - - [24/Aug/2023 10:53:12] "POST /api/getmailbyruc HTTP/1.1" 200 -
+kude INFO 2023-08-24 10:55:25,601 werkzeug _internal.py(187) _log(): [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5002
+ * Running on http://192.168.150.155:5002
+kude INFO 2023-08-24 10:55:25,602 werkzeug _internal.py(187) _log(): [33mPress CTRL+C to quit[0m

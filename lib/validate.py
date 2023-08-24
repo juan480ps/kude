@@ -1,16 +1,18 @@
 import psycopg2, datetime as dt, requests
 from flask import request, request, jsonify
 from config.db.db_config_pstgr import postgresqlConfig
+from api import API_KEY, URL_AUTH_GET_API, AUTH_USER, AUTH_PASS, BASE_URL_AUTH, BY_PASS_AUTH
+from utils.format_json import set_format_json
 
 connpost = psycopg2.connect(postgresqlConfig)# se importa la configuracion del postgres
 cur = connpost.cursor() # se abre cursor
 
 #urls 
-# url_auth_login = 'http://localhost:5001/aut/login' 
-# url_auth_get_api = 'http://localhost:5001/aut/getapibyalias/'
+# BASE_URL_AUTH = 'http://localhost:6001/aut/login' 
+# URL_AUTH_GET_API = 'http://localhost:6001/aut/getapibyalias/'
 
-url_auth_login = 'http://192.168.150.156:6001/aut/login'
-url_auth_get_api = 'http://192.168.150.156:6001/aut/getapibyalias/'
+# BASE_URL_AUTH = 'http://192.168.150.156:6001/aut/login'
+# URL_AUTH_GET_API = 'http://192.168.150.156:6001/aut/getapibyalias/'
 
 #variables
 token = ''
@@ -74,11 +76,11 @@ def force_token_expiration(token): # funcion para forzar el vencimiento de token
     connpost.commit()
     
 def get_api_key(json_data, ambiente): # funcion que retorna la apikey llamando al webservice de autenticador
-    global url_auth_get_api, api_key_pool
+    global URL_AUTH_GET_API, api_key_pool
     objetoJson = {}
     json_data["params"]["apikey"] = api_key_auth['apikey']
     json_data["params"]["authcontext"] = ambiente
-    auth_res = requests.post(url_auth_get_api + ambiente, json=json_data)
+    auth_res = requests.post(URL_AUTH_GET_API + ambiente, json=json_data)
     data = auth_res.json()
     descripcion = data['descripcion']
     codigo = data['codigo']
@@ -96,33 +98,46 @@ def validator(request, token, session_closed, api_key_auth, APP_CONTEXT):#funcio
     global token_is_expired, vencimiento_token, objetoJson
     token_request = ''
     data = request.get_json()
+    
+    credentials_auth = {"username": AUTH_USER, "password" : AUTH_PASS, "apikey" : API_KEY,  "authcontext" : APP_CONTEXT}
+    data = set_format_json(credentials_auth, 'get_token')
+    momento = dt.datetime.strptime(str(dt.datetime.now()), '%Y-%m-%d %H:%M:%S.%f')
+    
     try:
-        operation = data['operation']
-        params = data['params']
-        if operation == "get_token":
-            momento = dt.datetime.strptime(str(dt.datetime.now()), '%Y-%m-%d %H:%M:%S.%f')
-            if request.is_json:
-                if request.headers.get('cookie'):
-                    token_request = request.headers.get('cookie').replace('cookie=', '')
-                    token_exists = check_token(token_request)
-                    if token_exists:
-                        token = token_request
-                        token_is_expired = check_vigencia_token(token, momento)
-                        if token_is_expired or session_closed:
+        if not BY_PASS_AUTH:
+            operation = data['operation']
+            params = data['params']
+            if operation == "get_token":
+                if request.is_json:
+                    if request.headers.get('cookie'):
+                        token_request = request.headers.get('cookie').replace('cookie=', '')
+                        token_exists = check_token(token_request)
+                        if token_exists:
+                            token = token_request
+                            token_is_expired = check_vigencia_token(token, momento)
+                            if token_is_expired or session_closed:
+                                res = get_login(data, api_key_auth, APP_CONTEXT, momento)
+                                codigo = res['codigo']
+                                descripcion = res['descripcion']
+                                if codigo == 1000:
+                                    objetoJson = res['objetoJson']                            
+                                    objetoJson = {"token" : objetoJson['token']}
+                                    session_closed = False
+                                    token = objetoJson['token']
+                            else:
+                                vencimiento_token = get_vencimiento_token(token)                            
+                                descripcion = 'Sesion ya iniciada'
+                                codigo = 1100
+                                respuesta = {'codigo': codigo, 'descripcion': descripcion, 'objetoJson' : {}, 'arrayJson' : []}
+                                return respuesta, token, momento, vencimiento_token, token_is_expired, session_closed
+                        else :
                             res = get_login(data, api_key_auth, APP_CONTEXT, momento)
                             codigo = res['codigo']
                             descripcion = res['descripcion']
                             if codigo == 1000:
-                                objetoJson = res['objetoJson']                            
+                                objetoJson = res['objetoJson']                    
                                 objetoJson = {"token" : objetoJson['token']}
-                                session_closed = False
                                 token = objetoJson['token']
-                        else:
-                            vencimiento_token = get_vencimiento_token(token)                            
-                            descripcion = 'Sesion ya iniciada'
-                            codigo = 1100
-                            respuesta = {'codigo': codigo, 'descripcion': descripcion, 'objetoJson' : {}, 'arrayJson' : []}
-                            return respuesta, token, momento, vencimiento_token, token_is_expired, session_closed
                     else :
                         res = get_login(data, api_key_auth, APP_CONTEXT, momento)
                         codigo = res['codigo']
@@ -131,23 +146,38 @@ def validator(request, token, session_closed, api_key_auth, APP_CONTEXT):#funcio
                             objetoJson = res['objetoJson']                    
                             objetoJson = {"token" : objetoJson['token']}
                             token = objetoJson['token']
-                else :
-                    res = get_login(data, api_key_auth, APP_CONTEXT, momento)
-                    codigo = res['codigo']
-                    descripcion = res['descripcion']
-                    if codigo == 1000:
-                        objetoJson = res['objetoJson']                    
-                        objetoJson = {"token" : objetoJson['token']}
-                        token = objetoJson['token']
-                    else:
-                        token = {}
-                        objetoJson = {}
+                        else:
+                            token = {}
+                            objetoJson = {}
+                else:
+                    descripcion = 'Json necesario para inicio de sesion'
+                    codigo = -1001
             else:
-                descripcion = 'Json necesario para inicio de sesion'
-                codigo = -1001
+                descripcion = 'Operación inválida'
+                codigo = -1002
+            
+            respuesta = {'codigo': codigo, 'descripcion': descripcion, 'objetoJson' : objetoJson, 'arrayJson' : []}   
+            if codigo == 1000:
+                respuesta = jsonify(respuesta)
+                respuesta.set_cookie('cookie', objetoJson['token'])   
+            connpost.commit()
+            return respuesta, token, momento, vencimiento_token, token_is_expired, session_closed
+                
         else:
-            descripcion = 'Operación inválida'
-            codigo = -1002
+            res = get_login(data, api_key_auth, APP_CONTEXT, momento)
+            codigo = res['codigo']
+            descripcion = res['descripcion']
+            if codigo == 1000:
+                objetoJson = res['objetoJson']                            
+                objetoJson = {"token" : objetoJson['token']}
+                session_closed = False
+                token = objetoJson['token']
+            
+            respuesta = {'codigo': codigo, 'descripcion': descripcion, 'objetoJson' : objetoJson, 'arrayJson' : []}   
+            connpost.commit()
+            return respuesta, token, momento, vencimiento_token, token_is_expired, session_closed
+                
+                
     except KeyError as e :
         descripcion = 'No se encuentra el parametro: ' + str(e)
         codigo = -1001
@@ -155,50 +185,75 @@ def validator(request, token, session_closed, api_key_auth, APP_CONTEXT):#funcio
         descripcion = str(e)
         codigo = -1000
     respuesta = {'codigo': codigo, 'descripcion': descripcion, 'objetoJson' : objetoJson, 'arrayJson' : []}
-    if codigo == 1000:
-        respuesta = jsonify(respuesta)
-        respuesta.set_cookie('cookie', objetoJson['token'])    
-    connpost.commit()
-    return respuesta, token, momento, vencimiento_token, token_is_expired, session_closed
+    # if codigo == 1000:
+    #     respuesta = jsonify(respuesta)
+    #     respuesta.set_cookie('cookie', objetoJson['token'])    
+    # connpost.commit()
+    return respuesta#, token, momento, vencimiento_token, token_is_expired, session_closed
+
 
 
 def oper_validator(request, token, api_key_auth_, vencimiento_token,  json, ambiente): #funcion que valida el token de sesion para poder realizar las operaciones requeridas
     global api_key_auth, api_key_pool
     api_key_auth = api_key_auth_
     try:
-        if token:
-            if request.is_json:
-                if request.headers.get('cookie'):
-                    token = request.headers.get('cookie').replace('cookie=', '')
-                    momento = dt.datetime.strptime(str(dt.datetime.now()), '%Y-%m-%d %H:%M:%S.%f')
-                    if token:
-                        token_is_expired = check_vigencia_token(token, momento)
-                        if token_is_expired:
-                            descripcion = 'Token expirado'
-                            codigo = -1010
-                            respuesta = {'codigo': codigo, 'descripcion': descripcion, 'objetoJson' : [], 'arrayJson': [] }
-                            return respuesta
-                        else:
-                            if not api_key_pool:
-                                api_key_pool = get_api_key(json, ambiente)
-                            if api_key_pool:
-                                save_token_access(token=token, apikey=api_key_pool, momento=momento, vencimiento_token=vencimiento_token)
-                                descripcion = 'OK'
-                                codigo = 1000
-                                respuesta = {'codigo': codigo, 'descripcion': descripcion, 'objetoJson' : [], 'arrayJson': [] } 
-                            else:
-                                descripcion = 'Api-Key no recuperada de la base de datos'
+        if not BY_PASS_AUTH:
+            if token:
+                if request.is_json:
+                    if request.headers.get('cookie'):
+                        token = request.headers.get('cookie').replace('cookie=', '')
+                        momento = dt.datetime.strptime(str(dt.datetime.now()), '%Y-%m-%d %H:%M:%S.%f')
+                        if token:
+                            token_is_expired = check_vigencia_token(token, momento)
+                            if token_is_expired:
+                                descripcion = 'Token expirado'
                                 codigo = -1010
-                                respuesta = {'codigo': codigo, 'descripcion': descripcion, 'objetoJson' : [], 'arrayJson': [] } 
+                                respuesta = {'codigo': codigo, 'descripcion': descripcion, 'objetoJson' : [], 'arrayJson': [] }
+                                return respuesta
+                            else:
+                                if not api_key_pool:
+                                    api_key_pool = get_api_key(json, ambiente)
+                                if api_key_pool:
+                                    save_token_access(token=token, apikey=api_key_pool, momento=momento, vencimiento_token=vencimiento_token)
+                                    descripcion = 'OK'
+                                    codigo = 1000
+                                    respuesta = {'codigo': codigo, 'descripcion': descripcion, 'objetoJson' : [], 'arrayJson': [] } 
+                                else:
+                                    descripcion = 'Api-Key no recuperada de la base de datos'
+                                    codigo = -1010
+                                    respuesta = {'codigo': codigo, 'descripcion': descripcion, 'objetoJson' : [], 'arrayJson': [] } 
+                    else:
+                        descripcion = 'Token necesario para realizar la operacion'
+                        codigo = -1000
                 else:
-                    descripcion = 'Token necesario para realizar la operacion'
-                    codigo = -1000
+                    descripcion = 'Json necesario para realizar operacion'
+                    codigo = -1001
             else:
-                descripcion = 'Json necesario para realizar operacion'
-                codigo = -1001
-        else:
-            descripcion = 'Token necesario para realizar operacion'
-            codigo = -1000
+                descripcion = 'Token necesario para realizar operacion'
+                codigo = -1000
+                            
+        else: 
+            momento = dt.datetime.now()#dt.datetime.strptime(str(dt.datetime.now()), '%Y-%m-%d %H:%M:%S.%f')
+            momento = momento.strftime("%d/%m/%Y, %H:%M:%S")
+            # if token:
+            #     token_is_expired = check_vigencia_token(token, momento)
+            #     if token_is_expired:
+            #         descripcion = 'Token expirado'
+            #         codigo = -1010
+            #         respuesta = {'codigo': codigo, 'descripcion': descripcion, 'objetoJson' : [], 'arrayJson': [] }
+            #         return respuesta
+            #     else:
+            if not api_key_pool:
+                api_key_pool = get_api_key(json, ambiente)
+            if api_key_pool:
+                save_token_access(token=token, apikey=api_key_pool, momento=momento, vencimiento_token=vencimiento_token)
+                descripcion = 'OK'
+                codigo = 1000
+                respuesta = {'codigo': codigo, 'descripcion': descripcion, 'objetoJson' : [], 'arrayJson': [] } 
+            else:
+                descripcion = 'Api-Key no recuperada de la base de datos'
+                codigo = -1010
+                respuesta = {'codigo': codigo, 'descripcion': descripcion, 'objetoJson' : [], 'arrayJson': [] } 
     except KeyError as e :
         descripcion = 'Parametro no encontrado: ' + str(e)
         codigo = -1001
@@ -216,7 +271,7 @@ def get_login(json_data, api_key_auth, APP_CONTEXT, momento):# funcion que obtie
     try:
         json_data["params"]["apikey"] = api_key_auth['apikey']
         json_data["params"]["authcontext"] = APP_CONTEXT
-        auth_res = requests.post(url_auth_login, json = json_data)
+        auth_res = requests.post(BASE_URL_AUTH, json = json_data)
         data = auth_res.json()
         codigo = data['codigo']
         descripcion = data['descripcion']

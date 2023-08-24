@@ -1,22 +1,15 @@
 from flask_restful import Resource
 from flask import request
-from api import API_KEY, AMBIENTE_DB, APP_CONTEXT
+from api import API_KEY, AMBIENTE_DB, APP_CONTEXT, DEFAULT_PAGE_SIZE, DEFAULT_PAGE_NUMBER
 import requests, base64, datetime as dt, sys, logging, json
-from lib import validate# se importa la libreria validador que se encarga de validar el token y la sesion 
+from lib import validate, query_result_pager as qrp
+from utils.format_json import set_format_json# se importa la libreria validador que se encarga de validar el token y la sesion 
 
-# url_jde = 'http://localhost:5000/api/jdedb'
-url_jde = 'http://192.168.150.156:6000/api/jdedb' #url del pool
-
-api_key_auth = {"apikey" : API_KEY} # diccionario que contiene la apikei del auth
-
-#variables
 token = ''
-#ambiente = 'testdta'
-momento = dt.datetime.fromtimestamp(1688410986) - dt.timedelta(days=20*365)
-vencimiento_token = dt.datetime.fromtimestamp(1688410986) - dt.timedelta(days=20*365)
-token_is_expired = False
-session_closed = False
+api_key_auth = {"apikey" : API_KEY}
+vencimiento_token = ''
 api_key_pool = ''
+session_closed = False
 
 # Esta clase se encarga de obtener el token de sesion. Recibe el json con un formato especifico que debe contener el usuario y la contraseña para poder autenticarse. Este Json
 # se envia al autenticador. Este trabajo lo hace el validador mediante la funcion validator(). Esta funcion recibe ciertos parametros para poder funcionar.
@@ -69,10 +62,16 @@ class GetToken(Resource):
 # Esta clase se encarga de enviar una consulta al jde y el resultado se muestra en json. Recibe el json con un formato especifico que debe contener el la operacion y el campo a consultar. Este Json
 # se envia al pooljde si es que ya se cuenta con una sesion activa, que antes de ser enviado la solicitud, se realiza una validacion de la sesion. 
 # Este trabajo lo hace el validador mediante la funcion oper_validator(). Esta funcion recibe ciertos parametros para poder funcionar.
-class Select(Resource):
+class GetMailByRuc(Resource):
     def post(self):
         global token, momento, vencimiento_token, api_key_pool, api_key_auth# se sobreescriben los valores de las variables de la aplicacion
         logging.debug("/Select")
+        codigo = -99999
+        descripcion = 'No se a procesado la peticion'
+        arrayJson = [] 
+        json_data = {"json":"parse"}
+        respuesta = None
+        objetoJson = {}
         try:
             logging.debug("HTTP REQUEST HEADERS: " + str(request.headers))
             logging.debug("HTTP REQUEST DATA: " + str(request.data))
@@ -82,22 +81,29 @@ class Select(Resource):
                 operation = data['operation']
                 params = data['params']
                 if operation == "get_email":
-                    res = validate.oper_validator(request, token, api_key_auth, vencimiento_token, data, AMBIENTE_DB)
+                    json_data = set_format_json(data, "select")
+                    res = validate.oper_validator(request, token, api_key_auth, vencimiento_token, json_data, AMBIENTE_DB)
                     codigo = res['codigo']
-                    descripcion = res['descripcion']
-                    
+                    descripcion = res['descripcion']                    
                     if codigo == 1000:
                         arrayJson = res['arrayJson']
                         api_key_pool = arrayJson['apikey']
                         data = request.get_json()
-                        if api_key_pool:
-                            respuesta = send_query_select(data, token, api_key_pool)
+                        if api_key_pool:                            
+                            operation = data['operation']
+                            params = data['params']
+                            ruc = params['ruc']
+                            objetoJson = { "ruc" : ruc }                              
+                            arrayJson = make_response_by_query(AMBIENTE_DB, ruc, data)                            
                             logging.info('@REQUEST GET ' + request.full_path + ' @RESPONSE ' + json.dumps(respuesta))
-                            return respuesta
                         else:
                             descripcion = 'Hubo un problema al recuperar la Api-Key'
                             codigo = -1000
                             logging.error("Peticion finalizada con error: " + descripcion + " " + str(codigo), exc_info = True)
+                    else:
+                        respuesta = {'codigo': codigo, 'descripcion': descripcion, 'objetoJson' : objetoJson, 'arrayJson': arrayJson }
+                        logging.info('@REQUEST GET ' + request.full_path + ' @RESPONSE ' + json.dumps(respuesta))
+                        return respuesta
                 else:
                     descripcion = 'Operación inválida'
                     codigo = -1002
@@ -116,7 +122,7 @@ class Select(Resource):
             codigo = -1000
             logging.debug(e)
             logging.error("Peticion finalizada con error: " + descripcion + " " + str(codigo), exc_info = True)
-        respuesta = {'codigo': codigo, 'descripcion': descripcion, 'objetoJson' : {}, 'arrayJson': [] }
+        respuesta = {'codigo': codigo, 'descripcion': descripcion, 'objetoJson' : objetoJson, 'arrayJson': arrayJson }
         logging.info('@REQUEST GET ' + request.full_path + ' @RESPONSE ' + json.dumps(respuesta))
         return respuesta
     
@@ -173,46 +179,32 @@ class KnowMyToken(Resource):
         respuesta = {'codigo': codigo, 'descripcion': descripcion, 'objetoJson' : objetoJson, 'arrayJson': arrayJson }
         logging.info('@REQUEST GET ' + request.full_path + ' @RESPONSE ' + json.dumps(respuesta))
         return respuesta
-
     
-#Funcion que se encarga de armar el query de consulta al pool y el json con el formato correcto
-def send_query_select(data, token, api_key_pool):
-    try:
-        objetoJson = {}
-        arrayJson = []
-        operation = data['operation']
-        params = data['params']
-        ruc = params['ruc']
-        query = f"""
-                    SELECT trim(EAEMAL) email
-                    FROM {AMBIENTE_DB}.F0101, {AMBIENTE_DB}.F01151
-                    WHERE ABAN8 = EAAN8
-                    AND EAETP = 'E'
-                    AND trim(ABTAX) = '{ruc}'
-                """
-        encoded_query = base64.b64encode(query.encode("utf-8")).decode("utf-8")# sel encripta con base 64 y se desencripta en el pool para realizar la consulta
-        body = {
-                "operation": "select",
-                "params" : {
-                            "apikey" : api_key_pool,
-                            "token" : token,
-                            "query": encoded_query
-                            }
-                }
-        pool_res = requests.post(url_jde, json = body)
-        data = pool_res.json()
-        codigo = data['codigo']
-        descripcion = data['descripcion']
-        arrayJson = data['arrayJson']
-    except KeyError as e :
-        codigo = -1001
-        descripcion = 'No se encuentra el parametro: ' + str(e)
-        logging.debug(e)
-        logging.error("Peticion finalizada con error: " + descripcion + " " + str(codigo), exc_info = True)
-    except Exception as e:
-        codigo = -1000
-        descripcion = str(e)
-        logging.debug(e)
-        logging.error("Peticion finalizada con error: " + descripcion + " " + str(codigo), exc_info = True)
-    respuesta =  {'codigo': codigo, 'descripcion': descripcion, 'objetoJson': objetoJson, 'arrayJson': arrayJson}
-    return respuesta
+    
+def get_query_mail_by_ruc(ambiente, ruc):
+    query = f"""
+                SELECT trim(EAEMAL) email
+                FROM {ambiente}.F0101, {ambiente}.F01151
+                WHERE ABAN8 = EAAN8
+                AND EAETP = 'E'
+                AND trim(ABTAX) = '{ruc}'
+            """
+    return query
+    
+    
+def make_response_by_query(ambiente, ruc, data):
+    global api_key_pool        
+    kudeRucArray = []
+
+    query = get_query_mail_by_ruc(ambiente, ruc)
+    query_result_pager = qrp.QueryResultPager()
+    arrayJson = query_result_pager.get_rows_select(data, token, api_key_pool, query, DEFAULT_PAGE_NUMBER, DEFAULT_PAGE_SIZE)
+    
+    for row in arrayJson:
+        email = row['EMAIL']
+        arrayList = {
+            "email" : email
+        }
+        
+        kudeRucArray.append(arrayList)
+    return kudeRucArray
