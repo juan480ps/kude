@@ -7,7 +7,7 @@ BASE_URL_AUTH : 'http://localhost:6001/aut/login'
 URL_AUTH_GET_API : 'http://localhost:6001/aut/getapibyalias/'
 AUTH_USER : 'bridge2jdews01'
 AUTH_PASS : 'bridge2jdews01.2023'
-BY_PASS_AUTH : FALSE
+BY_PASS_AUTH : TRUE
 
 
 DEFAULT_PAGE_SIZE : 500

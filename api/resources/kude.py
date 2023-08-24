@@ -1,9 +1,10 @@
 from flask_restful import Resource
 from flask import request
-from api import API_KEY, AMBIENTE_DB, APP_CONTEXT, DEFAULT_PAGE_SIZE, DEFAULT_PAGE_NUMBER
-import requests, base64, datetime as dt, sys, logging, json
+from api import API_KEY, AMBIENTE_DB, APP_CONTEXT, DEFAULT_PAGE_SIZE, DEFAULT_PAGE_NUMBER, AUTH_USER, AUTH_PASS
+import logging, json
 from lib import validate, query_result_pager as qrp
 from utils.format_json import set_format_json# se importa la libreria validador que se encarga de validar el token y la sesion 
+from api.resources.auth.auth import GetToken as gt
 
 token = ''
 api_key_auth = {"apikey" : API_KEY}
@@ -64,8 +65,9 @@ class GetToken(Resource):
 # Este trabajo lo hace el validador mediante la funcion oper_validator(). Esta funcion recibe ciertos parametros para poder funcionar.
 class GetMailByRuc(Resource):
     def post(self):
-        global token, momento, vencimiento_token, api_key_pool, api_key_auth# se sobreescriben los valores de las variables de la aplicacion
+        global token, momento, vencimiento_token, api_key_pool, api_key_auth, credentials_auth, session_closed# se sobreescriben los valores de las variables de la aplicacion
         logging.debug("/Select")
+        operacion = 'get_email'
         codigo = -99999
         descripcion = 'No se a procesado la peticion'
         arrayJson = [] 
@@ -73,15 +75,36 @@ class GetMailByRuc(Resource):
         respuesta = None
         objetoJson = {}
         try:
-            logging.debug("HTTP REQUEST HEADERS: " + str(request.headers))
-            logging.debug("HTTP REQUEST DATA: " + str(request.data))
-            if request.is_json:
-                data = request.get_json()
-                logging.info('@REQUEST POST ' + json.dumps(data))
-                operation = data['operation']
-                params = data['params']
-                if operation == "get_email":
-                    json_data = set_format_json(data, "select")
+            ############################################### auto-login ###############################################
+          
+            token_object = gt()        
+            response = token_object.check_session()
+            codigo = response['codigo']
+            descripcion = response['descripcion']
+            objetoJson = response['objetoJson']
+            token = objetoJson['token']
+            vencimiento_token = objetoJson['vencimiento_token']
+            credentials_auth = {"username": AUTH_USER, "password" : AUTH_PASS, "apikey" : API_KEY,  "authcontext" : APP_CONTEXT}
+            credentials_auth = set_format_json(credentials_auth, operacion) #formateael json con el estandard del jdewsring01
+            
+            operation = credentials_auth['operation']
+            params = credentials_auth['params']
+            
+            if operation == "get_email":
+                if codigo < 0:
+                    respuesta = validate.validator(request, token, session_closed, api_key_auth, APP_CONTEXT)
+                    json_data = respuesta[0]
+                    codigo = json_data['codigo']
+                    descripcion = json_data['descripcion']
+                    token = respuesta[1]
+                    momento = respuesta[2]
+                    vencimiento_token = respuesta[3]
+                    token_is_expired = respuesta[4]
+                    session_closed = respuesta[5]            
+
+        #############################################################################################################
+        
+                    json_data = set_format_json(json_data, "select")
                     res = validate.oper_validator(request, token, api_key_auth, vencimiento_token, json_data, AMBIENTE_DB)
                     codigo = res['codigo']
                     descripcion = res['descripcion']                    
@@ -95,7 +118,7 @@ class GetMailByRuc(Resource):
                             ruc = params['ruc']
                             objetoJson = { "ruc" : ruc }                              
                             arrayJson = make_response_by_query(AMBIENTE_DB, ruc, data)                            
-                            logging.info('@REQUEST GET ' + request.full_path + ' @RESPONSE ' + json.dumps(respuesta))
+                            #logging.info('@REQUEST GET ' + request.full_path + ' @RESPONSE ' + json.dumps(respuesta))
                         else:
                             descripcion = 'Hubo un problema al recuperar la Api-Key'
                             codigo = -1000
@@ -104,14 +127,11 @@ class GetMailByRuc(Resource):
                         respuesta = {'codigo': codigo, 'descripcion': descripcion, 'objetoJson' : objetoJson, 'arrayJson': arrayJson }
                         logging.info('@REQUEST GET ' + request.full_path + ' @RESPONSE ' + json.dumps(respuesta))
                         return respuesta
-                else:
-                    descripcion = 'Operación inválida'
-                    codigo = -1002
-                    logging.error("Peticion finalizada con error: " + descripcion + " " + str(codigo), exc_info = True)
             else:
-                descripcion = 'Json necesario para ingresar'
+                descripcion = 'Operación inválida'
                 codigo = -1002
                 logging.error("Peticion finalizada con error: " + descripcion + " " + str(codigo), exc_info = True)
+                
         except KeyError as e :
             descripcion = 'No se encuentra el parametro: ' + str(e)
             codigo = -1001
