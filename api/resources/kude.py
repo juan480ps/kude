@@ -1,5 +1,5 @@
 from flask_restful import Resource
-from flask import request
+from flask import jsonify, request
 from api import API_KEY, AMBIENTE_DB, APP_CONTEXT, DEFAULT_PAGE_SIZE, DEFAULT_PAGE_NUMBER, AUTH_USER, AUTH_PASS
 import logging, json
 from lib import validate, query_result_pager as qrp
@@ -67,7 +67,7 @@ class GetMailByRuc(Resource):
     def post(self):
         global token, momento, vencimiento_token, api_key_pool, api_key_auth, credentials_auth, session_closed# se sobreescriben los valores de las variables de la aplicacion
         logging.debug("/Select")
-        operacion = 'get_email'
+        operacion = 'get_token'
         codigo = -99999
         descripcion = 'No se a procesado la peticion'
         arrayJson = [] 
@@ -90,7 +90,7 @@ class GetMailByRuc(Resource):
             operation = credentials_auth['operation']
             params = credentials_auth['params']
             
-            if operation == "get_email":
+            if operation == "get_token":
                 if codigo < 0:
                     respuesta = validate.validator(request, token, session_closed, api_key_auth, APP_CONTEXT)
                     json_data = respuesta[0]
@@ -104,33 +104,47 @@ class GetMailByRuc(Resource):
 
         #############################################################################################################
         
-                    json_data = set_format_json(json_data, "select")
-                    res = validate.oper_validator(request, token, api_key_auth, vencimiento_token, json_data, AMBIENTE_DB)
-                    codigo = res['codigo']
-                    descripcion = res['descripcion']                    
-                    if codigo == 1000:
-                        arrayJson = res['arrayJson']
-                        api_key_pool = arrayJson['apikey']
-                        data = request.get_json()
-                        if api_key_pool:                            
-                            operation = data['operation']
-                            params = data['params']
-                            ruc = params['ruc']
-                            objetoJson = { "ruc" : ruc }                              
-                            arrayJson = make_response_by_query(AMBIENTE_DB, ruc, data)                            
-                            #logging.info('@REQUEST GET ' + request.full_path + ' @RESPONSE ' + json.dumps(respuesta))
-                        else:
-                            descripcion = 'Hubo un problema al recuperar la Api-Key'
-                            codigo = -1000
-                            logging.error("Peticion finalizada con error: " + descripcion + " " + str(codigo), exc_info = True)
-                    else:
-                        respuesta = {'codigo': codigo, 'descripcion': descripcion, 'objetoJson' : objetoJson, 'arrayJson': arrayJson }
-                        logging.info('@REQUEST GET ' + request.full_path + ' @RESPONSE ' + json.dumps(respuesta))
-                        return respuesta
+            json_data = set_format_json(json_data, "select")
+            res = validate.oper_validator(request, token, api_key_auth, vencimiento_token, json_data, AMBIENTE_DB)
+            codigo = res['codigo']
+            descripcion = res['descripcion']                    
+            if codigo == 1000:
+                arrayJson = res['arrayJson']
+                api_key_pool = arrayJson['apikey']
+                data = request.get_json()
+                if api_key_pool:                            
+                    operation = data['operation']
+                    params = data['params']
+                    ruc = params['ruc']
+                    objetoJson = { "ruc" : ruc }                              
+                    arrayJson = make_response_by_query(AMBIENTE_DB, ruc, data)                            
+                    #logging.info('@REQUEST GET ' + request.full_path + ' @RESPONSE ' + json.dumps(respuesta))
+                    
+                    respuesta = {"codigo": codigo, "descripcion": descripcion, "objetoJson": objetoJson, "arrayJson" : arrayJson}
+                
+                    ############################################### cookies para el cliente ###############################################
+                    
+                    respuesta = jsonify(respuesta)
+                    respuesta.set_cookie('cookie', token)
+                    
+                    return respuesta                    
+
+                    ########################################################################################################################
+                else:
+                    descripcion = 'Hubo un problema al recuperar la Api-Key'
+                    codigo = -1000
+                    logging.error("Peticion finalizada con error: " + descripcion + " " + str(codigo), exc_info = True)
+                    
             else:
-                descripcion = 'Operación inválida'
-                codigo = -1002
-                logging.error("Peticion finalizada con error: " + descripcion + " " + str(codigo), exc_info = True)
+                codigo = res['codigo']
+                descripcion = res['descripcion']
+                respuesta = {"codigo": codigo, "descripcion": descripcion, "objetoJson": {}, "arrayJson" : []}
+                logging.info('@REQUEST GET ' + request.full_path + ' @RESPONSE ' + json.dumps(respuesta))
+                return respuesta
+            # else:
+            #     descripcion = 'Operación inválida'
+            #     codigo = -1002
+            #     logging.error("Peticion finalizada con error: " + descripcion + " " + str(codigo), exc_info = True)
                 
         except KeyError as e :
             descripcion = 'No se encuentra el parametro: ' + str(e)
@@ -208,6 +222,7 @@ def get_query_mail_by_ruc(ambiente, ruc):
                 WHERE ABAN8 = EAAN8
                 AND EAETP = 'E'
                 AND trim(ABTAX) = '{ruc}'
+                AND EAECLASS = 'KUD'
             """
     return query
     

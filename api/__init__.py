@@ -26,6 +26,7 @@ DEFAULT_PAGE_SIZE = app_config_data['DEFAULT_PAGE_SIZE']
 DEFAULT_PAGE_NUMBER = app_config_data['DEFAULT_PAGE_NUMBER']
 
 app = Flask(__name__)
+app.json.sort_keys = False #esto evita que al agregar cookies al header se ordene el json de respuesta alfabeticamente 
 api = Api(app)
 
 from api.resources.kude import GetToken, GetMailByRuc, Logout, KnowMyToken
